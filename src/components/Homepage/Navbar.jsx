@@ -11,13 +11,13 @@ const Navbar = () => {
 
         {/* centered menu items */}
         <ul className="main-nav__list">
-          <li><a href="#about" className="main-nav__link active">About Us</a></li>
-          <li><a href="#projects" className="main-nav__link">Projects</a></li>
-          <li><a href="#tenders" className="main-nav__link">Tenders</a></li>
-          <li><a href="#downloads" className="main-nav__link">Downloads</a></li>
-          <li><a href="#media" className="main-nav__link">Media</a></li>
-          <li><a href="#rti" className="main-nav__link">RTI Dashboard</a></li>
-          <li><a href="#contact" className="main-nav__link">Contact Numbers</a></li>
+          <li><a href="#about" className="main-nav__link active">ನಮ್ಮ ಬಗ್ಗೆ</a></li>
+          <li><a href="#projects" className="main-nav__link">ಯೋಜನೆಗಳು</a></li>
+          <li><a href="#tenders" className="main-nav__link">ಟೆಂಡರ್‌ಗಳು</a></li>
+          <li><a href="#downloads" className="main-nav__link">ಡೌನ್‌ಲೋಡ್‌ಗಳು</a></li>
+          <li><a href="#media" className="main-nav__link">ಮಾಧ್ಯಮ</a></li>
+          <li><a href="#rti" className="main-nav__link">ಮಾಹಿತಿ ಹಕ್ಕು ವಿಭಾಗ</a></li>
+          <li><a href="#contact" className="main-nav__link">ಸಂಪರ್ಕ ಸಂಖ್ಯೆಗಳು</a></li>
         </ul>
 
         {/* blue round 3-lines button on the right inside the pill */}

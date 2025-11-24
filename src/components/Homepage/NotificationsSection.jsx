@@ -13,7 +13,7 @@ const NotificationsSection = () => {
   return (
     <section className="notifications">
       <div className="container">
-        <h3 className="section-title">NOTIFICATIONS</h3>
+<h3 className="section-title">ಅಧಿಸೂಚನೆಗಳು</h3>
 
         <div className="notifications__table-wrapper">
           <table className="notifications__table">

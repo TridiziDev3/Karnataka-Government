@@ -35,9 +35,10 @@ const HeroSection = () => {
 
       {/* bottom bar */}
       <div className="hero__ticker">
-        Call 1902 to register your grievance (if any) regarding any scheme /
-        service delivery of Government of Karnataka
-      </div>
+  <span>ಯಾವುದೇ ಯೋಜನೆ / ಸೇವಾ ವಿತರಣೆ ಕುರಿತು ನಿಮ್ಮ ಅಹವಾಲನ್ನು (ಇದ್ದಲ್ಲಿ) ನೋಂದಾಯಿಸಲು 1902 ಗೆ ಕರೆ ಮಾಡಿ — ಕರ್ನಾಟಕ ಸರ್ಕಾರ</span>
+</div>
+
+
     </section>
   );
 };

@@ -2,12 +2,10 @@
 import React from "react";
 import "../../Styles/Homepage/gallerySection.css";
 
-// ===== BSWML IMAGES =====
 import imgB1 from "../../assets/Homepage/Image 1.png";
 import imgB2 from "../../assets/Homepage/Image 2.png";
 import imgB3 from "../../assets/Homepage/Image3.png";
 
-// ===== GALLERY IMAGES (RECTANGLES) =====
 import rect1 from "../../assets/Homepage/Rectangle 34625672.png";
 import rect2 from "../../assets/Homepage/Rectangle 34625673.png";
 import rect3 from "../../assets/Homepage/Rectangle 34625674.png";
@@ -15,32 +13,30 @@ import rect4 from "../../assets/Homepage/Rectangle 34625675.png";
 import rect5 from "../../assets/Homepage/Rectangle 34625676.png";
 import rect6 from "../../assets/Homepage/Rectangle 34625677.png";
 
-// ===== DATA =====
 const bswmlCards = [
   {
-    title: "Sramadan",
-    desc: "It’s a dummy text, click read more button to know more",
+    title: "ಶ್ರಮದಾನ",
+    desc: "ಇದು ತಾತ್ಕಾಲಿಕ ಪಠ್ಯ, ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗಿ ಇನ್ನಷ್ಟು ಓದಿ ಕ್ಲಿಕ್ ಮಾಡಿ",
     image: imgB1,
   },
   {
-    title: "Plastic Awareness Program",
-    desc: "It’s a dummy text, click read more button to know more",
+    title: "ಪ್ಲಾಸ್ಟಿಕ್ ಜಾಗೃತಿ ಕಾರ್ಯಕ್ರಮ",
+    desc: "ಇದು ತಾತ್ಕಾಲಿಕ ಪಠ್ಯ, ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗಿ ಇನ್ನಷ್ಟು ಓದಿ ಕ್ಲಿಕ್ ಮಾಡಿ",
     image: imgB2,
   },
   {
-    title: "Inspection to Dry Waste Center",
-    desc: "It’s a dummy text, click read more button to know more",
+    title: "ಒಣ ತ್ಯಾಜ್ಯ ಕೇಂದ್ರ ಪರಿಶೀಲನೆ",
+    desc: "ಇದು ತಾತ್ಕಾಲಿಕ ಪಠ್ಯ, ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗಿ ಇನ್ನಷ್ಟು ಓದಿ ಕ್ಲಿಕ್ ಮಾಡಿ",
     image: imgB3,
   },
 ];
 
-const galleryTabs = ["Photos", "Videos"];
+const galleryTabs = ["ಚಿತ್ರಗಳು", "ವೀಡಿಯೊಗಳು"];
 
-// each gallery card = 2 images
 const galleryItems = [
-  { title: "Event Photos", images: [rect1, rect2] },
-  { title: "Transfer Station", images: [rect3, rect4] },
-  { title: "Landfill", images: [rect5, rect6] },
+  { title: "ಕಾರ್ಯಕ್ರಮದ ಚಿತ್ರಗಳು", images: [rect1, rect2] },
+  { title: "ಟ್ರಾನ್ಸ್‌ಫರ್ ಸ್ಟೇಷನ್", images: [rect3, rect4] },
+  { title: "ಲ್ಯಾಂಡ್‌ಫಿಲ್", images: [rect5, rect6] },
 ];
 
 const GallerySection = () => {
@@ -49,25 +45,20 @@ const GallerySection = () => {
       <div className="container">
         {/* ================= BSWML ================= */}
         <div className="bswml">
-          <h3 className="section-title bswml__title">BSWML</h3>
+          <h3 className="section-title bswml__title">ಬಿ.ಎಸ್.ಡಬ್ಲ್ಯೂ.ಎಂ.ಎಲ್</h3>
 
           <div className="bswml__row">
-            {/* 3 cards */}
             <div className="bswml__grid">
               {bswmlCards.map((card) => (
                 <div key={card.title} className="bswml-card">
-                  <img
-                    src={card.image}
-                    alt={card.title}
-                    className="bswml-card__image"
-                  />
+                  <img src={card.image} alt={card.title} className="bswml-card__image" />
 
                   <div className="bswml-card__body">
                     <h4 className="bswml-card__title">{card.title}</h4>
                     <p className="bswml-card__desc">{card.desc}</p>
 
                     <button className="bswml-card__btn">
-                      <span>Read More</span>
+                      <span>ಇನ್ನಷ್ಟು ಓದಿ</span>
                       <span className="bswml-card__btn-icon">↗</span>
                     </button>
                   </div>
@@ -75,7 +66,6 @@ const GallerySection = () => {
               ))}
             </div>
 
-            {/* round arrow on the right */}
             <button className="bswml__arrow">➜</button>
           </div>
         </div>
@@ -83,14 +73,11 @@ const GallerySection = () => {
         {/* ================= GALLERY ================= */}
         <div className="gallery">
           <div className="gallery__header">
-            <h3 className="section-title gallery__title">Gallery</h3>
+            <h3 className="section-title gallery__title">ಗ್ಯಾಲರಿ</h3>
 
             <div className="gallery__tabs">
               {galleryTabs.map((tab, idx) => (
-                <button
-                  key={tab}
-                  className={`gallery__tab ${idx === 0 ? "active" : ""}`}
-                >
+                <button key={tab} className={`gallery__tab ${idx === 0 ? "active" : ""}`}>
                   {tab}
                 </button>
               ))}

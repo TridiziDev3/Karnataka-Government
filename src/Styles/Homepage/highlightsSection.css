@@ -22,14 +22,14 @@
 
 .highlights__subtext {
   font-family: "Open Sans", sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 300;
   color: #4275C8;
   display: block;
   margin-bottom: 22px;
 }
 
-/* ---------- Cards Row (4 cards in row on desktop) ---------- */
+/* ---------- Cards Row ---------- */
 .highlights__grid {
   max-width: 1220px;
   margin: 0 auto;
@@ -43,13 +43,28 @@
 .highlight-card {
   flex: 0 0 282px;
   width: 282px;
-  height: 119px;
+  height: 130px;
   background: #f8f8f8;
   border-radius: 11px;
   padding: 12px 16px;
   box-sizing: border-box;
   display: flex;
   align-items: flex-start;
+
+  border: 1px solid transparent;      /* default border */
+  transition: border 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover effects */
+.highlight-card:hover {
+  border: 2px solid #0B368E;          /* blue border */
+  transform: translateY(-2px);        /* small lift */
+  box-shadow: 0 6px 18px rgba(11, 54, 142, 0.12);
+  cursor: pointer;
+}
+
+.highlight-card:hover .highlight-card__title {
+  color: #0B368E;                     /* highlight title color */
 }
 
 /* Left icon */
@@ -99,6 +114,11 @@
   font-family: "Open Sans", sans-serif;
   font-size: 11px;
   cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.highlight-card__btn:hover {
+  background: #0B368E;
 }
 
 /* Card with no icon (In Focus) */

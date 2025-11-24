@@ -5,7 +5,6 @@
   background: #ffffff;
 }
 
-/* outer rectangle: 1266 x 220, bg #f8f8f8 */
 .quick-links__outer {
   width: 100%;
   max-width: 1266px;
@@ -26,46 +25,44 @@
   gap: 75px;
 }
 
-/* card: 260 x 115 – content sits inside, no overlap */
 .quick-link-card {
   width: 260px;
-  height: 115px;                 /* fixed card height */
+  height: 115px;
   border-radius: 10px;
   border: 1px solid #0b36be;
   background: #f8f8f8;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;       /* center icon + text vertically */
-  gap: 6px;                      /* space between icon & text */
-
+  justify-content: center;
+  gap: 6px;
   cursor: pointer;
   transition: transform 0.2s ease;
-  padding: 10px;                 /* stops icon from touching border */
+  padding: 10px;
   box-sizing: border-box;
 }
 
 .quick-link-card:hover {
   transform: translateY(-2px);
 }
+
 .quick-link-icon {
-  width: 60px;                   /* reduced so text fits */
+  width: 60px;
   height: 60px;
   object-fit: contain;
   display: block;
 }
 
 .quick-link-text {
-  font-family: "Inter", sans-serif;
-  font-size: 18px;               /* slightly smaller so it fits */
+ font-family: "Noto Sans Kannada", "Poppins", sans-serif;
+  font-size: 18px;
   font-weight: 700;
   text-align: center;
   line-height: 1.1;
   color: #0b36be;
   max-width: 200px;
-  word-wrap: break-word;         /* wrap if long */
-  white-space: normal;           /* allow 2 lines */
+  word-wrap: break-word;
+  white-space: normal;
 }
 
 
@@ -74,16 +71,13 @@
 .footer-main {
   background: #ffffff;
   padding: 30px 0 50px;
-  
 }
 
-/* card: 1266 x 186, radius 10, bg #F8F8F8 */
 .footer-main__card {
   width: 1266px;
   margin-left: -60px;
   background: #f8f8f8;
   border-radius: 10px;
-  /* top padding = 29px to match Figma (4724 -> 4753) */
   padding: 29px 36px 24px;
   box-sizing: border-box;
   height: 186px;
@@ -94,14 +88,13 @@
   grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
   column-gap: 40px;
   font-size: 12px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Noto Sans Kannada", "Poppins", sans-serif;
   align-items: flex-start;
 }
 
-/* headings with blue underline frames from Figma */
 .footer-heading {
   display: inline-block;
-  padding: 0 10px 4px; /* horizontal padding 10px, gap 10px */
+  padding: 0 10px 4px;
   margin: 0 0 10px;
   border-bottom: 0.5px solid #4275c8;
   font-size: 12px;
@@ -109,20 +102,18 @@
   color:#4275C8;
 }
 
-/* exact widths of heading frames */
 .footer-heading--disclaimer {
-  width: 122px; /* 122 x 24 */
+  width: 122px;
 }
 
 .footer-heading--policies {
-  width: 222px; /* 222 x 24 */
+  width: 222px;
 }
 
 .footer-heading--access {
-  width: 168px; /* 168 x 24 */
+  width: 168px;
 }
 
-/* disclaimer text: 357 x 112, 12px, 136% */
 .footer-main__col--disclaimer .footer-disclaimer-text {
   max-width: 357px;
   margin: 0;
@@ -131,7 +122,6 @@
   color:#505050;
 }
 
-/* list columns */
 .footer-main__col ul {
   list-style: none;
   padding: 0;
@@ -142,21 +132,17 @@
   margin-top: 4px;
 }
 
-/* width of policy list block: 134 x 95 */
 .footer-main__col--policies ul {
   max-width: 134px;
   font-size: 14px;
   line-height: 1.36;
 }
 
-/* width of accessibility list block: 145 x 76 */
 .footer-main__col--access ul {
   max-width: 145px;
   font-size: 14px;
   line-height: 1.36;
 }
-
-/* ---- Brand block layout ---- */
 
 .footer-main__brand {
   display: flex;
@@ -164,7 +150,6 @@
   align-items: flex-start;
 }
 
-/* top row: QR + [temple + org text] */
 .footer-brand__top {
   display: flex;
   align-items: flex-start;
@@ -172,14 +157,12 @@
   margin-bottom: 6px;
 }
 
-/* QR: 82 x 80 */
 .footer-brand__qr {
   width: 82px;
   height: 80px;
   object-fit: contain;
 }
 
-/* right side of top row: temple + title text */
 .footer-brand__right {
   display: flex;
   flex-direction: row;
@@ -187,14 +170,12 @@
   gap: 10px;
 }
 
-/* temple: 60 x 85 */
 .footer-brand__temple {
   width: 60px;
   height: 85px;
   object-fit: contain;
 }
 
-/* org text: 200 x 63, Kumar One 14px */
 .footer-brand__org {
   max-width: 200px;
   margin: 0;
@@ -204,30 +185,34 @@
   color:#000000;
 }
 
-/* 2nd line: 344 x 18, Open Sans 7px */
 .footer-brand__owned {
   max-width: 344px;
   margin: 0 0 2px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Noto Sans Kannada", "Poppins", sans-serif;
   font-size: 7px;
   line-height: 1.36;
 }
 
-/* 3rd line: 301 x 18, Open Sans 7px */
 .footer-brand__credits {
   max-width: 301px;
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Noto Sans Kannada", "Poppins", sans-serif;
   font-size: 7px;
   line-height: 1.36;
 }
 
-/* ---------- RESPONSIVE ---------- */
+
+/* ---------- RESPONSIVE FOR FOOTER / QUICK LINKS ---------- */
 
 @media (max-width: 1300px) {
   .quick-links__outer,
   .footer-main__card {
     width: 100%;
+  }
+
+  /* stop footer card from shifting left on medium screens */
+  .footer-main__card {
+    margin-left: 0;
   }
 }
 
@@ -237,8 +222,14 @@
     gap: 24px;
   }
 
+  .quick-links__outer {
+    height: auto;
+    padding: 24px 20px;
+  }
+
   .footer-main__card {
     padding: 24px 20px;
+    height: auto;          /* allow content to grow when columns stack */
   }
 
   .footer-main__inner {
@@ -248,5 +239,68 @@
 
   .footer-main__brand {
     align-items: flex-start;
+  }
+}
+
+/* extra tuning for small mobiles */
+@media (max-width: 767px) {
+  .quick-links {
+    padding: 24px 12px;
+  }
+
+  .quick-links__outer {
+    height: auto;
+    padding: 16px 12px;
+  }
+
+  .quick-links__grid {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .quick-link-card {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .quick-link-text {
+    font-size: 16px;
+  }
+
+  .footer-main {
+    padding: 24px 12px 32px;
+  }
+
+  .footer-main__card {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    height: auto;
+    padding: 20px 16px 18px;
+  }
+
+  .footer-main__inner {
+    grid-template-columns: 1fr;
+    row-gap: 14px;
+  }
+
+  .footer-heading {
+    font-size: 13px;
+  }
+
+  .footer-main__col--policies ul,
+  .footer-main__col--access ul {
+    font-size: 13px;
+  }
+
+  .footer-brand__top {
+    align-items: center;
+  }
+
+  .footer-brand__org {
+    font-size: 13px;
   }
 }

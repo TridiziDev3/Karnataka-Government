@@ -1,16 +1,17 @@
 /* src/Styles/Homepage/hero.css */
 
-/* ===================== DESKTOP (1440px) ===================== */
+/* ===================== DESKTOP (up to 1440px) ===================== */
 .hero {
-  margin-bottom: 20px;
-  width: 1440px;
-  margin-top: 20px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto 40px;
 }
 
-/* background image block (1440 x 562) */
+/* background image block */
 .hero__image {
   position: relative;
-  width: 1440px;
+  width: 100%;          /* was 1440px – now fully responsive */
+  max-width: 1440px;
   height: 562px;
   background-size: cover;
   background-position: center;
@@ -74,21 +75,33 @@
   min-height: 66px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  overflow: hidden; /* IMPORTANT */
   padding: 0 32px;
-  text-align: center;
-  font-family: "Open Sans", system-ui, sans-serif;
-  font-size: 18px;
-  line-height: 25px;
 }
 
-.hero__ticker span,
+.hero__ticker span {
+  display: inline-block;
+  white-space: nowrap;
+  font-family: "Noto Sans Kannada", system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  animation: tickerScroll 15s linear infinite;
+}
 .hero__ticker p {
   max-width: 940px;
 }
 
+@keyframes tickerScroll {
+  0% {
+    transform: translateX(100%); /* start from right */
+  }
+  100% {
+    transform: translateX(-100%); /* exit on left */
+  }
+}
 
-/* ===================== TABLET (1024px–900px) ===================== */
+
+/* ===================== TABLET (≤1024px) ===================== */
 @media (max-width: 1024px) {
   .hero {
     width: 100%;
@@ -120,6 +133,17 @@
   }
 }
 
+/* slightly smaller tablets */
+@media (max-width: 900px) {
+  .hero__image {
+    height: 360px;
+  }
+
+  .hero__overlay {
+    padding: 0 24px;
+  }
+}
+
 
 /* ===================== MOBILE (≤767px) ===================== */
 @media (max-width: 767px) {
@@ -130,7 +154,7 @@
 
   .hero__image {
     width: 100%;
-    height: 260px; /* fits mobile perfectly */
+    height: 260px;
   }
 
   .hero__overlay {
