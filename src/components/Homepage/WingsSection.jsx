@@ -12,36 +12,33 @@ import {
   FiClock,
   FiArrowUpRight,
 } from "react-icons/fi";
+import { TEXT } from "../../content/text";
+
+const iconComponents = [
+  <FiSearch />,
+  <FiMonitor />,
+  <FiBriefcase />,
+  <FiTool />,
+  <FiAlertTriangle />,
+  <FiUsers />,
+  <FiEdit3 />,
+  <FiClock />,
+];
 
 const WingsSection = ({ lang }) => {
-  const wings =
-    lang === "kn"
-      ? [
-          { name: "ಐಟಿ ಸೆಲ್", icon: <FiSearch /> },
-          { name: "ಜನಸಂಪರ್ಕ ವಿಭಾಗ", icon: <FiMonitor /> },
-          { name: "ವಿಜಿಲೆನ್ಸ್ ಸೆಲ್", icon: <FiBriefcase /> },
-          { name: "ತಾಂತ್ರಿಕ ವಿಭಾಗ", icon: <FiTool /> },
-          { name: "ನಿರ್ವಹಣಾ ವಿಭಾಗ", icon: <FiAlertTriangle /> },
-          { name: "ಸಾಮಾಜಿಕ ಅಭಿವೃದ್ಧಿ", icon: <FiUsers /> },
-          { name: "ಕಾನೂನು ಸೆಲ್", icon: <FiEdit3 /> },
-          { name: "ಸಂಶೋಧನೆ ಮತ್ತು ಅಭಿವೃದ್ಧಿ ಸೆಲ್", icon: <FiClock /> },
-        ]
-      : [
-          { name: "IT Cell", icon: <FiSearch /> },
-          { name: "Public Relation", icon: <FiMonitor /> },
-          { name: "Vigilance Cell", icon: <FiBriefcase /> },
-          { name: "Technical", icon: <FiTool /> },
-          { name: "Administration", icon: <FiAlertTriangle /> },
-          { name: "Social Development", icon: <FiUsers /> },
-          { name: "Legal Cell", icon: <FiEdit3 /> },
-          { name: "R & D Cell", icon: <FiClock /> },
-        ];
+  const t = TEXT.wings;
+  const names = t.items[lang];
+
+  const wings = names.map((name, idx) => ({
+    name,
+    icon: iconComponents[idx],
+  }));
 
   return (
     <section className="wings">
       <div className="container">
         <h3 className="section-title">
-          {lang === "kn" ? "ವಿಭಾಗಗಳು" : "Wings"}
+          {t.heading[lang]}
         </h3>
 
         <div className="wings__grid">

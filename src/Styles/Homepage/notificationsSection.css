@@ -4,7 +4,8 @@
 
 .notifications {
   padding: 40px 0 56px;
-  background: #ffffff;
+  background: var(--surface-bg);
+
 }
 
 /* NOTIFICATIONS heading – 708 x 55 frame in Figma */

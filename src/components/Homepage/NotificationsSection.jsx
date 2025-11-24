@@ -1,5 +1,7 @@
+// src/components/Homepage/NotificationsSection.jsx
 import React from "react";
 import "../../Styles/Homepage/notificationsSection.css";
+import { TEXT } from "../../content/text";
 
 const rows = [
   { title: "Lorem Ipsum Content Is Dummy Text", date: "10/03/2019" },
@@ -10,12 +12,13 @@ const rows = [
 ];
 
 const NotificationsSection = ({ lang }) => {
+  const t = TEXT.notifications;
+
   return (
     <section className="notifications">
       <div className="container">
-
         <h3 className="section-title">
-          {lang === "kn" ? "ಅಧಿಸೂಚನೆಗಳು" : "Notifications"}
+          {t.heading[lang]}
         </h3>
 
         <div className="notifications__table-wrapper">
@@ -29,10 +32,10 @@ const NotificationsSection = ({ lang }) => {
 
             <thead>
               <tr>
-                <th>{lang === "kn" ? "ಇತ್ತೀಚಿನವು" : "Latest"}</th>
+                <th>{t.latest[lang]}</th>
                 <th></th>
                 <th></th>
-                <th>{lang === "kn" ? "ದಿನಾಂಕ" : "Date"}</th>
+                <th>{t.date[lang]}</th>
               </tr>
             </thead>
 
@@ -40,7 +43,7 @@ const NotificationsSection = ({ lang }) => {
               {rows.map((row, idx) => (
                 <tr key={idx}>
                   <td className="notifications__title">
-                    {lang === "kn" ? "ಲೋರಮ್ ಇಪ್ಸಮ್ ವಿಷಯ ಡಮ್ಮಿ ಪಠ್ಯವಾಗಿದೆ" : row.title}
+                    {lang === "kn" ? t.rowTitleKn : row.title}
                   </td>
                   <td></td>
                   <td></td>
@@ -50,7 +53,6 @@ const NotificationsSection = ({ lang }) => {
             </tbody>
           </table>
         </div>
-
       </div>
     </section>
   );

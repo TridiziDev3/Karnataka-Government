@@ -3,7 +3,7 @@
 /* =============== DESKTOP (1440px) =============== */
 .md-section {
   padding: 56px 0 32px;
-  background: #ffffff;
+  background: var(--surface-bg);
   margin-top: -10px;
 }
 

@@ -141,3 +141,67 @@ a.btn:hover,
     transform: translateX(20px);
   }
 }
+
+
+/* ===================== THEME VARIABLES ===================== */
+:root {
+  --page-bg: #f1f4ff;
+  --surface-bg: #ffffff;
+  --surface-alt-bg: #eef3ff;
+
+  --text-main: #222222;
+  --text-muted: #444444;
+
+  --primary: #163a96;
+  --primary-soft: #5a7aff;
+
+  --border-subtle: #e2e4f0;
+
+  --nav-pill-bg: #eef3ff;
+  --mobile-menu-bg: #ffffff;
+
+  --shadow-soft: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* 🌙 DARK THEME OVERRIDES */
+[data-theme="dark"] {
+  --page-bg: #050714;
+  --surface-bg: #0d1020;
+  --surface-alt-bg: #181c33;
+
+  --text-main: #f4f6ff;
+  --text-muted: #c2c8ff;
+
+  --primary: #6d8bff;
+  --primary-soft: #93a7ff;
+
+  --border-subtle: #262b46;
+
+  --nav-pill-bg: #181c33;
+  --mobile-menu-bg: #11152a;
+
+  --shadow-soft: 0 4px 18px rgba(0, 0, 0, 0.6);
+}
+
+/* Smooth color transition when toggling */
+*,
+*::before,
+*::after {
+  transition: background-color 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Base layout */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  background: var(--page-bg);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}

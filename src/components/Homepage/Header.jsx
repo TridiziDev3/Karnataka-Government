@@ -8,14 +8,16 @@ import TempleImage from "../../assets/Homepage/temple.png";
 import { FaUser } from "react-icons/fa";
 
 import Navbar from "./Navbar";
+import { TEXT } from "../../content/text";
 
 const Header = ({ lang, setLang }) => {
   const [dateTime, setDateTime] = useState("");
-
-  // 🔍 text size scale (1 = normal)
   const [fontScale, setFontScale] = useState(1);
+  const [theme, setTheme] = useState("light");
 
-  // ⏰ date/time updater
+  const t = TEXT.header;
+
+  // DATE / TIME
   useEffect(() => {
     const updateDateTime = () => {
       const now = new Date();
@@ -49,16 +51,15 @@ const Header = ({ lang, setLang }) => {
     return () => clearInterval(timer);
   }, [lang]);
 
-  // 🌐 Toggle language: kn <-> en
+  // LANGUAGE TOGGLE
   const handleToggleLang = () => {
     setLang(lang === "kn" ? "en" : "kn");
   };
 
-  // 🔠 Text size handlers (zoom out / zoom in)
+  // TEXT SIZE
   const changeFontScale = (delta) => {
     setFontScale((prev) => {
       const next = prev + delta;
-      // limit between 0.8x and 1.4x
       if (next < 0.8) return 0.8;
       if (next > 1.4) return 1.4;
       return next;
@@ -66,21 +67,34 @@ const Header = ({ lang, setLang }) => {
   };
 
   useEffect(() => {
-    // apply scale to the whole page
     const root = document.documentElement;
     const previous = root.style.fontSize;
-
     root.style.fontSize = `${fontScale * 100}%`;
-
-    // cleanup (optional)
     return () => {
       root.style.fontSize = previous;
     };
   }, [fontScale]);
 
+  // THEME
+  useEffect(() => {
+    const saved = localStorage.getItem("site-theme");
+    if (saved === "dark" || saved === "light") {
+      setTheme(saved);
+    }
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("site-theme", theme);
+  }, [theme]);
+
+  const handleToggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
+
   return (
     <header className="header">
-      {/* 🔹 Top govt strip */}
+      {/* Top govt strip */}
       <div className="header-top">
         <div className="header-top__left">
           <span>{dateTime}</span>
@@ -88,17 +102,17 @@ const Header = ({ lang, setLang }) => {
 
         <div className="header-top__center">
           <a href="#!" className="header-top__link">
-            {lang === "kn" ? "ದೃಷ್ಟಿ ಬಾಧಿತರಿಗಾಗಿ" : "Visually Challenged"}
+            {t.top.visuallyChallenged[lang]}
           </a>
           <span className="header-divider">|</span>
 
           <a href="#!" className="header-top__link">
-            {lang === "kn" ? "ಸ್ಕ್ರೀನ್ ರೀಡರ್ ಪ್ರವೇಶ" : "Screen Reader Access"}
+            {t.top.screenReader[lang]}
           </a>
           <span className="header-divider">|</span>
 
           <span className="header-top__link">
-            {lang === "kn" ? "ಪಠ್ಯದ ಗಾತ್ರ" : "Text Size"}
+            {t.top.textSize[lang]}
           </span>
 
           {/* ➖ zoom out */}
@@ -111,7 +125,6 @@ const Header = ({ lang, setLang }) => {
             -
           </button>
 
-          {/* just a label for normal size */}
           <span className="header-top__size-a">A</span>
 
           {/* ➕ zoom in */}
@@ -124,22 +137,27 @@ const Header = ({ lang, setLang }) => {
             +
           </button>
 
-          {/* 🌐 Single Language Toggle Button */}
+          {/* Language toggle */}
           <div className="header-top__lang-switch">
             <button className="lang-btn" onClick={handleToggleLang}>
-              {lang === "kn" ? "English" : "ಕನ್ನಡ"}
+              {t.top.langButton[lang]}
             </button>
           </div>
         </div>
 
         <div className="header-top__right">
-          <div className="header-top__theme-toggle">
+          <button
+            type="button"
+            className="header-top__theme-toggle"
+            onClick={handleToggleTheme}
+            aria-label="Toggle dark theme"
+          >
             <div className="theme-half theme-half--light" />
             <div className="theme-half theme-half--dark" />
-          </div>
+          </button>
 
           <button className="header-top__btn">
-            {lang === "kn" ? "ಲಾಗಿನ್" : "Login"}
+            {t.top.login[lang]}
           </button>
 
           <span className="header-top__user-icon">
@@ -148,34 +166,28 @@ const Header = ({ lang, setLang }) => {
         </div>
       </div>
 
-      {/* 🔹 CM banner + Logo + Minister */}
+      {/* CM banner + centre logo + Minister */}
       <div className="header-main">
         <div className="header-main__leader header-main__leader--left">
           <img
             src={CmImage}
-            alt={lang === "kn" ? "ಮಾನ್ಯ ಮುಖ್ಯಮಂತ್ರಿ" : "Hon'ble Chief Minister"}
+            alt={t.people.cmAlt[lang]}
           />
         </div>
 
         <div className="header-main__center">
           <img
             src={TempleImage}
-            alt={
-              lang === "kn"
-                ? "ಬೆಂಗಳೂರು ಘನ ತ್ಯಾಜ್ಯ ನಿರ್ವಹಣೆ ಲಿಮಿಟೆಡ್"
-                : "Bengaluru Solid Waste Management Limited"
-            }
+            alt={t.center.logoAlt[lang]}
             className="header-main__logo"
           />
 
           <div className="header-main__text">
             <h1 className="header-main__title">
-              {lang === "kn"
-                ? "ಬೆಂಗಳೂರು ಘನ ತ್ಯಾಜ್ಯ ನಿರ್ವಹಣೆ ಲಿಮಿಟೆಡ್"
-                : "Bengaluru Solid Waste Management Limited"}
+              {t.center.orgName[lang]}
             </h1>
             <p className="header-main__subtitle">
-              {lang === "kn" ? "(ಕರ್ನಾಟಕ ಸರ್ಕಾರ)" : "(Government of Karnataka)"}
+              {t.center.orgTagline[lang]}
             </p>
           </div>
         </div>
@@ -183,12 +195,11 @@ const Header = ({ lang, setLang }) => {
         <div className="header-main__leader header-main__leader--right">
           <img
             src={MinisterImage}
-            alt={lang === "kn" ? "ಉಪಮುಖ್ಯಮಂತ್ರಿ" : "Deputy Chief Minister"}
+            alt={t.people.ministerAlt[lang]}
           />
         </div>
       </div>
 
-      {/* Navbar gets lang too */}
       <Navbar lang={lang} />
     </header>
   );

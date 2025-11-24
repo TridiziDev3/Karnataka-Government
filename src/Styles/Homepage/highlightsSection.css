@@ -4,7 +4,7 @@
 
 .highlights {
   padding: 32px 0 48px;
-  background: #ffffff;
+background: var(--surface-bg);
 }
 
 .highlights__block + .highlights__block {

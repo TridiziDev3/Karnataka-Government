@@ -23,7 +23,8 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   color: var(--text-main);
-  background: #ffffff;
+ background: var(--surface-bg);
+
 }
 
 .homepage main {

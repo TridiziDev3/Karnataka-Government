@@ -1,8 +1,11 @@
+
+
 /* ===== HEADER WRAPPER ===== */
 .header {
-  background: #ffffff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--surface-bg);
+  box-shadow: var(--shadow-soft);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
@@ -20,14 +23,13 @@
   cursor: pointer;
   font-size: 13px;
   font-weight: 600;
-  color: white;
+  color: var(--top-strip-text);
 }
-
 
 /* =========================== TOP BLUE STRIP =========================== */
 .header-top {
-  background: #112b7a;
-  color: #ffffff;
+  background: var(--top-strip-bg);
+  color: var(--top-strip-text);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -44,7 +46,7 @@
 }
 
 .header-top__link {
-  color: #ffffff;
+  color: var(--top-strip-text);
   text-decoration: none;
   cursor: pointer;
 }
@@ -54,9 +56,9 @@
 }
 
 .header-top__size-btn {
-  border: 1px solid #ffffff;
+  border: 1px solid var(--top-strip-text);
   background: transparent;
-  color: #ffffff;
+  color: var(--top-strip-text);
   font-size: 11px;
   width: 18px;
   height: 18px;
@@ -86,24 +88,32 @@
   height: 22px;
   border-radius: 50%;
   overflow: hidden;
-  border: 1px solid #ffffff;
+  border: 1px solid var(--top-strip-text);
   display: flex;
+  background: transparent;
+  cursor: pointer;
 }
-.theme-half { flex: 1; }
-.theme-half--light { background: #ffffff; }
-.theme-half--dark  { background: #000000; }
+.theme-half {
+  flex: 1;
+}
+.theme-half--light {
+  background: #ffffff;
+}
+.theme-half--dark {
+  background: #000000;
+}
 
 .header-top__btn {
   background: transparent;
   border: none;
-  color: #ffffff;
+  color: var(--top-strip-text);
   cursor: pointer;
   font-size: 13px;
 }
 
 .header-top__user-icon {
   font-size: 14px;
-  color: #ffffff;
+  color: var(--top-strip-text);
 }
 
 /* =========================== MIDDLE HEADER =========================== */
@@ -124,8 +134,12 @@
   align-items: center;
 }
 
-.header-main__leader--left { width: 269px; }
-.header-main__leader--right { width: 270px; }
+.header-main__leader--left {
+  width: 269px;
+}
+.header-main__leader--right {
+  width: 270px;
+}
 
 .header-main__leader img {
   width: 100%;
@@ -164,14 +178,14 @@
   font-size: 20px;
   font-family: "Times New Roman", Georgia, serif;
   font-weight: 700;
-  color: #000000;
+  color: var(--text-main);
   white-space: nowrap;
 }
 
 .header-main__subtitle {
   margin: 4px 0 0;
   font-size: 14px;
-  color: #000000;
+  color: var(--text-main);
 }
 
 /* =========================== TABLET (768px–1024px) =========================== */

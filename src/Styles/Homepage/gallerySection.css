@@ -4,7 +4,7 @@
 
 .gallery-section {
   padding: 40px 0 56px;
-  background: #ffffff;
+  background: var(--surface-bg);
   margin-bottom: 0vh;   /* 👈 gap before next section */
 }
 
@@ -55,7 +55,7 @@
 .bswml-card {
   width: 277.5px;
   height: 352px;
-  background: #ffffff;
+  background: var(--surface-bg);
   border-radius: 12px;
   box-shadow: 0 12px 24px rgba(16, 66, 133, 0.13);
   overflow: hidden;
@@ -191,7 +191,7 @@
   padding: 9px 15px;
   border-radius: 4.5px;
   border: 2px solid #0b368e;
-  background: #ffffff;
+  background: var(--surface-bg);
   font-family: "Inter", sans-serif;
   font-size: 13px;
   cursor: pointer;
@@ -224,7 +224,7 @@
   height: 340px;
   border-radius: 20px;
   border: 2px solid #0b368e;
-  background: #ffffff;
+  background: var(--surface-bg);
   display: flex;
   flex-direction: column;
   overflow: hidden;

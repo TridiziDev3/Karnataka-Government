@@ -13,66 +13,36 @@ import rect4 from "../../assets/Homepage/Rectangle 34625675.png";
 import rect5 from "../../assets/Homepage/Rectangle 34625676.png";
 import rect6 from "../../assets/Homepage/Rectangle 34625677.png";
 
+import { TEXT } from "../../content/text";
+
 const GallerySection = ({ lang }) => {
-  const bswmlCards =
-    lang === "kn"
-      ? [
-          {
-            title: "ಶ್ರಮದಾನ",
-            desc: "ಇದು ತಾತ್ಕಾಲಿಕ ಪಠ್ಯ. ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗಿ 'ಇನ್ನಷ್ಟು ತಿಳಿದುಕೊಳ್ಳಿ' ಕ್ಲಿಕ್ ಮಾಡಿ.",
-            image: imgB1,
-          },
-          {
-            title: "ಪ್ಲಾಸ್ಟಿಕ್ ಜಾಗೃತಿ ಕಾರ್ಯಕ್ರಮ",
-            desc: "ಇದು ತಾತ್ಕಾಲಿಕ ಪಠ್ಯ. ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗಿ 'ಇನ್ನಷ್ಟು ತಿಳಿದುಕೊಳ್ಳಿ' ಕ್ಲಿಕ್ ಮಾಡಿ.",
-            image: imgB2,
-          },
-          {
-            title: "ಒಣ ತ್ಯಾಜ್ಯ ಕೇಂದ್ರ ಪರಿಶೀಲನೆ",
-            desc: "ಇದು ತಾತ್ಕಾಲಿಕ ಪಠ್ಯ. ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗಿ 'ಇನ್ನಷ್ಟು ತಿಳಿದುಕೊಳ್ಳಿ' ಕ್ಲಿಕ್ ಮಾಡಿ.",
-            image: imgB3,
-          },
-        ]
-      : [
-          {
-            title: "Sramadan",
-            desc: "This is a dummy text. Click 'Know More' to learn more.",
-            image: imgB1,
-          },
-          {
-            title: "Plastic Awareness Program",
-            desc: "This is a dummy text. Click 'Know More' to learn more.",
-            image: imgB2,
-          },
-          {
-            title: "Inspection to Dry Waste Center",
-            desc: "This is a dummy text. Click 'Know More' to learn more.",
-            image: imgB3,
-          },
-        ];
+  const t = TEXT.gallery;
 
-  const galleryTabs =
-    lang === "kn" ? ["ಚಿತ್ರಗಳು", "ವೀಡಿಯೊಗಳು"] : ["Photos", "Videos"];
+  const bswmlCards = t.bswml.cards[lang].map((card, idx) => ({
+    ...card,
+    image: [imgB1, imgB2, imgB3][idx],
+  }));
 
-  const galleryItems =
-    lang === "kn"
-      ? [
-          { title: "ಕಾರ್ಯಕ್ರಮದ ಚಿತ್ರಗಳು", images: [rect1, rect2] },
-          { title: "ಟ್ರಾನ್ಸ್‌ಫರ್ ಸ್ಟೇಷನ್", images: [rect3, rect4] },
-          { title: "ಲ್ಯಾಂಡ್‌ಫಿಲ್", images: [rect5, rect6] },
-        ]
-      : [
-          { title: "Event Photos", images: [rect1, rect2] },
-          { title: "Transfer Station", images: [rect3, rect4] },
-          { title: "Landfill", images: [rect5, rect6] },
-        ];
+  const galleryTabs = t.gallery.tabs[lang];
+
+  const galleryItemsConfig = t.gallery.items[lang];
+  const galleryImages = [
+    [rect1, rect2],
+    [rect3, rect4],
+    [rect5, rect6],
+  ];
+
+  const galleryItems = galleryItemsConfig.map((item, idx) => ({
+    ...item,
+    images: galleryImages[idx],
+  }));
 
   return (
     <section className="gallery-section">
       <div className="container">
         <div className="bswml">
           <h3 className="section-title bswml__title">
-            {lang === "kn" ? "ಬಿ.ಎಸ್.ಡಬ್ಲ್ಯೂ.ಎಂ.ಎಲ್" : "BSWML"}
+            {t.bswml.title[lang]}
           </h3>
 
           <div className="bswml__row">
@@ -90,11 +60,7 @@ const GallerySection = ({ lang }) => {
                     <p className="bswml-card__desc">{card.desc}</p>
 
                     <button className="bswml-card__btn">
-                      <span>
-                        {lang === "kn"
-                          ? "ಇನ್ನಷ್ಟು ತಿಳಿದುಕೊಳ್ಳಿ"
-                          : "Know More"}
-                      </span>
+                      <span>{t.bswml.button[lang]}</span>
                       <span className="bswml-card__btn-icon">↗</span>
                     </button>
                   </div>
@@ -109,7 +75,7 @@ const GallerySection = ({ lang }) => {
         <div className="gallery">
           <div className="gallery__header">
             <h3 className="section-title gallery__title">
-              {lang === "kn" ? "ಗ್ಯಾಲರಿ" : "Gallery"}
+              {t.gallery.title[lang]}
             </h3>
 
             <div className="gallery__tabs">
