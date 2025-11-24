@@ -1,0 +1,72 @@
+/* ===== FIX FULL PAGE WIDTH (Figma 1440px) ===== */
+.page-container {
+  width: 1440px;        /* Figma size */
+  margin: 0 auto;       /* Center full website */
+  background: #ffffff;  /* Keep white inside */
+  overflow-x: hidden;
+     /* Prevent scrolling sideways */
+}
+
+/* Optional — outside background if required */
+body {
+  background: #f1f4ff;  /* or keep white */
+}
+
+section {
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+}
+
+
+
+/* Smooth scroll for nav links etc. */
+/* Smooth scroll for nav links etc. */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base state (hidden) */
+.animated-section {
+  opacity: 0;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+/* Variants – starting positions */
+.animated-section--up {
+  transform: translateY(30px);
+}
+
+.animated-section--left {
+  transform: translateX(-40px);
+}
+
+.animated-section--right {
+  transform: translateX(40px);
+}
+
+.animated-section--zoom {
+  transform: scale(0.95);
+}
+
+/* When visible */
+.animated-section--visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* Optional: generic hover motion for cards / buttons */
+button,
+a.btn,
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover,
+a.btn:hover,
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}

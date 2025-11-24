@@ -1,0 +1,157 @@
+/* src/Styles/Homepage/wingsSection.css */
+
+/* ===================== DESKTOP (1440px) ===================== */
+.wings {
+  padding: 45px 0 24px;
+  background: #ffffff;
+}
+
+/* WINGS heading */
+.wings .section-title {
+  font-family: "Lato", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: #0B368E;
+
+  max-width: 1440px;
+  height: 56px;
+  line-height: 56px;
+
+  margin: 0 auto 42px;
+  display: block;
+}
+
+/* grid = 4 columns on desktop */
+.wings__grid {
+  max-width: 1330px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  padding: 11px 0;
+  box-sizing: content-box;
+}
+
+.wing-card {
+  width: 280px;
+  height: 188px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e4e4e4;
+  box-shadow: 0 12px 24px rgba(0, 72, 139, 0.08);
+  padding: 22px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wing-card:hover {
+  border: 2px solid #0B368E;
+}
+
+.wing-card__icon {
+  font-size: 46px;
+  color: #0B368E;
+  margin-bottom: 16px;
+}
+
+.wing-card__title {
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #0B368E;
+  text-align: center;
+  margin-top: auto;
+}
+
+.wing-card__arrow {
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  right: 26px;
+  bottom: 22px;
+  color: #0B368E;
+  transform: rotate(45deg);
+}
+
+
+/* ===================== TABLET (1024px–768px) ===================== */
+@media (max-width: 1024px) {
+  .wings {
+    padding: 40px 0 20px;
+  }
+
+  .wings .section-title {
+    font-size: 34px;
+    line-height: 44px;
+    height: auto;
+    margin-bottom: 32px;
+  }
+
+  /* grid = 2 columns */
+  .wings__grid {
+    max-width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .wing-card {
+    width: 100%;
+    height: auto;
+    padding: 22px 26px;
+  }
+
+  .wing-card__title {
+    font-size: 22px;
+  }
+}
+
+
+/* ===================== MOBILE (≤767px) ===================== */
+@media (max-width: 767px) {
+  .wings {
+    padding: 32px 0 18px;
+  }
+
+  .wings .section-title {
+    font-size: 24px;
+    line-height: 1.3;
+    height: auto;
+    margin-bottom: 26px;
+    padding: 0 12px;
+  }
+
+  /* grid = 1 column on phones */
+  .wings__grid {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0;
+  }
+
+  .wing-card {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 22px;
+  }
+
+  .wing-card__icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+  }
+
+  .wing-card__title {
+    font-size: 20px;
+  }
+
+  .wing-card__arrow {
+    right: 22px;
+    bottom: 18px;
+    width: 20px;
+    height: 20px;
+  }
+}
