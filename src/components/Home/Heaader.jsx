@@ -6,7 +6,7 @@ import { FaClock, FaGlobe, FaHome, FaInfoCircle, FaFileContract, FaRegLightbulb,
 import { IoIosArrowDown } from "react-icons/io";
 import { TEXT } from '../../content/text';
 
-import SiddaramaiahImage from "../../assets/Homepage/cm.png";
+import SiddaramaiahImage from "../../assets/Homepage/Cm.png";
 import EmblemImage from "../../assets/Homepage/emblem.png";
 const ShivakumarImage = 'src/assets/Homepage/Minister.png';
 const LogoImage = 'src/assets/Homepage/temple.png'; 
