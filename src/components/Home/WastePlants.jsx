@@ -8,8 +8,7 @@ import { IoIosNavigate } from 'react-icons/io';
 
 import plantImage1 from "../../assets/Homepage/Rectangle 34625677.png";
 import plantImage3 from "../../assets/Homepage/image 1.png";
-
-import plantImage2 from "../../assets/Homepage/image 1.png";
+import plantImage2 from "../../assets/Homepage/image 2.png";
 
 
 const plantImages = [plantImage1, plantImage2, plantImage3];
