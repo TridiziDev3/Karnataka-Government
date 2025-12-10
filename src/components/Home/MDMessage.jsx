@@ -31,7 +31,7 @@ const MDMessage = ({ lang = 'en' }) => {
 
           {/* Right: Message Text (Animated) */}
           <div className="md-message-text md-animate-right">
-            <FaQuoteLeft className="quote-icon" />
+            
             <p className="message-paragraph">{localize(t.p1)}</p>
             <p className="message-paragraph">{localize(t.p2)}</p>
             <a href="#" className="message-link">
