@@ -1,59 +1,47 @@
 import React, { useState, useEffect } from 'react';
 import './Projects.css';
-
 import { FaMapMarkerAlt, FaArrowRight } from 'react-icons/fa';
 import { TEXT } from '../../content/text';
 
-// Auto-scroll order
 const FILTER_STATUSES = ['Ongoing', 'Active', 'Completed'];
 const SCROLL_INTERVAL = 3000;
 
 import project1 from "../../assets/Homepage/Rectangle 34625672.png";
 import project2 from "../../assets/Homepage/Rectangle 34625677.png";
-
 import project3 from "../../assets/Homepage/Rectangle 34625673.png";
-
 import project4 from "../../assets/Homepage/Rectangle 34625674.png";
-
 import project5 from "../../assets/Homepage/Rectangle 34625675.png";
 import project6 from "../../assets/Homepage/Rectangle 34625672.png";
-
 import project7 from "../../assets/Homepage/Rectangle 34625676.png";
-
 import project8 from "../../assets/Homepage/Rectangle 34625677.png";
 import project9 from "../../assets/Homepage/Rectangle 34625672.png";
 
-
-
 const projectImages = {
-  1: project1,
-  2: project2,
-  3: project3,
-  4: project4,
-  5: project5,
-  6: project6,
-  7: project7,
-  8: project8,
-  9: project9,
+  1: project1, 2: project2, 3: project3,
+  4: project4, 5: project5, 6: project6,
+  7: project7, 8: project8, 9: project9,
+};
+
+// Pillar ID ranges per status
+const PILLAR_RANGES = {
+  Ongoing: [1, 3],
+  Active: [4, 6],
+  Completed: [7, 9],
 };
 
 const Projects = ({ lang = 'en' }) => {
   const [activeFilter, setActiveFilter] = useState('Ongoing');
 
-  if (!TEXT.projects) {
-    return <div>Error: Project data not found in TEXT.js</div>;
-  }
+  if (!TEXT.projects) return <div>Error: Project data not found</div>;
 
-  // Localization helpers
   const t = TEXT.projects.filters;
   const localize = (obj) => obj[lang] || obj.en;
-
   const localizeCard = (card, key) => localize(card[key]);
-
-  // Auto-switch (3 seconds)
+ const pillars = TEXT.projects.pillars;
+  // Auto-scroll filter
   useEffect(() => {
     const timer = setInterval(() => {
-      setActiveFilter((prev) => {
+      setActiveFilter(prev => {
         const index = FILTER_STATUSES.indexOf(prev);
         return FILTER_STATUSES[(index + 1) % FILTER_STATUSES.length];
       });
@@ -62,32 +50,27 @@ const Projects = ({ lang = 'en' }) => {
     return () => clearInterval(timer);
   }, []);
 
-  // Filter 3 cards per status
   const filteredCards = TEXT.projects.cards
-    .filter((c) => c.status === activeFilter)
-    .map((c) => ({
+    .filter(c => c.status === activeFilter)
+    .map(c => ({
       ...c,
       image: projectImages[c.id] || c.image,
       currentStatusText: localize(t[c.status.toLowerCase()]),
     }));
 
-  // Pillar slide transform
-  const getPillarTransform = () => {
-    const index = FILTER_STATUSES.indexOf(activeFilter);
-    return `translateX(-${index * 100}%)`;
+  // Get all 3 pillars for current status
+  const getCurrentPillars = () => {
+    const [start, end] = PILLAR_RANGES[activeFilter];
+    return TEXT.projects.pillars.filter(p => p.id >= start && p.id <= end);
   };
-
-  const pillars = TEXT.projects.pillars;
 
   return (
     <section className="projects-section" id="projects">
-      
-      {/* =============== TOP SECTION (Filters + Pillars) =============== */}
-      <div className="project-top-section">
 
-        {/* Filter Buttons */}
+      {/* FILTER BUTTONS */}
+      <div className="project-top-section">
         <div className="project-filters">
-          {FILTER_STATUSES.map((status) => (
+          {FILTER_STATUSES.map(status => (
             <button
               key={status}
               className={`filter-tab ${activeFilter === status ? 'tab-active' : ''}`}
@@ -99,50 +82,40 @@ const Projects = ({ lang = 'en' }) => {
         </div>
 
         {/* PILLARS CAROUSEL */}
-        <div className="pillar-carousel-wrapper">
-          <div
-            className="project-pillars-row"
-            style={{ transform: getPillarTransform() }}
-          >
-            {FILTER_STATUSES.map((status, index) => {
-              const start = index * 3;
-              const group = pillars.slice(start, start + 3);
-
-              return (
-                <div className="pillar-slide-container" key={status}>
-                  {group.map((pillar) => (
-                    <div className="pillar-item" key={pillar.id}>
-                      <p className="pillar-text">{localize(pillar)}</p>
-                      <a href="#" className="pillar-link">
-                        {localize(t.knowMore)}
-                      </a>
-                    </div>
-                  ))}
-                </div>
-              );
-            })}
-          </div>
+       <div className="pillar-carousel-wrapper">
+  <div className="pillar-slide-container">
+    {pillars
+      .filter((p) => {
+        // Each pillar is grouped by ID: 1-3 Ongoing, 4-6 Active, 7-9 Completed
+        if (activeFilter === "Ongoing") return p.id <= 3;
+        if (activeFilter === "Active") return p.id >= 4 && p.id <= 6;
+        if (activeFilter === "Completed") return p.id >= 7 && p.id <= 9;
+        return false;
+      })
+      .map((pillar) => (
+        <div className="pillar-item" key={pillar.id}>
+          <p className="pillar-text">{localize(pillar)}</p>
+          <a href="#" className="pillar-link">
+            {localize(t.knowMore)}
+          </a>
         </div>
+      ))}
+  </div>
+</div>
       </div>
-      {/* =============== END TOP SECTION =============== */}
 
-      {/* Section Heading */}
+      {/* SECTION HEADINGS */}
       <div className="projects-heading-group">
         <p className="projects-subheading">{localize(t.subheading)}</p>
         <h3 className="projects-main-heading">{localize(t.mainHeading)}</h3>
       </div>
 
-      {/* =============== PROJECT CARDS =============== */}
+      {/* PROJECT CARDS */}
       <div className="project-cards-grid">
-        {filteredCards.map((card) => (
+        {filteredCards.map(card => (
           <div className="project-card" key={card.id}>
-            
             <div className="card-image-wrapper">
-              <img
-                src={card.image}
-                alt={localizeCard(card, 'title')}
-                className="card-image"
-              />
+              <img src={card.image} alt={localizeCard(card, 'title')} className="card-image" />
               <div className="status-badge">
                 <span className="status-circle" />
                 {card.currentStatusText}
@@ -151,19 +124,14 @@ const Projects = ({ lang = 'en' }) => {
 
             <div className="card-content-body">
               <h4 className="card-title">{localizeCard(card, 'title')}</h4>
-
               <div className="card-location">
                 <FaMapMarkerAlt className="location-icon" />
                 <span>{localizeCard(card, 'location')}</span>
               </div>
 
               <p className="progress-label">{localize(t.progressLabel)}</p>
-
               <div className="progress-bar-container">
-                <div
-                  className="progress-bar-fill"
-                  style={{ width: `${card.progress}%` }}
-                ></div>
+                <div className="progress-bar-fill" style={{ width: `${card.progress}%` }} />
                 <span className="progress-percent">{card.progress}%</span>
               </div>
 
@@ -172,11 +140,9 @@ const Projects = ({ lang = 'en' }) => {
                 <FaArrowRight className="details-arrow" />
               </a>
             </div>
-
           </div>
         ))}
       </div>
-
     </section>
   );
 };

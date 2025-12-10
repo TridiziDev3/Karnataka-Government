@@ -154,12 +154,12 @@ projects: {
 
   hero: {
     title: {
-      en: "Lorem ipsum content is the dummy text to place it on website",
-      kn: "ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿ ವಿಷಯವನ್ನು ಇರಿಸಲು ಇದು ಒಂದು ಉದಾಹರಣೆಯ ಪಠ್ಯ",
+      en: "Efficient Waste Management for a Cleaner Tomorrow.",
+      kn: "ಸುಸ್ಥಿರ завтраಗೆ ಪರಿಣಾಮಕಾರಿ ಕಸದ ನಿರ್ವಹಣೆ.",
     },
     text: {
-      en: "Lorem ipsum content is the dummy text to place it on website for the placement purpose",
-      kn: "ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿ ಪ್ರದರ್ಶನಕ್ಕಾಗಿ ಪಠ್ಯವನ್ನು ಇರಿಸಲಾಗಿದೆ",
+      en: "We handle waste responsibly, ensuring a sustainable and healthier environment for everyone",
+      kn: "ನಾವು ಕಸದ ನಿರ್ವಹಣೆಯನ್ನು ಹೊಣೆಗಾರಿಕೆಯಿಂದ ನಡೆಸುತ್ತೇವೆ, ಆರೋಗ್ಯಕರ ಪರಿಸರವನ್ನು ಎಲ್ಲರಿಗಾಗಿ ತಲುಪಿಸುತ್ತೇವೆ",
     },
     button: {
       en: "Know More",

@@ -64,12 +64,9 @@
 }
 
 .minister-photo {
-  /* Reduced size using vh */
-  width: 50vh; 
-  height: 15vh;
-
-  object-fit: cover;
-  margin: 0 1vw; /* Smaller margins */
+  width: 280px;                 /* Desktop safe size */
+  height: auto;
+  object-fit: contain;
 }
 
 .emblem-image {
@@ -209,7 +206,7 @@
   }
 
   .minister-photo {
-    width: 35vh;
+     width: 100px;  
     height: 12vh;
   }
 

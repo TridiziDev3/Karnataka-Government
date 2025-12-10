@@ -96,12 +96,12 @@ background: linear-gradient(
 .project-pillars-row {
   display: flex;
   width: 300%;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.6s ease-in-out;
 }
 
 /* Slide container */
 .pillar-slide-container {
-  width: calc(100% / 3);
+  width: 100vw;        /* FULL SLIDE WIDTH */
   flex-shrink: 0;
   display: flex;
   justify-content: space-evenly;
@@ -110,7 +110,7 @@ background: linear-gradient(
 
 /* Individual pillar text */
 .pillar-item {
-  width: 30%;
+  width: 28%;
   text-align: center;
   padding: 20px;
   color: #fff;

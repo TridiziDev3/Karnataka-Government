@@ -1,84 +1,99 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Hero.css';
-
-// Import the TEXT object (assuming this path is correct based on prior context)
 import { TEXT } from '../../content/text';
 
-// Placeholder Images Array for Carousel
-// Use relative paths assuming images are in src/assets/
+// Import images
 import hero1 from "../../assets/hero1.png";
 import hero2 from "../../assets/hero2.png";
-
 import hero3 from "../../assets/hero3.png";
 
+// Import videos
+import heroVideo1 from "../../assets/video1.mp4";
+import heroVideo2 from "../../assets/video2.mp4";
+import heroVideo3 from "../../assets/video3.mp4";
 
-
-
-const carouselImages = [
-hero1 , hero2, hero3
+// Array of carousel items (images or videos)
+const carouselItems = [
+  { type: 'image', src: hero1 },
+  { type: 'video', src: heroVideo1 },
+  { type: 'image', src: hero2 },
+  { type: 'video', src: heroVideo2 },
+  { type: 'image', src: hero3 },
+  { type: 'video', src: heroVideo3 },
 ];
 
-// Carousel scroll interval is now 2000ms (2 seconds)
-const SCROLL_INTERVAL = 2000; 
+const SCROLL_INTERVAL = 10000; // 10 seconds per slide
 
 const Hero = ({ lang = 'en' }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const t = TEXT.hero;
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const videoRef = useRef(null);
+  const t = TEXT.hero;
 
-  // Effect for the automatic carousel scroll (2 seconds)
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImageIndex(prevIndex => 
-        (prevIndex + 1) % carouselImages.length
-      );
-    }, SCROLL_INTERVAL);
+  // Handle carousel auto-play
+  useEffect(() => {
+    const item = carouselItems[currentIndex];
 
-    // Cleanup the interval on component unmount
-    return () => clearInterval(timer);
-  }, []); 
+    let timer;
+    if (item.type === 'video') {
+      // Play the video and move to next after 10s or when video ends
+      const videoEl = videoRef.current;
+      if (videoEl) {
+        videoEl.currentTime = 0;
+        videoEl.play();
+        timer = setTimeout(() => {
+          setCurrentIndex((prev) => (prev + 1) % carouselItems.length);
+        }, SCROLL_INTERVAL);
+      }
+    } else {
+      // For images, auto advance after 10s
+      timer = setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % carouselItems.length);
+      }, SCROLL_INTERVAL);
+    }
 
-  // Get the localized text
-  const title = t.title[lang];
-  const text = t.text[lang];
-  const buttonLabel = t.button[lang];
+    return () => clearTimeout(timer);
+  }, [currentIndex]);
 
-  // Get the current image URL
-  const currentImageUrl = carouselImages[currentImageIndex];
+  // Get localized text
+  const title = t.title[lang];
+  const text = t.text[lang];
+  const buttonLabel = t.button[lang];
 
-  return (
-    <div className="hero-section">
-      
-      {/* Text Content Area */}
-      <div className="hero-content">
-        <h2 className="hero-title hero-animate-slide-up">{title}</h2>
-        <p className="hero-text hero-animate-slide-up hero-animate-delay-1">{text}</p>
-        
-        <div className="hero-actions hero-animate-slide-up hero-animate-delay-2">
-          {/* Contact Button (Outline Gold) */}
-          <button className="contact-button contact-button-ui-match">
-            Contact Us
-          </button>
-          
-          {/* Know More Button (Solid Gold) */}
-          <button className="know-more-button know-more-button-ui-match">
-            {buttonLabel}
-          </button>
-        </div>
-      </div>
+  const currentItem = carouselItems[currentIndex];
 
-      {/* Image Carousel Area (Right) */}
-     <div className="hero-image-container hero-rect-ui">
-        <div 
-          key={currentImageIndex} 
-          className="hero-carousel-image"
-          style={{ backgroundImage: `url(${currentImageUrl})` }}
-        >
-        </div>
-        
-        {/* Carousel Dots removed as requested */}
-      </div>
-    </div>
-  );
+  return (
+    <div className="hero-section">
+      {/* Text Content */}
+      <div className="hero-content">
+        <h2 className="hero-title hero-animate-slide-up">{title}</h2>
+        <p className="hero-text hero-animate-slide-up hero-animate-delay-1">{text}</p>
+        <div className="hero-actions hero-animate-slide-up hero-animate-delay-2">
+          <button className="contact-button contact-button-ui-match">Contact Us</button>
+          <button className="know-more-button know-more-button-ui-match">{buttonLabel}</button>
+        </div>
+      </div>
+
+      {/* Image/Video Carousel */}
+      <div className="hero-image-container hero-rect-ui">
+        {currentItem.type === 'image' ? (
+          <div
+            key={currentIndex}
+            className="hero-carousel-image"
+            style={{ backgroundImage: `url(${currentItem.src})` }}
+          />
+        ) : (
+          <video
+            ref={videoRef}
+            key={currentIndex}
+            className="hero-carousel-image"
+            src={currentItem.src}
+            muted
+            playsInline
+          />
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default Hero;
