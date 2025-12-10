@@ -1,0 +1,130 @@
+/* Colors */
+:root {
+  --hero-yellow-light: #f9d668;
+  --hero-yellow-strong: #f6b900;
+  --text-dark: #333;
+}
+
+/* --- HERO MAIN WRAPPER (same UI as image) --- */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* EXACT same background as screenshot */
+  background: linear-gradient(90deg, #ffffff 60%, #83A031 40%);
+
+  /* RECTANGLE TOP + BOTTOM & CURVE ON RIGHT */
+  border-radius: 0 180px 180px 0;
+
+  height: 480px;       /* 🔥 Screenshot-like small height */
+  padding: 0 60px;
+  gap: 40px;
+  overflow: hidden;
+}
+
+/* --- LEFT CONTENT --- */
+.hero-content {
+  width: 45%;
+}
+
+.hero-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--hero-yellow-strong);
+  margin: 0 0 15px 0;
+}
+
+.hero-text {
+  font-size: 1rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 15px;
+}
+
+/* Buttons — same as screenshot */
+.contact-button-ui-match,
+.know-more-button-ui-match {
+  padding: 10px 25px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-button-ui-match {
+  background: transparent;
+  border: 2px solid var(--hero-yellow-strong);
+  color: var(--hero-yellow-strong);
+}
+
+.contact-button-ui-match:hover {
+  background: var(--hero-yellow-strong);
+  color: #fff;
+}
+
+.know-more-button-ui-match {
+  background: var(--hero-yellow-strong);
+  border: 2px solid var(--hero-yellow-strong);
+  color: #fff;
+}
+
+.know-more-button-ui-match:hover {
+  background: #d9a200;
+  border-color: #d9a200;
+}
+
+/* --- RIGHT SIDE (Carousel) --- */
+.hero-image-container {
+  width: 55%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ⭐ Replace circle with PERFECT rectangle shape like screenshot */
+.hero-rect-ui {
+  border-radius: 0 180px 180px 0;
+}
+
+/* carousel image */
+.hero-carousel-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  animation: fade 1s ease-out;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .hero-section {
+    flex-direction: column;
+    height: auto;
+    padding: 30px;
+    border-radius: 0 0 80px 80px; /* nice curve on mobile */
+    background: #fff;
+  }
+
+  .hero-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-image-container {
+    width: 100%;
+    height: 250px;
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+}

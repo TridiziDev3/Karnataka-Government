@@ -1,5 +1,84 @@
 // src/content/text.js
 export const TEXT = {
+
+projects: {
+  filters: {
+      ongoing: { en: "Ongoing", kn: "ಪ್ರಗತಿಯಲ್ಲಿದೆ" },
+      active: { en: "Active", kn: "ಸಕ್ರಿಯ" },
+      completed: { en: "Completed", kn: "ಪೂರ್ಣಗೊಂಡಿದೆ" },
+      knowMore: { en: "Know More", kn: "ಇನ್ನಷ್ಟು ತಿಳಿದುಕೊಳ್ಳಿ" },
+      viewDetails: { en: "View Details", kn: "ವಿವರಗಳನ್ನು ನೋಡಿ" },
+      progressLabel: { en: "Project Progress", kn: "ಯೋಜನೆಯ ಪ್ರಗತಿ" },
+      subheading: { en: "Our Projects", kn: "ನಮ್ಮ ಯೋಜನೆಗಳು" },
+      mainHeading: { en: "Get detailed information about Our Projects", kn: "ನಮ್ಮ ಯೋಜನೆಗಳ ಬಗ್ಗೆ ವಿವರವಾದ ಮಾಹಿತಿ ಪಡೆಯಿರಿ" },
+  },
+  pillars: [
+      // --- PILLARS FOR ONGOING STATUS (ID 1, 2, 3) ---
+      { 
+          id: 1,
+          en: "Building transformative software that impacts users.", 
+          kn: "ಬಳಕೆದಾರರ ಮೇಲೆ ಪರಿಣಾಮ ಬೀರುವ ಪರಿವರ್ತಕ ಸಾಫ್ಟ್‌ವೇರ್ ನಿರ್ಮಿಸುವುದು.",
+      },
+      { 
+          id: 2,
+          en: "Transforming payments into a stressless and fun activity.", 
+          kn: "ಪಾವತಿಗಳನ್ನು ಒತ್ತಡರಹಿತ ಮತ್ತು ಮೋಜಿನ ಚಟುವಟಿಕೆಯಾಗಿ ಪರಿವರ್ತಿಸುವುದು.",
+      },
+      { 
+          id: 3,
+          en: "Join us in shaping the future of online payment systems.", 
+          kn: "ಆನ್‌ಲೈನ್ ಪಾವತಿ ವ್ಯವಸ್ಥೆಗಳ ಭವಿಷ್ಯವನ್ನು ರೂಪಿಸಲು ನಮ್ಮೊಂದಿಗೆ ಸೇರಿ.",
+      },
+      // --- PILLARS FOR ACTIVE STATUS (ID 4, 5, 6) ---
+      { 
+          id: 4,
+          en: "Actively monitoring new projects and mobilizing resources.", 
+          kn: "ಹೊಸ ಯೋಜನೆಗಳನ್ನು ಸಕ್ರಿಯವಾಗಿ ಮೇಲ್ವಿಚಾರಣೆ ಮಾಡುವುದು ಮತ್ತು ಸಂಪನ್ಮೂಲಗಳನ್ನು ಕ್ರೋಢೀಕರಿಸುವುದು.",
+      },
+      { 
+          id: 5,
+          en: "Accelerating execution of high-priority initiatives globally.", 
+          kn: "ಹೆಚ್ಚಿನ ಆದ್ಯತೆಯ ಉಪಕ್ರಮಗಳ ಜಾಗತಿಕ ಅನುಷ್ಠಾನವನ್ನು ತ್ವರಿತಗೊಳಿಸುವುದು.",
+      },
+      { 
+          id: 6,
+          en: "Seeking new technology partners for deployment innovation.", 
+          kn: "ನಿಯೋಜನೆ ನಾವೀನ್ಯತೆಗಾಗಿ ಹೊಸ ತಂತ್ರಜ್ಞಾನ ಪಾಲುದಾರರನ್ನು ಹುಡುಕುವುದು.",
+      },
+      // --- PILLARS FOR COMPLETED STATUS (ID 7, 8, 9) ---
+      { 
+          id: 7,
+          en: "Successfully completed projects deliver significant user impact.", 
+          kn: "ಯಶಸ್ವಿಯಾಗಿ ಪೂರ್ಣಗೊಂಡ ಯೋಜನೆಗಳು ಗಣನೀಯ ಬಳಕೆದಾರ ಪರಿಣಾಮವನ್ನು ನೀಡುತ್ತವೆ.",
+      },
+      { 
+          id: 8,
+          en: "Documenting achievements and scaling proven methodologies.", 
+          kn: "ಸಾಧನೆಗಳನ್ನು ದಾಖಲಿಸುವುದು ಮತ್ತು ಸಾಬೀತಾದ ವಿಧಾನಗಳನ್ನು ಅಳೆಯುವುದು.",
+      },
+      { 
+          id: 9,
+          en: "Reviewing metrics to identify areas for future optimization.", 
+          kn: "ಭವಿಷ್ಯದ ಆಪ್ಟಿಮೈಸೇಶನ್‌ಗಾಗಿ ಪ್ರದೇಶಗಳನ್ನು ಗುರುತಿಸಲು ಮೆಟ್ರಿಕ್‌ಗಳನ್ನು ಪರಿಶೀಲಿಸುವುದು.",
+      },
+  ],
+  cards: [
+    // --- ONGOING (IDs 1-3) ---
+    { id: 1, title: { en: "Smart City Waste Management - Delhi NCR", kn: "ಸ್ಮಾರ್ಟ್ ಸಿಟಿ ತ್ಯಾಜ್ಯ ನಿರ್ವಹಣೆ - ದೆಹಲಿ ಎನ್‌ಸಿಆರ್" }, location: { en: "New Delhi", kn: "ನವ ದೆಹಲಿ" }, progress: 75, status: "Ongoing", image: "path-to-assets/project-image-1.jpg", },
+    { id: 2, title: { en: "Waste-to-Energy Plant - Mumbai", kn: "ತ್ಯಾಜ್ಯದಿಂದ ಶಕ್ತಿ ಘಟಕ - ಮುಂಬೈ" }, location: { en: "Mumbai, Maharashtra", kn: "ಮುಂಬೈ, ಮಹಾರಾಷ್ಟ್ರ" }, progress: 60, status: "Ongoing", image: "path-to-assets/project-image-2.jpg" },
+    { id: 3, title: { en: "E-Waste Recycling Hub - Bangalore", kn: "ಇ-ತ್ಯಾಜ್ಯ ಮರುಬಳಕೆ ಕೇಂದ್ರ - ಬೆಂಗಳೂರು" }, location: { en: "Bangalore, Karnataka", kn: "ಬೆಂಗಳೂರು, ಕರ್ನಾಟಕ" }, progress: 45, status: "Ongoing", image: "path-to-assets/project-image-3.jpg" },
+    
+    // --- ACTIVE (IDs 4-6) ---
+    { id: 4, title: { en: "Bio-Gas Plant - Chennai", kn: "ಬಯೋ-ಗ್ಯಾಸ್ ಘಟಕ - ಚೆನ್ನೈ" }, location: { en: "Chennai, Tamil Nadu", kn: "ಚೆನ್ನೈ, ತಮಿಳುನಾಡು" }, progress: 20, status: "Active", image: "path-to-assets/project-image-4.jpg" },
+    { id: 5, title: { en: "New Recycling Project - Pune", kn: "ಹೊಸ ಮರುಬಳಕೆ ಯೋಜನೆ - ಪುಣೆ" }, location: { en: "Pune, Maharashtra", kn: "ಪುಣೆ, ಮಹಾರಾಷ್ಟ್ರ" }, progress: 10, status: "Active", image: "path-to-assets/project-image-5.jpg" },
+    { id: 6, title: { en: "Composting Unit Expansion - Mysore", kn: "ಗೊಬ್ಬರ ಘಟಕ ವಿಸ್ತರಣೆ - ಮೈಸೂರು" }, location: { en: "Mysore, Karnataka", kn: "ಮೈಸೂರು, ಕರ್ನಾಟಕ" }, progress: 30, status: "Active", image: "path-to-assets/project-image-6.jpg" },
+
+    // --- COMPLETED (IDs 7-9) ---
+    { id: 7, title: { en: "Landfill Cleanup - Hyderabad", kn: "ಕಸ ತುಂಬುವ ಸ್ಥಳ ಸ್ವಚ್ಛತೆ - ಹೈದರಾಬಾದ್" }, location: { en: "Hyderabad, Telangana", kn: "ಹೈದರಾಬಾದ್, ತೆಲಂಗಾಣ" }, progress: 100, status: "Completed", image: "path-to-assets/project-image-7.jpg" },
+    { id: 8, title: { en: "Plastic Ban Campaign - Goa", kn: "ಪ್ಲಾಸ್ಟಿಕ್ ನಿಷೇಧ ಅಭಿಯಾನ - ಗೋವಾ" }, location: { en: "Goa", kn: "ಗೋವಾ" }, progress: 100, status: "Completed", image: "path-to-assets/project-image-8.jpg" },
+    { id: 9, title: { en: "Pilot Dry Waste Center - Hubli", kn: "ಪೈಲಟ್ ಒಣ ತ್ಯಾಜ್ಯ ಕೇಂದ್ರ - ಹುಬ್ಬಳ್ಳಿ" }, location: { en: "Hubli, Karnataka", kn: "ಹುಬ್ಬಳ್ಳಿ, ಕರ್ನಾಟಕ" }, progress: 100, status: "Completed", image: "path-to-assets/project-image-9.jpg" },
+  ]
+},
   header: {
     top: {
       visuallyChallenged: {
@@ -92,6 +171,37 @@ export const TEXT = {
     },
   },
 
+
+  wastePlants: {
+    heading: { en: "Waste Treatment Plants", kn: "ತ್ಯಾಜ್ಯ ಸಂಸ್ಕರಣಾ ಘಟಕಗಳು" },
+    subheading: { en: "Modern facilities across India", kn: "ಭಾರತದಾದ್ಯಂತ ಆಧುನಿಕ ಸೌಲಭ್ಯಗಳು" },
+    viewAll: { en: "View All Plants →", kn: "ಎಲ್ಲಾ ಘಟಕಗಳನ್ನು ನೋಡಿ →" },
+    cards: [
+        {
+            title: { en: "Pune Organic Waste Treatment Plant", kn: "ಪುಣೆ ಸಾವಯವ ತ್ಯಾಜ್ಯ ಸಂಸ್ಕರಣಾ ಘಟಕ" },
+            location: { en: "Uruli Devachi, Pune", kn: "ಉರುಳಿ ದೇವಾಚಿ, ಪುಣೆ" },
+            type: { en: "Composting", kn: "ಗೊಬ್ಬರ ತಯಾರಿಕೆ" },
+            capacity: { en: "800 tons/day", kn: "800 ಟನ್‌/ದಿನ" },
+            output: { en: "250 tons/day", kn: "250 ಟನ್‌/ದಿನ" },
+        },
+        // Duplicating cards for the scrolling effect as seen in the image:
+        { 
+            title: { en: "Pune Organic Waste Treatment Plant", kn: "ಪುಣೆ ಸಾವಯವ ತ್ಯಾಜ್ಯ ಸಂಸ್ಕರಣಾ ಘಟಕ" },
+            location: { en: "Uruli Devachi, Pune", kn: "ಉರುಳಿ ದೇವಾಚಿ, ಪುಣೆ" },
+            type: { en: "Composting", kn: "ಗೊಬ್ಬರ ತಯಾರಿಕೆ" },
+            capacity: { en: "800 tons/day", kn: "800 ಟನ್‌/ದಿನ" },
+            output: { en: "250 tons/day", kn: "250 ಟನ್‌/ದಿನ" },
+        },
+        { 
+            title: { en: "Pune Organic Waste Treatment Plant", kn: "ಪುಣೆ ಸಾವಯವ ತ್ಯಾಜ್ಯ ಸಂಸ್ಕರಣಾ ಘಟಕ" },
+            location: { en: "Uruli Devachi, Pune", kn: "ಉರುಳಿ ದೇವಾಚಿ, ಪುಣೆ" },
+            type: { en: "Composting", kn: "ಗೊಬ್ಬರ ತಯಾರಿಕೆ" },
+            capacity: { en: "800 tons/day", kn: "800 ಟನ್‌/ದಿನ" },
+            output: { en: "250 tons/day", kn: "250 ಟನ್‌/ದಿನ" },
+        },
+    ],
+},
+
   md: {
     heading: {
       en: "Managing Director Desk",
@@ -123,34 +233,78 @@ export const TEXT = {
     },
   },
 
-  wings: {
+ wings: {
     heading: {
-      en: "Wings",
-      kn: "ವಿಭಾಗಗಳು",
+        en: "Wings",
+        kn: "ವಿಭಾಗಗಳು",
     },
+    // ADDED: Localized headings for the Wings section (Hardcoded in JSX previously)
+    mainHeading: { 
+        en: "Organizational Wings",
+        kn: "ಸಂಸ್ಥೆಯ ವಿಭಾಗಗಳು",
+    },
+    subheading: { 
+        en: "Specialized departments driving our mission",
+        kn: "ನಮ್ಮ ಧ್ಯೇಯವನ್ನು ನಡೆಸುವ ವಿಶೇಷ ವಿಭಾಗಗಳು",
+    },
+    // The 'items' now hold objects containing both the title and the full description, localized.
     items: {
-      en: [
-        "IT Cell",
-        "Public Relation",
-        "Vigilance Cell",
-        "Technical",
-        "Administration",
-        "Social Development",
-        "Legal Cell",
-        "R & D Cell",
-      ],
-      kn: [
-        "ಐಟಿ ಸೆಲ್",
-        "ಜನಸಂಪರ್ಕ ವಿಭಾಗ",
-        "ವಿಜಿಲೆನ್ಸ್ ಸೆಲ್",
-        "ತಾಂತ್ರಿಕ ವಿಭಾಗ",
-        "ನಿರ್ವಹಣಾ ವಿಭಾಗ",
-        "ಸಾಮಾಜಿಕ ಅಭಿವೃದ್ಧಿ",
-        "ಕಾನೂನು ಸೆಲ್",
-        "ಸಂಶೋಧನೆ ಮತ್ತು ಅಭಿವೃದ್ಧಿ ಸೆಲ್",
-      ],
+        en: [
+            { 
+                title: "IT Cell",
+                description: "Digital infrastructure, technology implementation, and IT systems management for efficient waste tracking and monitoring.",
+            },
+            { 
+                title: "Technical Wing",
+                description: "Project planning, engineering design, technical implementation, and quality assurance of waste management facilities.",
+            },
+            { 
+                title: "Administration",
+                description: "Administrative operations, human resources, policy coordination, and overall organizational management.",
+            },
+        ],
+        kn: [
+            { 
+                title: "ಐಟಿ ಸೆಲ್",
+                description: "ಪರಿಣಾಮಕಾರಿ ತ್ಯಾಜ್ಯ ಟ್ರ್ಯಾಕಿಂಗ್ ಮತ್ತು ಮೇಲ್ವಿಚಾರಣೆಗಾಗಿ ಡಿಜಿಟಲ್ ಮೂಲಸೌಕರ್ಯ, ತಂತ್ರಜ್ಞಾನ ಅನುಷ್ಠಾನ ಮತ್ತು ಐಟಿ ಸಿಸ್ಟಮ್‌ಗಳ ನಿರ್ವಹಣೆ.",
+            },
+            { 
+                title: "ತಾಂತ್ರಿಕ ವಿಭಾಗ",
+                description: "ಯೋಜನಾ ಯೋಜನೆ, ಎಂಜಿನಿಯರಿಂಗ್ ವಿನ್ಯಾಸ, ತಾಂತ್ರಿಕ ಅನುಷ್ಠಾನ ಮತ್ತು ತ್ಯಾಜ್ಯ ನಿರ್ವಹಣಾ ಸೌಲಭ್ಯಗಳ ಗುಣಮಟ್ಟದ ಭರವಸೆ.",
+            },
+            { 
+                title: "ನಿರ್ವಹಣಾ ವಿಭಾಗ",
+                description: "ಆಡಳಿತಾತ್ಮಕ ಕಾರ್ಯಾಚರಣೆಗಳು, ಮಾನವ ಸಂಪನ್ಮೂಲಗಳು, ನೀತಿ ಸಮನ್ವಯ ಮತ್ತು ಒಟ್ಟಾರೆ ಸಾಂಸ್ಥಿಕ ನಿರ್ವಹಣೆ.",
+            },
+        ],
     },
-  },
+},
+  /* --- Conceptual Media Center Data to be added to TEXT.js --- */
+
+mediaCenter: {
+    heading: { en: "Media Center", kn: "ಮಾಧ್ಯಮ ಕೇಂದ್ರ" },
+    subheading: { en: "Breaking news, press releases, and achievements in waste management", kn: "ತ್ಯಾಜ್ಯ ನಿರ್ವಹಣೆಯಲ್ಲಿನ ಪ್ರಮುಖ ಸುದ್ದಿ, ಪತ್ರಿಕಾ ಪ್ರಕಟಣೆ ಮತ್ತು ಸಾಧನೆಗಳು" },
+    latestUpdateBadge: { en: "Latest Updates", kn: "ಇತ್ತೀಚಿನ ನವೀಕರಣಗಳು" },
+    viewAllButton: { en: "View All Media Updates", kn: "ಎಲ್ಲಾ ಮಾಧ್ಯಮ ನವೀಕರಣಗಳನ್ನು ವೀಕ್ಷಿಸಿ" },
+    cards: [
+        {
+            category: { en: "Press Release", kn: "ಪತ್ರಿಕಾ ಪ್ರಕಟಣೆ" },
+            categoryColor: 'blue',
+            title: { en: "NWMA Launches National Zero Waste Campaign", kn: "NWMA ರಾಷ್ಟ್ರೀಯ ಶೂನ್ಯ ತ್ಯಾಜ್ಯ ಅಭಿಯಾನ ಪ್ರಾರಂಭಿಸಿದೆ" },
+            date: { en: "Dec 1, 2024", kn: "ಡಿಸೆಂ 1, 2024" },
+            desc: { en: "National Waste Management Authority today launched an ambitious campaign to achieve zero waste across 100 smart cities by 2030, marking a historic milestone in India’s environmental journey.", kn: "ರಾಷ್ಟ್ರೀಯ ತ್ಯಾಜ್ಯ ನಿರ್ವಹಣಾ ಪ್ರಾಧಿಕಾರವು 2030 ರೊಳಗೆ 100 ಸ್ಮಾರ್ಟ್ ಸಿಟಿಗಳಲ್ಲಿ ಶೂನ್ಯ ತ್ಯಾಜ್ಯ ಸಾಧಿಸಲು ಮಹತ್ವಾಕಾಂಕ್ಷೆಯ ಅಭಿಯಾನವನ್ನು ಪ್ರಾರಂಭಿಸಿತು." },
+            button: { en: "Read Full Story", kn: "ಪೂರ್ಣ ಕಥೆಯನ್ನು ಓದಿ" },
+        },
+        {
+            category: { en: "Achievement", kn: "ಸಾಧನೆ" },
+            categoryColor: 'green',
+            title: { en: "India Wins UN Environment Award", kn: "ಭಾರತವು ವಿಶ್ವಸಂಸ್ಥೆಯ ಪರಿಸರ ಪ್ರಶಸ್ತಿ ಗೆದ್ದಿದೆ" },
+            date: { en: "Nov 20, 2024", kn: "ನವೆಂ 20, 2024" },
+            desc: { en: "NWMA's innovative approach to integrated waste management has been recognized by the United Nations Environment Programme with the prestigious Environment Leadership Award.", kn: "NWMA ಯ ಸಮಗ್ರ ತ್ಯಾಜ್ಯ ನಿರ್ವಹಣಾ ವಿಧಾನವು ವಿಶ್ವಸಂಸ್ಥೆಯ ಪರಿಸರ ಕಾರ್ಯಕ್ರಮದಿಂದ ಪ್ರತಿಷ್ಠಿತ ಪರಿಸರ ನಾಯಕತ್ವ ಪ್ರಶಸ್ತಿಯೊಂದಿಗೆ ಗುರುತಿಸಲ್ಪಟ್ಟಿದೆ." },
+            button: { en: "Read Full Story", kn: "ಪೂರ್ಣ ಕಥೆಯನ್ನು ಓದಿ" },
+        },
+    ]
+},
 
   notifications: {
     heading: {
@@ -409,3 +563,7 @@ export const TEXT = {
     },
   },
 };
+
+
+
+

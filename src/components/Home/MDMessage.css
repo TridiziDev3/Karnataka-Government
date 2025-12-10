@@ -1,0 +1,140 @@
+/* Color Variables */
+:root {
+  --color-blue-bg: #E3F2FD; /* Light blue background for the section */
+  --color-blue-accent: #2196F3; /* Medium blue accent for borders */
+  --color-quote: #90CAF9; /* Light blue for the quote icon */
+  --color-text-dark: #333;
+}
+
+.md-section {
+  background-color: var(--color-blue-bg);
+  padding: 60px 80px;
+}
+
+.md-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.md-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 5px;
+}
+
+.md-subheading {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.md-card-container {
+  display: flex;
+  gap: 40px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Profile Card */
+.md-profile-card {
+  flex-shrink: 0;
+  width: 280px;
+  text-align: center;
+  border-right: 1px solid #eee;
+  padding-right: 40px;
+}
+
+.md-photo {
+  width: 100%;
+  max-width: 180px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.director-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin: 0;
+}
+
+.director-role {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Right Message Text */
+.md-message-text {
+  flex-grow: 1;
+  text-align: left;
+  position: relative;
+}
+
+.quote-icon {
+  position: absolute;
+  top: 0;
+  left: -20px;
+  font-size: 3rem;
+  color: var(--color-quote);
+  opacity: 0.5;
+}
+
+.message-paragraph {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.message-link {
+  color: var(--color-blue-accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.3s;
+  display: inline-block;
+}
+
+.message-link:hover {
+  opacity: 0.8;
+}
+
+/* --- Animation (Shift-in effect) --- */
+@keyframes slideInLeft {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.md-animate-left {
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+.md-animate-right {
+    animation: slideInRight 1s ease-out 0.2s forwards; /* Slight delay */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+    .md-card-container {
+        flex-direction: column;
+    }
+    .md-profile-card {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .quote-icon {
+        left: 0;
+    }
+}

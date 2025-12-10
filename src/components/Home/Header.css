@@ -1,0 +1,201 @@
+/* Color Variables based on your input */
+:root {
+  --color-green-dark: #83A031;
+  --color-blue-active: #1447E6;
+  --color-orange-accent: #FF6900;
+  --color-grey-light: #E5E7EB;
+  --base-font-size: 1.6vw; /* Used as a fluid basis for scaling */
+}
+
+/* --- Top Bar Styling --- */
+.top-bar {
+  background-color:white;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Reduced padding for smaller height */
+  padding: 0.5vh 2vw; 
+  font-size: 1.8vh; /* Fluid font size */
+}
+
+.time-info, .language-switcher {
+  display: flex;
+  align-items: center;
+}
+
+.top-bar .icon {
+  margin-right: 0.5vw;
+  font-size: 1.8vh;
+}
+
+.lang-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8vh;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 0.5vw;
+  display: flex;
+  align-items: center;
+}
+
+/* --- Main Branding Section Styling (Reduced Height) --- */
+.branding-section {
+  background-color: white; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Significantly reduced padding */
+  padding: 1.5vh 2vw; 
+}
+
+.minister-profile {
+  display: flex;
+  align-items: center;
+  flex: 0 1 30%;
+}
+
+.left-minister {
+  text-align: right;
+  flex-direction: row-reverse;
+}
+
+.minister-photo {
+  /* Reduced size using vh */
+  width: 50vh; 
+  height: 15vh;
+
+  object-fit: cover;
+  margin: 0 1vw; /* Smaller margins */
+}
+
+.emblem-image {
+  width: 7vh;
+  height: auto;
+  margin-right: 1vw;
+}
+
+.minister-text {
+  line-height: 1.2; /* Tightened line height */
+}
+
+.minister-name-bold {
+  font-weight: bold;
+  font-size: 1.8vh; /* Fluid font size */
+}
+
+.minister-title {
+  font-size: 1.3vh; /* Fluid and smaller font size */
+}
+
+.center-branding {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.logo-image {
+  /* Reduced size */
+  width: 8vh; 
+  height: auto;
+  margin-right: 1.5vw;
+}
+
+.site-title {
+  font-size: 2.5vh; /* Fluid font size */
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+.site-subtitle {
+  font-size: 1.6vh;
+  margin: 0;
+  color: #555;
+}
+
+/* --- Navigation Bar Styling --- */
+.navbar {
+  background-color: var(--color-green-dark);
+  box-shadow: 0 3px 0 rgba(0,0,0,0.1); 
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  /* Reduced padding for smaller height */
+  padding: 1.2vh 1.5vw; 
+  display: flex;
+  align-items: center;
+  font-size: 1.8vh; /* Fluid font size */
+}
+
+.nav-icon {
+  margin-right: 0.5vw;
+  font-size: 2vh; 
+}
+
+/* Active Nav Item Styling */
+.nav-item.active {
+  background-color: var(--color-blue-active);
+  border-bottom: 3px solid var(--color-orange-accent); 
+}
+
+/* --- Responsive Adjustments (Crucial for mobile experience) --- */
+@media (max-width: 900px) {
+    /* Collapse the branding section on small screens */
+    .branding-section {
+        flex-direction: column;
+        padding: 1vh 2vw;
+    }
+
+    .minister-profile {
+        flex: 1 1 100%;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 1vh;
+    }
+    
+    .center-branding {
+        flex-direction: column;
+        margin-bottom: 1vh;
+    }
+
+    .minister-name-bold {
+      font-size: 2.5vw;
+    }
+
+    .minister-title, .site-subtitle {
+      font-size: 1.8vw;
+    }
+
+    .navbar {
+        /* Allow the navbar to wrap or scroll horizontally */
+        overflow-x: auto;
+    }
+    .nav-list {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+    .nav-link {
+        padding: 1.5vw 2.5vw;
+        font-size: 2.5vw;
+    }
+    .nav-icon {
+        font-size: 3vw;
+    }
+}

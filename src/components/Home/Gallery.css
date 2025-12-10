@@ -1,0 +1,120 @@
+/* Color Variables */
+:root {
+  --color-bg-dark: #12161A;
+  --color-heading: #F8F9FA;
+  --color-subheading: #9AA0A6;
+  --color-link-green: #4CD164;
+  --color-card-border: #383B41;
+  --color-overlay-dark: rgba(0, 0, 0, 0.7);
+}
+
+.gallery-section {
+  padding: 40px 50px; /* smaller padding */
+  background-color: var(--color-bg-dark);
+}
+
+/* --- Header --- */
+.gallery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 25px; /* smaller spacing */
+}
+
+.gallery-main-heading {
+  font-size: 1.8rem; /* smaller heading */
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+.gallery-subheading {
+  font-size: 0.9rem; 
+  color: var(--color-subheading);
+  margin-top: 5px;
+}
+
+.view-all-photos-link {
+  color: var(--color-link-green);
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s;
+  font-size: 0.85rem; /* slightly smaller */
+}
+
+.view-all-icon {
+  margin-left: 5px;
+}
+
+/* --- Image Carousel --- */
+.gallery-carousel-wrapper {
+  overflow: hidden;
+  padding: 5px 0;
+}
+
+.gallery-image-scroll {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  gap: 20px; /* reduced gap */
+  padding-bottom: 15px;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.gallery-image-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-card {
+  flex-shrink: 0;
+  width: 195px;  /* smaller card width */
+  height: 280px; /* smaller card height */
+  position: relative;
+  scroll-snap-align: start;
+
+  border-radius: 10px; /* slightly smaller */
+  overflow: hidden;
+  border: 1px solid var(--color-card-border);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.5s ease;
+}
+
+/* darkened effect */
+.darkened-image {
+  filter: grayscale(100%) brightness(35%);
+}
+
+.darkened-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-overlay-dark);
+}
+
+/* --- Mobile Compact --- */
+@media (max-width: 768px) {
+  .gallery-section {
+    padding: 30px 20px;
+  }
+  .gallery-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .view-all-photos-link {
+    margin-top: 10px;
+  }
+  .gallery-card {
+    width: 150px;
+    height: 220px;
+  }
+}

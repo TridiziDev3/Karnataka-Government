@@ -1,0 +1,254 @@
+/* ========================================================= */
+/* WastePlants.css (Exact UI Match & Fluid Layout)           */
+/* ========================================================= */
+
+/* Color Variables derived from image_b177b8.jpg and image_b10772.jpg */
+:root {
+  --color-blue-dark-plant: #315082;       /* Heading text color */
+  --color-blue-accent-plant: #337ab7;     /* View All Plants link color */
+  --color-green-operational: #4CD164;     /* Bright green for Operational badge and organic icon */
+  --color-location-icon: #fbc02d;         /* Yellow for location icon */
+  --color-card-shadow: rgba(0, 0, 0, 0.05);
+
+  /* Stat Box Colors (Exact UI Match) */
+  --color-type-bg: #E3F2FD;         /* Light Blue for Type box */
+  --color-capacity-bg: #E8F5E9;     /* Light Green for Capacity box */
+  --color-output-bg: #F1F8E9;       /* Lighter Green for Output box */
+  --color-stat-text-blue: #3E8DCF;  /* Dark Blue text for Type box value */
+  --color-stat-text-green: #37A054; /* Dark Green text for Output/Capacity value */
+
+  --color-card-border: #EEEEEE;
+  --color-grey-text: #777;
+  --color-text-dark: #333;
+}
+
+.plants-section {
+  /* Outer padding defines the usable area width */
+  padding: 40px 80px; 
+  background-color: white; 
+}
+
+/* --- Header Section --- */
+.plants-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 30px;
+}
+
+.plants-heading {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-blue-dark-plant);
+  margin-bottom: 5px;
+}
+
+.plants-subheading {
+  font-size: 0.95rem;
+  color: var(--color-grey-text);
+}
+
+.view-all-link {
+  color: var(--color-blue-accent-plant);
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s;
+  font-size: 0.9rem;
+}
+
+.view-all-icon {
+    margin-left: 5px;
+}
+
+
+/* --- Carousel Container and Scrolling (MODIFIED FOR FLUID WIDTH) --- */
+.plants-carousel-container {
+    position: relative;
+    width: 100%; 
+}
+
+/* Scroll Buttons for manual motion */
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #444;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-left { left: 10px; }
+.scroll-right { right: 10px; }
+
+.plants-cards-scroll {
+  /* Crucial: Enables horizontal scroll, flex layout, and spacing */
+  display: flex; 
+  overflow-x: scroll; 
+  scroll-snap-type: x mandatory; 
+  padding: 10px 0; 
+  gap: 30px; /* Gap between cards */
+  width: 100%; 
+
+  /* Hide scrollbar */
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+.plants-cards-scroll::-webkit-scrollbar {
+  display: none; 
+}
+
+/* --- Card Styling (FLUID WIDTH) --- */
+.plant-card {
+  flex-shrink: 0;
+  /* Calculate the width for 3 items with 30px gap: (100% - 2 * 30px gap) / 3 */
+  width: calc((100% - 60px) / 3); 
+  
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--color-card-shadow);
+  overflow: hidden;
+  scroll-snap-align: start; 
+  border: 1px solid var(--color-card-border);
+}
+
+.card-image-wrapper {
+    position: relative;
+    height: 180px;
+}
+
+.plant-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Operational Badge */
+.operational-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--color-green-operational);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+/* Top-Left Organic Icon Badge */
+.plant-icon-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--color-green-operational);
+    font-size: 1.1rem;
+    padding: 8px;
+    border-radius: 50%;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+}
+
+.plant-card-content {
+    padding: 20px;
+}
+
+.plant-card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-bottom: 10px;
+}
+
+.plant-location {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--color-grey-text);
+    margin-bottom: 20px;
+}
+
+.location-icon {
+    color: var(--color-location-icon);
+    margin-right: 5px;
+}
+
+/* Stat Rows */
+.plant-stats-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.plant-stat-item {
+    flex: 1;
+    text-align: left;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--color-grey-text);
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Type Box Styling (Light Blue Background) */
+.type-box .stat-value {
+    background-color: var(--color-type-bg);
+    color: var(--color-stat-text-blue);
+}
+
+/* Capacity Box Styling (Light Green Background) */
+.capacity-box .stat-value {
+    background-color: var(--color-capacity-bg);
+    color: var(--color-stat-text-green);
+}
+
+/* Output Box Styling (Full Width, Lighter Green Background) */
+.plant-output-row {
+    margin-top: 10px;
+}
+.output-box .stat-value {
+    background-color: var(--color-output-bg);
+    color: var(--color-stat-text-green);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1200px) {
+    /* Show 2 cards per view on medium screens */
+    .plant-card {
+        width: calc((100% - 30px) / 2); 
+    }
+}
+
+@media (max-width: 768px) {
+    .plants-section {
+        padding: 30px 20px;
+    }
+    /* Show 1 card per view on small screens */
+    .plant-card {
+        width: 100%;
+    }
+    /* Hide manual scroll buttons on small screens */
+    .scroll-button {
+        display: none; 
+    }
+}

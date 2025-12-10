@@ -1,0 +1,132 @@
+/* Variables */
+:root {
+  --color-blue-dark-text: #315082;
+  --color-grey-bg: #F5F5F5;
+  --color-text-dark: #333;
+  --color-text-light: #555;
+  --color-card-border: #E0E0E0;
+  --color-default-shadow: rgba(0, 0, 0, 0.05);
+  --card-radius: 14px;
+}
+
+.wings-section {
+  padding: 40px 40px;
+  background-color: var(--color-grey-bg);
+}
+
+/* Header */
+.wings-header-container {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.wings-main-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-blue-dark-text);
+}
+
+.wings-subheading {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  margin-top: 5px;
+}
+
+/* Grid */
+.wings-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+/* Card */
+.wing-card {
+  background-color: white;
+  border-radius: var(--card-radius);
+  padding: 25px;
+  border: 1px solid var(--color-card-border);
+  box-shadow: 0 4px 10px var(--color-default-shadow);
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 420px;
+  margin: auto;
+}
+
+.wing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* Thin Color Line */
+.card-top-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;    /* THIN line */
+  border-top-left-radius: var(--card-radius);
+  border-top-right-radius: var(--card-radius);
+}
+
+/* Icon/Image Wrapper (No background) */
+.wing-icon-wrapper {
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 18px;
+  background: transparent !important;   /* NO Background */
+}
+
+.wing-image {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+/* Title */
+.wing-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 10px;
+}
+
+/* Description */
+.wing-card-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-light);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wing-animate-fade-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .wings-section {
+    padding: 30px 20px;
+  }
+
+  .wings-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
