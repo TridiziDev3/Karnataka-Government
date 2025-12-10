@@ -9,7 +9,7 @@
 
 /* --- Top Bar Styling --- */
 .top-bar {
-  background-color:white;
+  background-color:#83A031;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -27,12 +27,13 @@
 .top-bar .icon {
   margin-right: 0.5vw;
   font-size: 1.8vh;
+  
 }
 
 .lang-button {
   background: none;
   border: none;
-  color: #83A031;
+  color: white;
   font-size: 1.8vh;
   font-weight: bold;
   cursor: pointer;
