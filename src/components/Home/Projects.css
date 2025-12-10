@@ -18,6 +18,7 @@
 .projects-section {
   
   background-color: var(--color-grey-bg);
+height: 900px;
 }
 
 .project-top-section {
@@ -55,7 +56,7 @@
 }
 
 .pillar-carousel-wrapper {
-  width: 100vw;
+  width: 99.5vw;
   position: relative;
   left: 50%;
   right: 50%;
@@ -159,7 +160,8 @@ background: linear-gradient(
 .project-cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 10px;
+  
 }
 
 .project-card {
@@ -168,6 +170,9 @@ background: linear-gradient(
   overflow: hidden;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
   border: 1px solid #eee;
+  width: 350px;
+  height: 440px;
+  margin-left: 80px;
 }
 
 .card-image-wrapper {

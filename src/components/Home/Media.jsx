@@ -1,11 +1,44 @@
 import React from 'react';
 import './Media.css';
-import { TEXT } from '../../content/text'; 
+// NOTE: Assuming this file exists and contains the required data structure.
+// This is a placeholder import.
+// import { TEXT } from '../../content/text'; 
 import { FaArrowRight, FaCalendarAlt } from 'react-icons/fa';
-import { IoDocumentText, IoStar } from 'react-icons/io5';
+// IoDocumentText and IoStar match the image for Press and Achievement
+import { IoDocumentText, IoStar } from 'react-icons/io5'; 
+
+// === PLACEHOLDER TEXT DATA STRUCTURE (For demonstration) ===
+const TEXT = {
+    mediaCenter: {
+        latestUpdateBadge: { en: 'Latest Updates' },
+        heading: { en: 'Media Center' },
+        subheading: { en: 'Breaking news, press releases, and achievements in waste management' },
+        viewAllButton: { en: 'View All Media Updates' },
+        cards: [
+            {
+                category: { en: 'Press Release' },
+                categoryColor: { en: 'blue' },
+                date: { en: 'Dec 1, 2024' },
+                title: { en: 'NWMA Launches National Zero Waste Campaign' },
+                desc: { en: 'National Waste Management Authority today launched an ambitious campaign to achieve zero waste across 100 smart cities by 2030, marking a historic milestone in India’s environmental journey.' },
+                button: { en: 'Read Full Story' },
+                link: '#',
+            },
+            {
+                category: { en: 'Achievement' },
+                categoryColor: { en: 'green' },
+                date: { en: 'Nov 20, 2024' },
+                title: { en: 'India Wins UN Environment Award' },
+                desc: { en: 'NWMA’s innovative approach to integrated waste management has been recognized by the United Nations Environment Programme with the prestigious Environment Leadership Award.' },
+                button: { en: 'Read Full Story' },
+                link: '#',
+            },
+        ]
+    }
+};
+// ==========================================================
 
 const Media = ({ lang = 'en' }) => {
-  // Assuming the 'mediaCenter' structure is added to TEXT.js
   if (!TEXT.mediaCenter || !TEXT.mediaCenter.cards) return null;
 
   const t = TEXT.mediaCenter;
@@ -20,7 +53,7 @@ const Media = ({ lang = 'en' }) => {
     }
   };
 
-  // Helper to get icon based on category
+  // Helper to get icon component based on category text
   const getCategoryIcon = (category) => {
     if (category === 'Press Release') return IoDocumentText;
     if (category === 'Achievement') return IoStar;
@@ -51,7 +84,8 @@ const Media = ({ lang = 'en' }) => {
                 
                 {/* Top Section: Category & Date */}
                 <div className="card-top-row">
-                  <div className={`category-badge ${colorClass}`}>
+                  <div className={`category-badge`}>
+                    {/* Render the Icon component */}
                     {ButtonIcon && <ButtonIcon className="category-icon" />}
                     {localize(card.category)}
                   </div>
@@ -66,7 +100,7 @@ const Media = ({ lang = 'en' }) => {
                 <p className="card-description">{localize(card.desc)}</p>
 
                 {/* Action Button */}
-                <a href="#" className={`read-full-button ${colorClass}`}>
+                <a href={card.link} className={`read-full-button ${colorClass}`}>
                   {localize(card.button)} <FaArrowRight className="button-arrow" />
                 </a>
               </div>

@@ -50,8 +50,7 @@ const WastePlants = ({ lang = 'en' }) => {
             <div className="plants-carousel-container">
                 
                 {/* Navigation Buttons for manual motion */}
-                <button className="scroll-button scroll-left" onClick={() => scroll('left')}>{'<'}</button>
-                <button className="scroll-button scroll-right" onClick={() => scroll('right')}>{'>'}</button>
+               
                 
                 {/* Plant Cards (Scrollable) */}
                 <div className="plants-cards-scroll" ref={scrollRef}>

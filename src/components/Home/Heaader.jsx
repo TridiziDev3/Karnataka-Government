@@ -107,8 +107,7 @@ const Header = ({ lang, toggleLanguage }) => {
           <img src={EmblemImage} alt="Karnataka Emblem" className="emblem-image" />
           <div className="minister-text">
             {/* 3. LOCALIZED STATIC TEXT (MUST be fixed later if needed) */}
-            <div className="minister-name-bold">SHRI D K SHIVAKUMAR</div> 
-            <div className="minister-title">Dy. Chief Minister, GoK and Minister for Bengaluru Development, GoK</div>
+      
           </div>
           <img src={ShivakumarImage} alt={t.people.ministerAlt[lang]} className="minister-photo" />
         </div>

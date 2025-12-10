@@ -12,13 +12,13 @@
   align-items: center;
 
   /* EXACT same background as screenshot */
-  background: linear-gradient(90deg, #ffffff 60%, #83A031 40%);
+  
 
   /* RECTANGLE TOP + BOTTOM & CURVE ON RIGHT */
-  border-radius: 0 180px 180px 0;
 
-  height: 480px;       /* 🔥 Screenshot-like small height */
-  padding: 0 60px;
+
+  height: 600px;       /* 🔥 Screenshot-like small height */
+  padding: 10px 70px;
   gap: 40px;
   overflow: hidden;
 }
@@ -95,10 +95,12 @@
 /* carousel image */
 .hero-carousel-image {
   width: 100%;
-  height: 100%;
+  height: 80%;
   background-size: cover;
   background-position: center;
   animation: fade 1s ease-out;
+  border-radius: 250px;
+  
 }
 
 @keyframes fade {

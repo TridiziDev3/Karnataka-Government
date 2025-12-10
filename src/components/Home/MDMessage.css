@@ -1,18 +1,19 @@
 /* Color Variables */
 :root {
-  --color-blue-bg: #E3F2FD; /* Light blue background for the section */
+  --color-blue-bg: #2d93dc; /* Light blue background for the section */
   --color-blue-accent: #2196F3; /* Medium blue accent for borders */
   --color-quote: #90CAF9; /* Light blue for the quote icon */
   --color-text-dark: #333;
 }
 
 .md-section {
-  background-color: var(--color-blue-bg);
+  background-color: white;
   padding: 60px 80px;
+  margin-top: 20px;
 }
 
 .md-content-wrapper {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 
@@ -32,7 +33,7 @@
 .md-card-container {
   display: flex;
   gap: 40px;
-  background-color: white;
+  background-color: #EFF6FF;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -41,7 +42,7 @@
 /* Left Profile Card */
 .md-profile-card {
   flex-shrink: 0;
-  width: 280px;
+  width: 350px;
   text-align: center;
   border-right: 1px solid #eee;
   padding-right: 40px;
