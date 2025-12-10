@@ -38,6 +38,7 @@
 
 .wing-card {
   background-color: white;
+  border-top: 4px solid #FF6900 !important; 
   border-radius: var(--card-radius);
   padding: 25px;
   border: 1px solid var(--color-card-border);

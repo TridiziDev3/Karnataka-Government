@@ -170,9 +170,9 @@ background: linear-gradient(
   overflow: hidden;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
   border: 1px solid #eee;
-  width: 350px;
-  height: 440px;
-  margin-left: 80px;
+  width: 400px;
+  height: 460px;
+  margin-left: 50px;
 }
 
 .card-image-wrapper {

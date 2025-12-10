@@ -77,18 +77,25 @@ const WastePlants = ({ lang = 'en' }) => {
                                     <span>{localize(card.location)}</span>
                                 </div>
                                 
-                                <div className="plant-stats-row">
-                                    {/* Type Box (Light Blue) */}
-                                    <div className="plant-stat-item type-box">
-                                        <p className="stat-label">Type</p>
-                                        <div className="stat-value">{localize(card.type)}</div>
-                                    </div>
-                                    {/* Capacity Box (Light Green) */}
-                                    <div className="plant-stat-item capacity-box">
-                                        <p className="stat-label">Capacity</p>
-                                        <div className="stat-value">{localize(card.capacity)}</div>
-                                    </div>
-                                </div>
+                            <div className="plant-stats-row">
+    {/* Type Box */}
+    <div className="plant-stat-box type-box">
+        <div className="stat-value">
+            <span className="stat-label-inside">Type</span>
+            <span className="stat-text">{localize(card.type)}</span>
+        </div>
+    </div>
+
+    {/* Capacity Box */}
+    <div className="plant-stat-box capacity-box">
+        <div className="stat-value">
+            <span className="stat-label-inside">Capacity</span>
+            <span className="stat-text">{localize(card.capacity)}</span>
+        </div>
+    </div>
+</div>
+
+{/* Compost Output Box */}
 
                                 {/* Output Box (Lightest Green, Full Width) */}
                                 <div className="plant-output-row output-box">

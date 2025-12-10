@@ -2,7 +2,13 @@ import React from 'react';
 import './Wings.css';
 // import { TEXT } from '../../content/text'; // Assuming this imports your data
 
-// --- Placeholder TEXT Data (Ensures description is available) ---
+// Import Images from assets
+// NOTE: Ensure these imports point to your actual image files
+import itImage from '../../assets/Container.png'; 
+import technicalImage from '../../assets/Container1.png';
+import adminImage from '../../assets/Container2.png';
+
+// --- Placeholder TEXT Data (with descriptions) ---
 const TEXT = {
     wings: {
         mainHeading: { en: 'Organizational Wings' },
@@ -12,17 +18,14 @@ const TEXT = {
                 { 
                     title: 'IT Cell', 
                     description: 'Digital infrastructure, technology implementation, and IT systems management for efficient waste tracking and monitoring',
-                    colorClass: 'blue' // New property to determine icon color/style
                 },
                 { 
                     title: 'Technical Wing', 
                     description: 'Project planning, engineering design, technical implementation, and quality assurance of waste management facilities',
-                    colorClass: 'green'
                 },
                 { 
                     title: 'Administration', 
                     description: 'Administrative operations, human resources, policy coordination, and overall organizational management',
-                    colorClass: 'orange'
                 },
             ]
         }
@@ -31,8 +34,7 @@ const TEXT = {
 // -----------------------------------------------------------------
 
 
-// Mapping English titles to static details (Image/Icon Component and color class)
-// Note: Since you are using image imports, we'll map the image path and provide the color class for the background.
+// Mapping English titles to static details (Image path and corresponding color class)
 const wingDetails = {
     "IT Cell": {
         img: itImage,
@@ -57,15 +59,12 @@ const Wings = ({ lang = 'en' }) => {
     const t = TEXT.wings;
     const localize = (obj) => obj[lang] || obj['en'];
 
-    // 1. Get the fully localized array of items
     const localizedItems = localize(t.items); 
 
-    // 2. Map static details (image/color) using the English key for index matching
     const wingsData = localizedItems.slice(0, 3).map((localizedItem, index) => {
         const englishKey = ENGLISH_KEYS[index];
-        const details = wingDetails[englishKey]; // Get the static image/colorClass
+        const details = wingDetails[englishKey];
         
-        // Use the localized title/description and the static image/color class
         return {
             title: localizedItem.title,
             description: localizedItem.description,
@@ -87,11 +86,11 @@ const Wings = ({ lang = 'en' }) => {
                 {wingsData.map((card, index) => (
                     <div
                         key={index}
-                        // Use the colorClass for background/accent styling
-                        className={`wing-card wing-animate-fade-up ${card.colorClass}`}
+                        // Apply the color class for icon background
+                        className={`wing-card wing-animate-fade-up ${card.colorClass}`} 
                         style={{ animationDelay: `${index * 0.1}s` }}
                     >
-                        {/* 1. Icon Wrapper (Left Side) */}
+                        {/* 1. Icon Wrapper (Left Side with Colored BG) */}
                         <div className="wing-icon-wrapper">
                             <img src={card.img} alt={card.title} className="wing-image" />
                         </div>
@@ -99,7 +98,8 @@ const Wings = ({ lang = 'en' }) => {
                         {/* 2. Text Content (Right Side) */}
                         <div className="wing-text-content">
                             <h3 className="wing-card-title">{card.title}</h3> 
-                            <p className="wing-card-description">{card.description}</p>
+                            {/* 🔥 DESCRIPTION ELEMENT */}
+                            <p className="wing-card-description">{card.description}</p> 
                         </div>
                     </div>
                 ))}

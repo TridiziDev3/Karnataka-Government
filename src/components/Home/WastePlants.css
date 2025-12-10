@@ -187,9 +187,35 @@
 
 /* Stat Rows */
 .plant-stats-row {
+     display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.plant-stat-box .stat-value,
+.output-box {
+    padding: 12px 14px;
+    border-radius: 10px;
     display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
+    background: #F1F8E9; 
+    flex-direction: column;
+    gap: 4px;
+}
+.output-box .stat-text {
+    color: #1B8E3F;
+}
+
+.stat-label-inside {
+    font-size: 0.75rem;
+    color: #6B7280;           /* Grey same as screenshot */
+    font-weight: 500;
+    width: 160px;
+}
+
+
+.stat-text {
+    font-size: 0.95rem;
+    font-weight: 700;
 }
 
 .plant-stat-item {
@@ -212,16 +238,20 @@
 
 /* Type Box Styling (Light Blue Background) */
 .type-box .stat-value {
-    background-color: var(--color-type-bg);
+    background: #E3F2FD; 
     color: var(--color-stat-text-blue);
 }
-
+.type-box .stat-text {
+    color: #3B82F6;             /* Blue same as screenshot */
+}
 /* Capacity Box Styling (Light Green Background) */
 .capacity-box .stat-value {
-    background-color: var(--color-capacity-bg);
+    background: #E8F5E9; 
     color: var(--color-stat-text-green);
 }
-
+.capacity-box .stat-text {
+    color: #1B8E3F;             /* Correct green */
+}
 /* Output Box Styling (Full Width, Lighter Green Background) */
 .plant-output-row {
     margin-top: 10px;
