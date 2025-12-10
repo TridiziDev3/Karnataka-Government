@@ -8,7 +8,23 @@ import { TEXT } from '../../content/text';
 const FILTER_STATUSES = ['Ongoing', 'Active', 'Completed'];
 const SCROLL_INTERVAL = 3000;
 
-// Local image mapping
+import project1 from "../../assets/Homepage/Rectangle 34625672.png";
+import project2 from "../../assets/Homepage/Rectangle 34625677.png";
+
+import project3 from "../../assets/Homepage/Rectangle 34625673.png";
+
+import project4 from "../../assets/Homepage/Rectangle 34625674.png";
+
+import project5 from "../../assets/Homepage/Rectangle 34625675.png";
+import project6 from "../../assets/Homepage/Rectangle 34625672.png";
+
+import project7 from "../../assets/Homepage/Rectangle 34625676.png";
+
+import project8 from "../../assets/Homepage/Rectangle 34625677.png";
+import project9 from "../../assets/Homepage/Rectangle 34625672.png";
+
+
+
 const projectImages = {
   1: 'src/assets/Homepage/Rectangle 34625672.png',
   2: 'src/assets/Homepage/Rectangle 34625677.png',

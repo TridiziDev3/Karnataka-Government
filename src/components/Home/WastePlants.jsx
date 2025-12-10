@@ -5,9 +5,13 @@ import { FaMapMarkerAlt, FaLeaf } from 'react-icons/fa'; // Using FaLeaf for the
 import { IoIosNavigate } from 'react-icons/io'; 
 
 // Placeholder image (check this path!)
-const plantImage1 = 'src/assets/Homepage/Rectangle 34625677.png'; 
-const plantImage3 = 'src/assets/Homepage/image 1.png'; 
-const plantImage2 = 'src/assets/Homepage/image 2.png'; 
+
+import plant1mage1 from "../../assets/Homepage/Rectangle 34625677.png";
+import plantImage3 from "../../assets/Homepage/image 1.png";
+
+import plantImage2 from "../../assets/Homepage/image 1.png";
+
+
 const plantImages = [plantImage1, plantImage2, plantImage3];
 const WastePlants = ({ lang = 'en' }) => {
     if (!TEXT.wastePlants || !TEXT.wastePlants.cards || TEXT.wastePlants.cards.length === 0) {

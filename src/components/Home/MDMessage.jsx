@@ -3,8 +3,9 @@ import './MDMessage.css';
 import { TEXT } from '../../content/text'; 
 import { FaQuoteLeft, FaArrowRight } from 'react-icons/fa'; // Icon for the quote and button
 
-// Placeholder for MD image (Assuming the path from your previous context)
-const mdImage = 'src/assets/Homepage/midimage.png'; 
+ 
+
+import mdImage from "../../assets/Homepage/midimage.png"
 
 const MDMessage = ({ lang = 'en' }) => {
   if (!TEXT.md) return null;

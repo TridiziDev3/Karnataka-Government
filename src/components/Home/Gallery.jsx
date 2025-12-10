@@ -4,13 +4,18 @@ import { TEXT } from '../../content/text';
 import { FaArrowRight } from 'react-icons/fa';
 
 // Placeholder images array (match the number of items needed for the scroll effect)
+ import gallery1 from "../../assets/Homepage/Rectangle 34625672.png"
+ import gallery2 from "../../assets/Homepage/Rectangle 34625673.png"
+ import gallery3 from "../../assets/Homepage/Rectangle 34625674.png"
+ import gallery4 from "../../assets/Homepage/Rectangle 34625675.png"
+ import gallery5 from "../../assets/Homepage/Rectangle 34625676.png"
+ import gallery6 from "../../assets/Homepage/Rectangle 34625672.png"
+
+
+
+
 const galleryImages = [
-  'src/assets/Homepage/Rectangle 34625672.png',
-  'src/assets/Homepage/Rectangle 34625673.png',
-  'src/assets/Homepage/Rectangle 34625674.png',
-  'src/assets/Homepage/Rectangle 34625675.png',
-  'src/assets/Homepage/Rectangle 34625676.png',
-  'src/assets/Homepage/Rectangle 34625672.png',
+ gallery1,gallery2,gallery3,gallery4,gallery5,gallery6
 ];
 
 const Gallery = ({ lang = 'en' }) => {

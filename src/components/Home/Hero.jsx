@@ -6,10 +6,16 @@ import { TEXT } from '../../content/text';
 
 // Placeholder Images Array for Carousel
 // Use relative paths assuming images are in src/assets/
+import hero1 from "../../assets/hero1.png";
+import hero2 from "../../assets/hero2.png";
+
+import hero3 from "../../assets/hero3.png";
+
+
+
+
 const carouselImages = [
-  'src/assets/hero1.png', 
-  'src/assets/hero2.png', // Assuming this is correct without the extra 'g'
-  'src/assets/hero3.png', 
+hero1 , hero2, hero3
 ];
 
 // Carousel scroll interval is now 2000ms (2 seconds)
