@@ -6,7 +6,7 @@ import { IoIosNavigate } from 'react-icons/io';
 
 // Placeholder image (check this path!)
 
-import plant1mage1 from "../../assets/Homepage/Rectangle 34625677.png";
+import plantImage1 from "../../assets/Homepage/Rectangle 34625677.png";
 import plantImage3 from "../../assets/Homepage/image 1.png";
 
 import plantImage2 from "../../assets/Homepage/image 1.png";

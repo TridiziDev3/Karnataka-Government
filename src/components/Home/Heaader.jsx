@@ -8,8 +8,8 @@ import { TEXT } from '../../content/text';
 
 import SiddaramaiahImage from "../../assets/Homepage/Cm.png";
 import EmblemImage from "../../assets/Homepage/emblem.png";
-const ShivakumarImage = "../../assets/Homepage/Minister.png";
-const LogoImage = "../../assets/Homepage/temple.png";
+import ShivakumarImage from "../../assets/Homepage/Minister.png";
+import LogoImage from "../../assets/Homepage/temple.png";
 
 // Navigation data mapping to their respective React Icons (no change here)
 const navItems = [

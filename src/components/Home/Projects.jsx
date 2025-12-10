@@ -26,15 +26,15 @@ import project9 from "../../assets/Homepage/Rectangle 34625672.png";
 
 
 const projectImages = {
-  1: 'src/assets/Homepage/Rectangle 34625672.png',
-  2: 'src/assets/Homepage/Rectangle 34625677.png',
-  3: 'src/assets/Homepage/Rectangle 34625674.png',
-  4: 'src/assets/Homepage/Rectangle 34625673.png',
-  5: 'src/assets/Homepage/Rectangle 34625675.png',
-  6: 'src/assets/Homepage/Rectangle 34625672.png',
-  7: 'src/assets/Homepage/Rectangle 34625672.png',
-  8: 'src/assets/Homepage/Rectangle 34625676.png',
-  9: 'src/assets/Homepage/Rectangle 34625677.png',
+  1: project1,
+  2: project2,
+  3: project3,
+  4: project4,
+  5: project5,
+  6: project6,
+  7: project7,
+  8: project8,
+  9: project9,
 };
 
 const Projects = ({ lang = 'en' }) => {
