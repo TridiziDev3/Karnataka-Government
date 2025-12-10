@@ -306,19 +306,83 @@ background: linear-gradient(
 }
 
 @media (max-width: 768px) {
+
+  /* Section padding */
   .projects-section {
-    padding: 30px 20px;
+    height: auto;
+    padding: 20px 15px;
   }
+
+  /* Pillar slide - stack vertically */
   .pillar-slide-container {
-    padding: 0 20px;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
+    padding: 20px 0;
   }
+
   .pillar-item {
     width: 100%;
-    padding: 0;
+    padding: 10px 0;
   }
+
+  .pillar-text {
+    font-size: 1rem;
+  }
+
+  /* Cards – 1 column layout */
   .project-cards-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  /* Remove fixed width on card */
+  .project-card {
+    width: 100% !important;
+    height: auto;
+    margin-left: 0 !important;
+  }
+
+  .card-image-wrapper {
+    height: 180px;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .details-button {
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 600px) {
+
+  /* Move filter tabs down to avoid overlap */
+  .project-filters {
+    top: 10px;
+    gap: 10px;
+  }
+
+  .filter-tab {
+    padding: 6px 15px;
+    font-size: 0.75rem;
+  }
+
+  /* Smaller section heading */
+  .projects-main-heading {
+    font-size: 1.5rem;
+  }
+
+  /* Cards tighten spacing */
+  .project-card {
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  }
+
+  .card-image-wrapper {
+    height: 150px;
+  }
+
+  .progress-percent {
+    right: -40px;
   }
 }

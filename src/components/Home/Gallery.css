@@ -8,27 +8,29 @@
   --color-overlay-dark: rgba(0, 0, 0, 0.7);
 }
 
+/* SECTION */
 .gallery-section {
-  padding: 40px 50px; /* smaller padding */
+  padding: 40px 50px;
   background-color: var(--color-bg-dark);
 }
 
-/* --- Header --- */
+/* HEADER */
 .gallery-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 25px; /* smaller spacing */
+  margin-bottom: 25px;
+  width: 100%;
 }
 
 .gallery-main-heading {
-  font-size: 1.8rem; /* smaller heading */
+  font-size: 1.8rem;
   font-weight: 700;
   color: var(--color-heading);
 }
 
 .gallery-subheading {
-  font-size: 0.9rem; 
+  font-size: 0.9rem;
   color: var(--color-subheading);
   margin-top: 5px;
 }
@@ -40,41 +42,42 @@
   display: flex;
   align-items: center;
   transition: opacity 0.3s;
-  font-size: 0.85rem; /* slightly smaller */
+  font-size: 0.85rem;
 }
 
 .view-all-icon {
   margin-left: 5px;
 }
 
-/* --- Image Carousel --- */
+/* CAROUSEL */
 .gallery-carousel-wrapper {
   overflow: hidden;
   padding: 5px 0;
+  width: 100%;
 }
 
 .gallery-image-scroll {
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
-  gap: 20px; /* reduced gap */
+  gap: 35px;
   padding-bottom: 15px;
-
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 .gallery-image-scroll::-webkit-scrollbar {
   display: none;
 }
 
 .gallery-card {
   flex-shrink: 0;
-  width: 195px;  /* smaller card width */
-  height: 280px; /* smaller card height */
+  width: 200px;
+  height: 280px;
   position: relative;
   scroll-snap-align: start;
 
-  border-radius: 10px; /* slightly smaller */
+  border-radius: 10px;
   overflow: hidden;
   border: 1px solid var(--color-card-border);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
@@ -87,7 +90,7 @@
   transition: filter 0.5s ease;
 }
 
-/* darkened effect */
+/* darkened optional */
 .darkened-image {
   filter: grayscale(100%) brightness(35%);
 }
@@ -101,20 +104,65 @@
   background: var(--color-overlay-dark);
 }
 
-/* --- Mobile Compact --- */
+/* ------------------------- */
+/*        MOBILE VIEW        */
+/* ------------------------- */
+
 @media (max-width: 768px) {
+
   .gallery-section {
-    padding: 30px 20px;
+    padding: 25px 20px;
   }
+
+  /* HEADER stacks on mobile */
   .gallery-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
   }
+
+  .gallery-main-heading {
+    font-size: 1.5rem;
+  }
+
+  .gallery-subheading {
+    font-size: 0.85rem;
+  }
+
   .view-all-photos-link {
-    margin-top: 10px;
+    font-size: 0.9rem;
+    margin-top: 5px;
   }
+
+  /* SCROLL CARDS SMALL SIZE */
   .gallery-card {
     width: 150px;
-    height: 220px;
+    height: 200px;
+  }
+
+  .gallery-image-scroll {
+    gap: 20px;
+  }
+}
+
+/* -------------------------- */
+/*      VERY SMALL PHONES     */
+/*          < 480px           */
+/* -------------------------- */
+
+@media (max-width: 480px) {
+
+  .gallery-main-heading {
+    font-size: 1.3rem;
+  }
+
+  .gallery-card {
+    width: 130px;
+    height: 180px;
+  }
+
+  .gallery-image-scroll {
+    gap: 15px;
   }
 }

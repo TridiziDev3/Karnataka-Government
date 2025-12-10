@@ -260,25 +260,111 @@
     background-color: var(--color-output-bg);
     color: var(--color-stat-text-green);
 }
+/* ========================================================= */
+/* RESPONSIVE FIXES FOR MOBILE & TABLET */
+/* ========================================================= */
 
-/* --- Responsive Adjustments --- */
+/* ----- Medium Screens: 2 Cards per Row ----- */
 @media (max-width: 1200px) {
-    /* Show 2 cards per view on medium screens */
     .plant-card {
-        width: calc((100% - 30px) / 2); 
+        width: calc((100% - 30px) / 2);
     }
 }
 
+/* ----- Tablets & Large Mobiles ----- */
+@media (max-width: 900px) {
+    .plants-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .view-all-link {
+        margin-top: 5px;
+    }
+}
+
+/* ----- Mobile Responsive: 1 Card Full Width ----- */
 @media (max-width: 768px) {
+
     .plants-section {
         padding: 30px 20px;
     }
-    /* Show 1 card per view on small screens */
+
+    /* Heading center align for mobile */
+    .plants-heading {
+        font-size: 1.4rem;
+        text-align: left;
+    }
+
+    .plants-subheading {
+        font-size: 0.85rem;
+        text-align: left;
+    }
+
+    /* One card full width */
     .plant-card {
         width: 100%;
     }
-    /* Hide manual scroll buttons on small screens */
+
+    /* Reduce image height to fit mobile */
+    .card-image-wrapper {
+        height: 160px;
+    }
+
+    /* Stack stats vertically on mobile */
+    .plant-stats-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Output box full width & bigger spacing */
+    .output-box {
+        margin-top: 15px;
+    }
+
+    /* Scroll area padding reduce */
+   .plants-cards-scroll {
+      display: flex;
+      flex-direction: column !important;   /* ONE BELOW ONE */
+      overflow-x: hidden !important;       /* Disable scroll */
+      overflow-y: visible !important;
+      gap: 20px;
+  }
+    /* Hide left-right scroll buttons */
     .scroll-button {
-        display: none; 
+        display: none !important;
+    }
+}
+
+/* ----- Extra Small Mobiles (Below 480px) ----- */
+@media (max-width: 480px) {
+
+    .plants-heading {
+        font-size: 1.2rem;
+    }
+
+    .plants-subheading {
+        font-size: 0.8rem;
+    }
+
+    .plant-card-content {
+        padding: 16px;
+    }
+
+    .plant-card-title {
+        font-size: 1rem;
+    }
+
+    .plant-location {
+        font-size: 0.85rem;
+    }
+
+    .stat-label-inside {
+        font-size: 0.7rem;
+    }
+
+    .stat-text {
+        font-size: 0.85rem;
     }
 }
