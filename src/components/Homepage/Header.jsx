@@ -1,10 +1,18 @@
 // src/components/Homepage/Header.jsx
 import React, { useEffect, useState } from "react";
 import "../../Styles/Homepage/header.css";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9bc7806297f3b36dfd0a63597ab884a6d315d174
 import CmImage from "../../assets/Homepage/Cm.png";
 import MinisterImage from "../../assets/Homepage/Minister.png";
 import TempleImage from "../../assets/Homepage/temple.png";
 import { FaUser } from "react-icons/fa";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9bc7806297f3b36dfd0a63597ab884a6d315d174
 import Navbar from "./Navbar";
 import { TEXT } from "../../content/text";
 

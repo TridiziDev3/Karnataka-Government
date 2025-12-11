@@ -12,8 +12,8 @@ import LogoImage from "../../assets/Homepage/temple.png";
 
 // Navigation data mapping to their respective React Icons (no change here)
 const navItems = [
-  { name: 'Home', icon: FaHome, href: "#home" },
-  { name: 'About Us', icon: FaInfoCircle, href: "#about" },
+ { name: 'Home', icon: FaHome, href: "#home" },
+{ name: 'About Us', icon: FaInfoCircle, href: "#about" },
   { name: 'Tenders', icon: FaFileContract, href: "#tenders" },
   { name: 'Projects', icon: FaRegLightbulb, href: "#projects" },
   { name: 'Plants', icon: FaTree, href: "#plants" },
