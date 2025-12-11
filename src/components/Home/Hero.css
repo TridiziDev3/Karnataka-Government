@@ -1,0 +1,295 @@
+
+:root {
+  --hero-yellow-light: #f9d668;
+  --hero-yellow-strong: #ECBC27; /* used in screenshots */
+  --text-dark: #333;
+  --hero-title-font: "Roboto", system-ui, -apple-system, "Segoe UI", "Helvetica Neue",
+                     Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;    /* keeps spacing same as original */
+  gap: 40px;
+  overflow: hidden;
+  height: 644px;         /* match screenshot measured height */
+  box-sizing: border-box;
+  background: #fff;
+}
+
+/* --- LEFT CONTENT (text block) --- */
+.hero-content {
+  width: 45%;            
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+
+/* Constrain the text block width to the measured 550px */
+.hero-content .text-wrap,
+.hero-content > * {
+  max-width: 550px;     /* measured width in design */
+}
+
+.hero-title {
+  font-family: var(--hero-title-font);
+  font-size: 54px;      /* design: 54px */
+  line-height: 58px;    /* design: 58px */
+  font-weight: 800;     /* ExtraBold in figma */
+  color: var(--hero-yellow-strong);
+  margin: 0 0 18px 0;
+  letter-spacing: 0;
+  word-break: break-word;
+}
+
+.hero-text {
+  font-family: var(--hero-title-font);
+  font-size: 25px;      
+  line-height: 32px;
+  color: var(--text-dark);
+  margin: 0 0 30px;
+  opacity: 0.95;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 10px;           
+  align-items: center;
+  margin-top: 12px;
+}
+
+/* Base button reset */
+.contact-button-ui-match,
+.know-more-button-ui-match {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 5px;         /* screenshot shows small radius 5px */
+  font-weight: 700;
+  font-family: var(--hero-title-font);
+  box-sizing: border-box;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.12s ease;
+  text-decoration: none;
+  border-style: solid;
+  border-width: 1px;
+}
+
+/* Contact button - measured 147 x 48 */
+.contact-button-ui-match {
+  width: 147px;           /* measured width */
+  height: 48px;           /* measured height */
+  padding: 11px 23px;     /* inspector shows top 11, bottom 11, left 23, right 23 */
+  background: transparent;
+  border-color: var(--hero-yellow-strong);
+  color: var(--hero-yellow-strong);
+}
+
+/* Primary know-more button - measured 220 x 48 */
+.know-more-button-ui-match {
+  width: 220px;           /* measured width */
+  height: 48px;           /* measured height */
+  padding: 11px 23px;
+  background: var(--hero-yellow-strong);
+  border-color: var(--hero-yellow-strong);
+  color: #fff;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.06) inset; /* subtle depth like screenshot */
+}
+
+/* Hover states */
+.contact-button-ui-match:hover {
+  background: var(--hero-yellow-strong);
+  color: #fff;
+}
+
+.know-more-button-ui-match:hover {
+  background: #d9a200;
+  border-color: #d9a200;
+}
+
+/* --- RIGHT IMAGE CAROUSEL / ILLUSTRATION --- */
+.hero-image-container {
+  width: 55%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  /* big rounded right mask like the design (matches original) */
+  border-radius: 0 180px 180px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Track that will slide left/right */
+.hero-track {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  transition: transform 600ms cubic-bezier(.22,.9,.35,1);
+  will-change: transform;
+}
+
+/* Each slide is 100% of container */
+.hero-slide {
+  flex: 0 0 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 20px; /* inner padding to match the large circular mask layout */
+  box-sizing: border-box;
+}
+
+/* image background style - large circle visual in the mock */
+.hero-carousel-image {
+  width: 100%;
+  height: 85%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 250px; /* keep the soft pill / circle cropping */
+  display: block;
+  object-fit: cover;
+}
+
+/* video style - fill slide */
+.hero-slide video.hero-carousel-image {
+  background: transparent;
+  height: 85%;
+  width: 100%;
+  border-radius: 250px;
+  display: block;
+  object-fit: cover;
+  outline: none;
+}
+
+/* preserve container overflow for rounded masks */
+.hero-rect-ui {
+  overflow: hidden;
+}
+
+/* small utility: center left content on narrower view so measurements align */
+.hero-content-centered {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+@media (max-width: 1024px) {
+  .hero-section {
+    padding: 20px 40px;
+    height: auto;
+    gap: 30px;
+  }
+
+  .hero-content {
+    width: 50%;
+  }
+
+  .hero-title {
+    font-size: 36px;
+    line-height: 40px;
+    max-width: 520px;
+  }
+
+  .hero-image-container {
+    width: 50%;
+  }
+
+  /* Buttons: keep touch-friendly sizes but slightly smaller */
+  .contact-button-ui-match { width: 140px; height: 44px; padding: 10px 20px; }
+  .know-more-button-ui-match { width: 200px; height: 44px; padding: 10px 20px; }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 20px 50px;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .hero-content {
+    width: 100%;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .hero-title {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .hero-text {
+    font-size: 18px;
+    width: 90%;
+    margin: 0 auto 20px;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .hero-image-container {
+    width: 100%;
+    height: 350px;
+    border-radius: 30px;
+  }
+
+  .hero-carousel-image {
+    height: 100%;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 15px;
+    gap: 25px;
+  }
+
+  .hero-title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .hero-text {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact-button-ui-match,
+  .know-more-button-ui-match {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    height: auto;
+  }
+
+  .hero-image-container {
+    height: 260px;
+    border-radius: 20px;
+  }
+
+  .hero-carousel-image {
+    border-radius: 18px;
+  }
+
+  .hero-slide {
+    padding: 8px;
+  }
+}

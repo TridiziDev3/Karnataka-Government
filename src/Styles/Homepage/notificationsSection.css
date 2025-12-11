@@ -1,0 +1,205 @@
+/* ===========================
+   NOTIFICATIONS SECTION
+   =========================== */
+
+.notifications {
+  padding: 40px 0 56px;
+  background: var(--surface-bg);
+
+}
+
+/* NOTIFICATIONS heading – 708 x 55 frame in Figma */
+.notifications .section-title {
+  font-family: "Lato", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: #0B368E;
+
+  max-width: 708px;
+  height: 55px;
+  line-height: 55px;
+
+  margin: 0 auto 32px;
+}
+
+/* Outer table frame – 1287 x 446 in Figma */
+.notifications__table-wrapper {
+  max-width: 1287px;
+  margin: 0 auto;
+  border: 3px solid #0B368E;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+/* TABLE BASE */
+.notifications__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Lato", sans-serif;
+}
+
+/* COLUMN WIDTHS (≈ Figma: 553 + 187 + 273 + 273) */
+.notifications__table col.col-latest {
+  width: 553px;
+}
+.notifications__table col.col-middle {
+  width: 187px;
+}
+.notifications__table col.col-middle-wide {
+  width: 273px;
+}
+.notifications__table col.col-date {
+  width: 273px;
+}
+
+/* HEADER ROW (blue bar, 75px height) */
+.notifications__table thead {
+  background: #0B368E;
+  color: #ffffff;
+}
+
+.notifications__table th {
+  height: 75px;
+  line-height: 75px;
+  padding: 0 24px;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: left;
+
+  border-right: 1px solid #ffffff;
+  border-bottom: 3px solid #0B368E;
+}
+
+.notifications__table th:last-child {
+  border-right: none;
+  text-align: center;
+}
+
+/* BODY ROWS */
+.notifications__table tbody tr {
+  height: 75px;
+}
+
+.notifications__table td {
+  padding: 0 24px;
+  font-size: 16px;
+  border-bottom: 1px solid #D4DCE6;
+  border-right: 1px solid #D4DCE6;
+  vertical-align: middle;
+}
+
+.notifications__table td:last-child {
+  border-right: none;
+}
+
+/* Text cell: “Lorem Ipsum Content Is Dummy Text” */
+.notifications__table td.notifications__title {
+  font-weight: 700;
+}
+
+/* DATE CELL */
+.notifications__table td.notifications__date {
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Grey background for full rows 2 & 4 */
+.notifications__table tbody tr:nth-child(2),
+.notifications__table tbody tr:nth-child(4) {
+  background: #F5F5F5;
+}
+
+
+/* ===========================
+   TABLET (1024px–768px)
+   =========================== */
+
+@media (max-width: 1024px) {
+  .notifications {
+    padding: 32px 0 44px;
+  }
+
+  .notifications .section-title {
+    font-size: 34px;
+    height: auto;
+    line-height: 1.3;
+    margin-bottom: 26px;
+  }
+
+  .notifications__table-wrapper {
+    max-width: 95%;
+    border-width: 2px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .notifications__table {
+    min-width: 700px; /* keep structure, allow horizontal scroll */
+  }
+
+  .notifications__table th {
+    font-size: 20px;
+    padding: 0 18px;
+  }
+
+  .notifications__table td {
+    font-size: 14px;
+    padding: 0 18px;
+  }
+}
+
+
+/* ===========================
+   MOBILE (≤767px)
+   =========================== */
+
+@media (max-width: 767px) {
+  .notifications {
+    padding: 28px 0 36px;
+  }
+
+  .notifications .section-title {
+    font-size: 24px;
+    line-height: 1.35;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 0 12px;
+  }
+
+  .notifications__table-wrapper {
+    max-width: 100%;
+    border-width: 2px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* keep table layout, scroll horizontally instead of squashing */
+  .notifications__table {
+    width: 100%;
+    min-width: 650px;
+  }
+
+  .notifications__table th {
+    height: auto;
+    line-height: 1.3;
+    padding: 10px 14px;
+    font-size: 16px;
+  }
+
+  .notifications__table tbody tr {
+    height: auto;
+  }
+
+  .notifications__table td {
+    padding: 10px 14px;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .notifications__table td.notifications__date {
+    font-size: 12px;
+  }
+}

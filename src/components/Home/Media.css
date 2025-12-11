@@ -1,0 +1,99 @@
+:root{
+  --color-bg-start:#FEF7E7;
+  --color-bg-end:#FDE8D4;
+  --color-heading-dark:#3A2D21;
+  --color-latest-updates-orange:#F97316;
+  --color-view-all-bg-start:#FF7F16;
+  --color-view-all-bg-end:#F94500;
+  --color-card-bg:#ffffff;
+  --color-card-shadow:rgba(0,0,0,0.08);
+  --blue-primary:#1447E6;
+  --blue-light:#E4EBFF;
+  --green-primary:#04AC4D;
+  --green-light:#D7FBE5;
+  --color-text-description:#555;
+  --color-text-date:#6b6b6b;
+}
+
+/* Section */
+.media-section{
+  background: radial-gradient(circle at center, var(--color-bg-start) 0%, #FFF8E8 40%, var(--color-bg-end) 100%);
+  padding:80px 40px 100px;
+  text-align:center;
+}
+
+.media-center-content{max-width:1150px;margin:0 auto}
+
+.media-header-group{margin-bottom:38px}
+
+.latest-updates-badge{
+  background:linear-gradient(to right,#FF884D,var(--color-latest-updates-orange));
+  color:#fff;padding:6px 18px;font-size:.8rem;border-radius:20px;display:inline-block;font-weight:700;
+  box-shadow:0 2px 8px rgba(249,115,22,0.3)
+}
+
+.media-heading{font-size:2.3rem;margin-top:12px;font-weight:700;color:var(--color-heading-dark)}
+.media-subheading{margin-top:8px;color:var(--color-text-date);font-size:1rem}
+
+/* Grid */
+.media-cards-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:26px;margin-bottom:45px;
+}
+
+/* Card */
+.media-card{
+  background:var(--color-card-bg);
+  padding:26px 26px 30px;border-radius:20px;
+  box-shadow:0 8px 25px var(--color-card-shadow);
+  position:relative;overflow:hidden;text-align:left;
+  transform:translateY(10px);
+  opacity:0;
+  animation: fadeInUp .55s ease forwards;
+  will-change: transform, opacity;
+}
+
+/* circular highlight */
+.media-card::after{content:"";position:absolute;top:-70px;right:-70px;width:200px;height:200px;border-radius:50%;opacity:.6;z-index:1}
+.media-blue::after{background:var(--blue-light)}
+.media-green::after{background:var(--green-light)}
+
+/* top row */
+.card-top-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;position:relative;z-index:2}
+.category-badge{padding:5px 14px;font-size:.78rem;font-weight:600;border-radius:20px;display:inline-flex;align-items:center;gap:6px;box-shadow:0 1px 4px rgba(0,0,0,0.2)}
+.media-blue .category-badge{background:var(--blue-primary);color:#fff}
+.media-green .category-badge{background:var(--green-primary);color:#fff}
+
+.date-info{color:var(--color-text-date);font-size:.82rem;display:flex;align-items:center;gap:5px}
+.date-icon{font-size:.9rem}
+
+/* text */
+.card-title{font-size:1.4rem;font-weight:700;margin-bottom:10px;color:var(--color-heading-dark)}
+.card-description{font-size:.95rem;color:var(--color-text-description);margin-bottom:25px;line-height:1.5}
+
+/* button */
+.read-full-button{padding:10px 22px;font-size:.92rem;font-weight:600;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;position:relative;z-index:2;transition:transform .18s,box-shadow .18s}
+.read-full-button:hover{transform:translateY(-1px);box-shadow:0 4px 8px rgba(0,0,0,0.2)}
+.read-full-button.media-blue{background:var(--blue-primary);color:#fff}
+.read-full-button.media-green{background:var(--green-primary);color:#fff}
+
+/* view all */
+.view-all-media-button{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(to right,var(--color-view-all-bg-start),var(--color-view-all-bg-end));color:#fff;padding:12px 30px;border-radius:10px;font-size:1rem;font-weight:700;box-shadow:0 6px 15px rgba(255,106,0,0.5);text-decoration:none;transition:transform .3s,box-shadow .3s}
+.view-all-media-button:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,106,0,0.6)}
+
+/* animation keyframes */
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(18px) scale(.995)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+/* hover motion for the card */
+.media-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 22px 40px -12px rgba(0,0,0,0.28);
+}
+
+/* responsive */
+@media (max-width:900px){.media-cards-grid{grid-template-columns:1fr}}
+@media (max-width:600px){.media-section{padding:50px 20px 80px}.media-card{padding:20px}.card-title{font-size:1.2rem}.read-full-button{padding:8px 18px}}
