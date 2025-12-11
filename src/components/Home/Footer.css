@@ -7,6 +7,7 @@
   --color-border-faded: rgba(255, 255, 255, 0.06);
 }
 
+
 /* FOOTER BASE */
 .site-footer {
   background-color: var(--color-footer-bg);
@@ -22,6 +23,7 @@
   gap: 25px;
   padding-bottom: 20px;      /* reduced */
   border-bottom: 1px solid var(--color-border-faded);
+  
 }
 
 .footer-col {
