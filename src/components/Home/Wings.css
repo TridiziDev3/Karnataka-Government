@@ -1,185 +1,155 @@
 :root {
-  --color-blue-dark-text: #315082;
-  --color-grey-bg: #F5F5F5;
-  --color-text-dark: #333;
-  --color-text-light: #555;
-  --color-card-border: #E0E0E0;
-  --color-default-shadow: rgba(0, 0, 0, 0.05);
-  --card-radius: 14px;
+  --color-blue-dark-text:#315082;
+  --color-grey-bg:#F5F5F5;
+  --color-text-dark:#222;
+  --color-text-light:#6b7280;
+  --color-card-border:#E7E7E7;
+  --card-radius:10px;
 }
 
-/* SECTION */
 .wings-section {
-  padding: 40px 40px;
-  background-color: var(--color-grey-bg);
+  padding:48px 0;
+  background-color:var(--color-grey-bg);
 }
 
-/* HEADER */
+.wings-inner {
+  max-width:1400px;
+  margin:0 auto;
+  padding:0 28px;
+  box-sizing:border-box;
+}
+
 .wings-header-container {
-  text-align: left;
-  margin-bottom: 30px;
+  margin-bottom:20px;
 }
 
 .wings-main-heading {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--color-blue-dark-text);
+  font-size:24px;
+  font-weight:700;
+  color:var(--color-blue-dark-text);
+  margin:0 0 6px 0;
+  max-width:420px;
 }
 
 .wings-subheading {
-  font-size: 1rem;
-  color: var(--color-text-light);
-  margin-top: 5px;
+  font-size:14px;
+  color:var(--color-text-light);
+  margin:0;
+  max-width:520px;
 }
 
-/* GRID */
 .wings-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 25px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:32px;
+  align-items:start;
 }
 
-/* CARD */
 .wing-card {
-  background-color: white;
-  border-top: 4px solid #FF6900;
-  border-radius: var(--card-radius);
-  padding: 25px;
-  border: 1px solid var(--color-card-border);
-  position: relative;
-  width: 100%;
-  max-width: 480px;
-  margin: auto;
-  min-height: 280px;
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  transition: transform 260ms cubic-bezier(.2,.9,.2,1), box-shadow 260ms ease;
-  will-change: transform, box-shadow;
-  box-shadow:
-    0px 4px 6px -4px rgba(0,0,0,0.10),
-    0px 10px 15px -3px rgba(0,0,0,0.10);
-  overflow: visible;
+  background:#fff;
+  border-top:4px solid #FF6900;
+  border-radius:var(--card-radius);
+  padding:18px 18px 24px 18px;
+  border:1px solid var(--color-card-border);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  align-items:flex-start;
+  height:282px;
+  max-width:480px;
+  width:100%;
+  margin:0 auto;
+  box-shadow:0 6px 10px -6px rgba(0,0,0,0.12),0 10px 18px -6px rgba(0,0,0,0.06);
+  box-sizing:border-box;
+  transition:transform .26s cubic-bezier(.2,.9,.2,1),box-shadow .26s ease;
+  overflow:hidden;
 }
 
 .wing-card:hover,
 .wing-card:focus-within {
-  transform: translateY(-6px);
-  box-shadow:
-    0px 12px 22px rgba(0,0,0,0.12),
-    0px 6px 12px rgba(0,0,0,0.08);
-  z-index: 5;
+  transform:translateY(-6px);
+  box-shadow:0 12px 22px rgba(0,0,0,0.12),0 6px 12px rgba(0,0,0,0.08);
 }
 
-/* IMAGE WRAPPER */
 .wing-icon-wrapper {
-  width: 80px;
-  height: 80px;
-  border-radius: 12px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  width:56px;
+  height:56px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:transparent;
+  margin-left:6px;
+  margin-top:4px;
+  flex-shrink:0;
 }
 
 .wing-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  width:40px;
+  height:40px;
+  object-fit:contain;
 }
 
-/* TEXT CONTENT */
 .wing-text-content {
-  flex: 1;
+  width:100%;
+  padding:0 6px;
+  box-sizing:border-box;
 }
 
 .wing-card-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--color-text-dark);
-  margin-bottom: 8px;
+  font-size:15px;
+  font-weight:700;
+  margin:6px 0;
+  color:var(--color-text-dark);
+  text-align:left;
 }
 
 .wing-card-description {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #315082;
+  font-size:13px;
+  line-height:1.6;
+  color:var(--color-blue-dark-text);
+  margin:0;
+  text-align:left;
+  max-width:85%;
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 
-/* FADE ANIMATION */
+.wing-card.blue { border-top-color:#155DFC; }
+.wing-card.green { border-top-color:#13A84B; }
+.wing-card.orange { border-top-color:#EA580C; }
+
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity:0; transform:translateY(12px); }
+  to { opacity:1; transform:translateY(0); }
 }
 
 .wing-card.reveal {
-  animation: fadeInUp 480ms cubic-bezier(.2,.9,.2,1) both;
+  animation:fadeInUp .42s cubic-bezier(.2,.9,.2,1) both;
 }
 
-/* REDUCE MOTION */
-@media (prefers-reduced-motion: reduce) {
-  .wing-card,
-  .wing-card.reveal {
-    animation: none !important;
-    transition: none !important;
-    transform: none !important;
-  }
+@media (max-width:1024px) {
+  .wings-inner { padding:0 20px; }
+  .wing-card { max-width:760px; height:282px; }
+  .wing-icon-wrapper { width:64px; height:64px; margin-left:8px; }
+  .wing-image { width:44px; height:44px; }
+  .wing-card-description { max-width:100%; }
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .wings-section {
-    padding: 30px 20px;
-  }
-
-  .wings-main-heading {
-    font-size: 1.6rem;
-  }
-
-  .wings-subheading {
-    font-size: 0.95rem;
-  }
-
-  .wings-cards-grid {
-    grid-template-columns: 1fr !important;
-    gap: 18px;
-  }
-
+@media (max-width:600px) {
   .wing-card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    height: auto;
-    padding: 20px;
+    padding:16px;
+    gap:10px;
+    align-items:center;
+    text-align:center;
+    height:auto;
   }
-
-  .wing-icon-wrapper {
-    width: 90px;
-    height: 90px;
-    margin-bottom: 15px;
-  }
-
-  .wing-image {
-    object-fit: contain;
-  }
-
-  .wing-text-content {
-    text-align: center;
-  }
-
-  .wing-card-title {
-    font-size: 1.2rem;
-  }
-
-  .wing-card-description {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
+  .wing-icon-wrapper { margin-left:0; margin-top:0; width:80px; height:80px; }
+  .wing-image { width:56px; height:56px; }
+  .wing-text-content { padding:0; }
+  .wing-card-title,
+  .wing-card-description { text-align:center; max-width:100%; }
 }

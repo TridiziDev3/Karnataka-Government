@@ -85,26 +85,25 @@
 
 /* Responsive vector sizes / positions - scales with viewport */
 .bg-vector-left {
-  width: min(45vw, 520px);
-  height: auto;
-  left: clamp(-28vw, -183px, -70px); /* keeps similar offset on all screens */
-  top: 18px;
-  transform: rotate(180deg);
+  width: 420px;
+  top: -40px;        /* 🔥 key: little top cut */
+  left: -120px;     /* outside nunchi lopalaki */
+  transform: rotate(0deg);
 }
 
 .bg-vector-right {
-  width: min(45vw, 520px);
-  height: auto;
-  right: clamp(-28vw, -183px, -70px);
-  top: 18px;
+  width: 420px;
+  top: -40px;
+  right: -120px;
 }
+
 
 /* CONTENT ABOVE VECTORS (stacked) */
 .project-top-section,
 .projects-heading-group,
 .project-cards-grid {
   position: relative;
-  z-index: 3;
+  z-index: 5;
   box-sizing: border-box;
 }
 
@@ -180,14 +179,13 @@
 /* slide container uses flex and allows horizontal scroll on small screens */
 .pillar-slide-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: 24px;
   width: min(1180px, 95%);
   margin: 0 auto;
   padding: 20px 0 40px;
   box-sizing: border-box;
-  /* allow overflow for horizontal scroll on mobile */
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
@@ -525,3 +523,23 @@
   padding: 0 20px;
   box-sizing: border-box;
 }
+
+.project-top-section,
+.projects-heading-group,
+.project-cards-grid {
+  position: relative;
+  z-index: 10;   /* vectors paina */
+}
+.bg-vector {
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+
+  opacity: 0.35;
+  mix-blend-mode: screen;
+  filter: brightness(1.25) contrast(1.1);
+}
+.bg-vector {
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+
