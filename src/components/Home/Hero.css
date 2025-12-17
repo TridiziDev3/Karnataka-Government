@@ -128,8 +128,8 @@
 
 /* ================= IMAGE + VIDEO ================= */
 .hero-carousel-image {
-  width: 900px;
-  height: 580px;
+  width: 1084px;
+  height: 644px;
   object-fit: cover;
   object-position: center;
   border-radius: 260px;
