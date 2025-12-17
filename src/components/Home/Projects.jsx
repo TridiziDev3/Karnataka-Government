@@ -146,9 +146,10 @@ const Projects = ({ lang = "en" }) => {
             <div className="card-image-wrapper">
               <img src={card.image} className="card-image" alt="" />
               <div className="status-badge">
-                <span className="status-circle"></span>
-                {card.currentStatusText}
-              </div>
+  <span className="status-arrow">↗</span>
+  <span>Ongoing</span>
+</div>
+
             </div>
 
             <div className="card-content-body">

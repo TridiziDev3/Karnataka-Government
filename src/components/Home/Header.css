@@ -1,25 +1,24 @@
-/* Color Variables based on your input */
 :root {
   --color-green-dark: #83A031;
   --color-blue-active: #1447E6;
   --color-orange-accent: #FF6900;
   --color-grey-light: #E5E7EB;
-  --base-font-size: 1.6vw; /* Used as a fluid basis for scaling */
+  --base-font-size: 1.6vw;
 }
 
-/* --- Top Bar Styling --- */
 .top-bar {
-  background-color:#83A031;
+  background-color: #83A031;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5vh 2vw; 
-  font-size: 1.8vh; 
-  height:45px;
+  padding: 0.5vh 2vw;
+  font-size: 1.8vh;
+  height: 45px;
 }
 
-.time-info, .language-switcher {
+.time-info,
+.language-switcher {
   display: flex;
   align-items: center;
 }
@@ -27,7 +26,6 @@
 .top-bar .icon {
   margin-right: 0.5vw;
   font-size: 1.8vh;
-  
 }
 
 .lang-button {
@@ -42,14 +40,12 @@
   align-items: center;
 }
 
-/* --- Main Branding Section Styling (Reduced Height) --- */
 .branding-section {
-  background-color: white; 
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* Significantly reduced padding */
-  padding: 1.5vh 2vw; 
+  padding: 1.5vh 2vw;
 }
 
 .minister-profile {
@@ -65,7 +61,7 @@
 }
 
 .minister-photo {
-  width: 280px;                 /* Desktop safe size */
+  width: 280px;
   height: auto;
   object-fit: contain;
 }
@@ -77,16 +73,16 @@
 }
 
 .minister-text {
-  line-height: 1.2; /* Tightened line height */
+  line-height: 1.2;
 }
 
 .minister-name-bold {
   font-weight: bold;
-  font-size: 1.8vh; /* Fluid font size */
+  font-size: 1.8vh;
 }
 
 .minister-title {
-  font-size: 1.3vh; /* Fluid and smaller font size */
+  font-size: 1.3vh;
 }
 
 .center-branding {
@@ -98,174 +94,108 @@
 }
 
 .logo-image {
-  /* Reduced size */
-  width: 8vh; 
+  width: 8vh;
   height: auto;
   margin-right: 1.5vw;
 }
 
-/* exact sizes from the design / properties panel */
 .site-title {
-  font-family: "Kumar One", "Open Sans", system-ui, sans-serif;
-  font-size: 20px;      /* exact measurement shown in your inspector */
-  font-weight: 400;     /* inspector shows weight 400 */
-  line-height: 1;       /* 100% line-height per inspector */
-  margin: 0;
-  color: #0c2a63;       /* use dark navy (optional) — change to black if you prefer */
-  white-space: nowrap;  /* keep title on single line to match design width */
-}
-
-/* the small span/subtitle under/next to title (Government of Karnataka) */
-.site-subtitle {
-  font-family: "Krub", "Open Sans", system-ui, sans-serif;
-  font-size: 20px;      /* exact measurement shown in inspector for span */
+  font-family: "Kumar One";
+  font-size: 20px;
   font-weight: 400;
-  line-height: 1;
+  line-height: 100%;
   margin: 0;
-  color: rgba(0,0,0,0.65); /* subtle grey as in screenshots */
+  color: #000;
   white-space: nowrap;
 }
 
+.site-subtitle {
+  font-family: "Krub", "Open Sans", system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.65);
+  white-space: nowrap;
+  margin-left: -130px;
+}
 
-/* ===========================
-   NAVBAR — exact-measurements
-   =========================== */
-
-/* outer bar background (keeps top-green strip look) */
 .navbar {
   background-color: var(--color-green-dark);
-  box-shadow: 0 3px 0 rgba(0,0,0,0.08);
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 8px 0;    
-  height: 60px;        /* small vertical breathing room */
+  padding: 8px 0;
+  height: 60px;
 }
 
-/* the rounded pill that contains links (centered) */
-.main-nav__pill { 
+/* pill wrapper */
+.main-nav__pill {
   width: 100%;
-  max-width: 1320px;        /* internal constraint same as other CSS */
-  height: 60px;             /* EXACT pill height */
-  min-height: 60px;
+  max-width: 1320px;
+  height: 60px;
   background: var(--color-green-dark);
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-  gap: 8px;
 }
 
-/* center list area sized to the "Fill" measurement you used */
+/* nav list */
 .nav-list {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 4px;                       /* small gap between items (screenshot shows ~4px) */
+  gap: 4px;
   margin: 0;
   padding: 0;
   width: 100%;
-  max-width: 1006px;              /* match 1006.36 Fill from screenshot */
+  max-width: 1006px;
   justify-content: center;
 }
 
-/* each nav item wrapper (keeps item spacing and active styles) */
+/* nav item */
 .nav-item {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 60px;                   /* matches pill height */
-  margin: 0;
-  padding: 0;
 }
 
-/* label / clickable link inside item — constrained height so it won't grow pill */
+/* nav link */
 .nav-link {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  height: 24px;                   /* label area height (inspector shows 24px) */
-  padding: 0 8px;                 /* horizontal padding around label */
-  font-size: 16px;                /* label font size tuned to 20px title earlier — 16px here fits */
-  line-height: 24px;              /* 24px line-height to match label height */
+  height: 65px;
+  padding: 0 16px;
+  font-size: 16px;
   font-weight: 600;
   color: #ffffff;
   text-decoration: none;
-  white-space: nowrap;
-  border-radius: 4px;
-  box-sizing: border-box;
+  border-radius: 6px;
+  box-sizing: border-box;       /* 🔥 IMPORTANT */
 }
 
-/* small icon inside nav items (sized to 16x16 from the inspector) */
-.nav-icon {
-  width: 16px;
-  height: 16px;
-  display: inline-block;
-  flex: 0 0 16px;
-  object-fit: contain;
-}
 
-/* active / focus state matches screenshot (blue pill on item) */
+/* active tab */
 .nav-item.active .nav-link,
+.nav-link.active,
 .nav-link:focus {
-  background: var(--color-blue-active);
-  color: #fff;
-  box-shadow: 0 6px 14px rgba(20,71,230,0.12);
-}
+  color: #ffffff;
 
-/* Active Nav Item Styling */
-.nav-item.active {
-  background-color: var(--color-blue-active);
-  border-bottom: 3px solid var(--color-orange-accent); 
-}
+  /* 🔥 BLUE + ORANGE STRIP INSIDE */
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-blue-active) 0%,
+    var(--color-blue-active) calc(100% - 4px),
+    var(--color-orange-accent) calc(100% - 4px),
+    var(--color-orange-accent) 100%
+  );
 
-/* --- Responsive Adjustments (Crucial for mobile experience) --- */
-@media (max-width: 900px) {
-    /* Collapse the branding section on small screens */
-    .branding-section {
-        flex-direction: column;
-        padding: 1vh 2vw;
-    }
-
-    .minister-profile {
-        flex: 1 1 100%;
-        width: 100%;
-        justify-content: center;
-        margin-bottom: 1vh;
-    }
-    
-    .center-branding {
-        flex-direction: column;
-        margin-bottom: 1vh;
-    }
-
-    .minister-name-bold {
-      font-size: 2.5vw;
-    }
-
-    .minister-title, .site-subtitle {
-      font-size: 1.8vw;
-    }
-
-    .navbar {
-        /* Allow the navbar to wrap or scroll horizontally */
-        overflow-x: auto;
-    }
-    .nav-list {
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        white-space: nowrap;
-    }
-    .nav-link {
-        padding: 1.5vw 2.5vw;
-        font-size: 2.5vw;
-    }
-    .nav-icon {
-        font-size: 3vw;
-    }
+  border-radius: 6px;
 }
 
 @media (max-width: 1200px) {
@@ -274,12 +204,17 @@
   }
 
   .minister-photo {
-     width: 100px;  
+    width: 100px;
     height: 12vh;
   }
 
-  .site-title { font-size: 2.3vh; }
-  .site-subtitle { font-size: 1.5vh; }
+  .site-title {
+    font-size: 2.3vh;
+  }
+
+  .site-subtitle {
+    font-size: 1.5vh;
+  }
 
   .nav-link {
     padding: 1.2vh 1.5vw;
@@ -287,7 +222,6 @@
   }
 }
 
-/* 🔵 900px — Tablet Portrait */
 @media (max-width: 900px) {
   .branding-section {
     flex-direction: column;
@@ -301,17 +235,10 @@
     margin-bottom: 1.5vh;
   }
 
-  .minister-photo {
-    width: 30vh;
-    height: 10vh;
+  .center-branding {
+    flex-direction: column;
+    margin-bottom: 1vh;
   }
-
-  .logo-image {
-    width: 7vh;
-  }
-
-  .site-title { font-size: 2.1vh; }
-  .site-subtitle { font-size: 1.6vh; }
 
   .navbar {
     overflow-x: auto;
@@ -333,9 +260,7 @@
   }
 }
 
-/* 🔵 600px — Mobile Devices (Most Phones) */
 @media (max-width: 600px) {
-
   .top-bar {
     flex-direction: column;
     text-align: center;
@@ -343,85 +268,15 @@
     padding: 1vh 2vw;
   }
 
-  .time-info, 
+  .time-info,
   .language-switcher {
     justify-content: center;
-  }
-
-  .datetime-text {
-    font-size: 1.4vh;
   }
 
   .lang-button {
     font-size: 1.4vh;
   }
 
-  /* Branding Compact */
-  .branding-section {
-    padding: 1vh 2vw;
-  }
-
-  .minister-photo {
-    width: 22vh;
-    height: 8vh;
-  }
-
-  .emblem-image {
-    width: 6vh;
-  }
-
-  .logo-image {
-    width: 6vh;
-  }
-
-  .site-title {
-    font-size: 2vh;
-  }
-
-  .site-subtitle {
-    font-size: 1.5vh;
-  }
-
-  /* Navbar Scroll */
- 
-
- 
-   .navbar {
-    background-color: var(--color-green-dark);
-    padding: 1vh 0;
-  }
-
-  .nav-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
-    gap: 0.5vh 0.5vw;
-    padding: 0 2vw;
-    justify-items: center;
-  }
-
-  .nav-item {
-    width: 100%;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.1); /* light highlight */
-    border-radius: 6px;
-  }
-
-  .nav-link {
-    padding: 1.8vh 1vw;
-    font-size: 2vh;
-    display: flex;
-    flex-direction: column; /* Icon above label */
-    align-items: center;
-    justify-content: center;
-  }
-
-  .nav-icon {
-    margin-right: 0;
-    margin-bottom: 0.8vh;
-    font-size: 3vh;
-  }
-
-  /* Branding Compact */
   .branding-section {
     padding: 1.5vh 2vw;
     flex-direction: column;
@@ -431,6 +286,10 @@
   .minister-photo {
     width: 22vh;
     height: 8vh;
+  }
+
+  .emblem-image {
+    width: 6vh;
   }
 
   .logo-image {
@@ -444,11 +303,34 @@
   .site-subtitle {
     font-size: 1.6vh;
   }
+
+  .nav-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5vh 0.5vw;
+    padding: 0 2vw;
+    justify-items: center;
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: center;
+    background: transparent;
+  }
+
+  .nav-link {
+    padding: 1.8vh 1vw;
+    font-size: 2vh;
+    flex-direction: column;
+  }
+
+  .nav-icon {
+    margin-bottom: 0.8vh;
+    font-size: 3vh;
+  }
 }
 
-/* 🔵 420px — Small Phones (Realme, Xiaomi, iPhone SE) */
 @media (max-width: 420px) {
-
   .top-bar {
     padding: 1vh 1.5vw;
   }
@@ -463,7 +345,7 @@
   }
 
   .site-title {
-    font-size: 1.8vh; 
+    font-size: 1.8vh;
     line-height: 2vh;
   }
 
@@ -471,7 +353,6 @@
     font-size: 1.4vh;
   }
 
-  /* Even bigger nav for mobile touch UX */
   .nav-link {
     padding: 1.5vh 5vw;
     font-size: 2.3vh;

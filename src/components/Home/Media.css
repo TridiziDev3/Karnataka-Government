@@ -26,13 +26,42 @@
 
 .media-header-group{margin-bottom:38px}
 
-.latest-updates-badge{
-  background:linear-gradient(to right,#FF884D,var(--color-latest-updates-orange));
-  color:#fff;padding:6px 18px;font-size:.8rem;border-radius:20px;display:inline-block;font-weight:700;
-  box-shadow:0 2px 8px rgba(249,115,22,0.3)
+.latest-updates-badge {
+  background: linear-gradient(
+    90deg,
+    #F54900 0%,
+    #D08700 100%
+  );
+  color: #fff;
+  padding: 6px 18px;
+  font-size: 0.8rem;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: 700;
+
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3);
 }
 
-.media-heading{font-size:2.3rem;margin-top:12px;font-weight:700;color:var(--color-heading-dark)}
+
+.media-heading {
+  font-size: 2.3rem;
+  margin-top: 12px;
+  font-weight: 700;
+
+  /* 🔥 GRADIENT TEXT COLOR */
+  background: linear-gradient(
+    90deg,
+    #7E2A0C 0%,
+    #733E0A 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Firefox support */
+  background-clip: text;
+  color: transparent;
+}
 .media-subheading{margin-top:8px;color:var(--color-text-date);font-size:1rem}
 
 /* Grid */
@@ -69,8 +98,41 @@
 .date-icon{font-size:.9rem}
 
 /* text */
-.card-title{font-size:1.4rem;font-weight:700;margin-bottom:10px;color:var(--color-heading-dark)}
-.card-description{font-size:.95rem;color:var(--color-text-description);margin-bottom:25px;line-height:1.5}
+.card-title{font-size:20px;font-weight:400;margin-bottom:10px;color:var(--color-heading-dark)}
+.card-description {
+  font-size: 0.75rem;
+  color: var(--color-text-description);
+
+  line-height: 1.6;         
+  margin-bottom: 20px;
+
+  display: block;
+  overflow-wrap: break-word;
+}
+.card-content-body {
+  position: relative;
+  z-index: 2;
+  padding-right: clamp(60px, 18%, 120px); /* 🔥 KEY FIX */
+}
+
+.media-card::after {
+  content: "";
+  position: absolute;
+  top: -85px;          /* 🔼 little more up */
+  right: -85px;        /* 🔼 little more right */
+  width: 200px;        /* 🔼 increased */
+  height: 200px;       /* 🔼 increased */
+  border-radius: 50%;
+  opacity: 0.6;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.card-top-row {
+  padding-right: -200px; /* 🔥 SAME AS BODY */
+  box-sizing: border-box;
+}
+
 
 /* button */
 .read-full-button{padding:10px 22px;font-size:.92rem;font-weight:600;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;position:relative;z-index:2;transition:transform .18s,box-shadow .18s}

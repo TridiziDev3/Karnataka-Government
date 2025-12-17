@@ -1,14 +1,20 @@
-/* Color Variables */
+/* =========================
+   COLOR VARIABLES
+   ========================= */
 :root {
-  --color-blue-bg: #2d93dc; /* Light blue background for the section */
-  --color-blue-accent: #2196F3; /* Medium blue accent for borders */
-  --color-quote: #90CAF9; /* Light blue for the quote icon */
+  --color-blue-bg: #2d93dc;
+  --color-blue-accent: #155DFC;
+  --color-quote: #90CAF9;
   --color-text-dark: #333;
+  --color-text-muted: #6b6b6b;
 }
 
+/* =========================
+   SECTION
+   ========================= */
 .md-section {
-  background-color: white;
-  padding: 60px 80px;
+  background-color: #ffffff;
+  padding: 20px 80px;
   margin-top: 20px;
 }
 
@@ -17,11 +23,14 @@
   margin: 0 auto;
 }
 
+/* =========================
+   HEADER
+   ========================= */
 .md-heading {
   font-size: 2rem;
   font-weight: 700;
   color: var(--color-text-dark);
-  margin-bottom: 5px;
+  margin: 0 0 5px 0;
 }
 
 .md-subheading {
@@ -30,37 +39,65 @@
   margin-bottom: 30px;
 }
 
+/* =========================
+   MAIN CARD CONTAINER
+   ========================= */
 .md-card-container {
   display: flex;
+  align-items: flex-start;
   gap: 40px;
-  background-color: #EFF6FF;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+  max-width: 1501px;
+  min-height: 629.5px;
+  margin: 0 auto;
+
+  padding: 32px 40px;
+  box-sizing: border-box;
+
+  background: linear-gradient(
+    180deg,
+    #EFF6FF 0%,
+    #FFFFFF 100%
+  );
+
+  border-radius: 10px;
+  border-left: 4px solid var(--color-blue-accent);
+
+  box-shadow:
+    0px 4px 6px -4px rgba(0,0,0,0.10),
+    0px 10px 15px -3px rgba(0,0,0,0.10);
 }
 
-/* Left Profile Card */
+/* =========================
+   LEFT PROFILE
+   ========================= */
 .md-profile-card {
   flex-shrink: 0;
   width: 350px;
   text-align: center;
-  border-right: 1px solid #eee;
   padding-right: 40px;
+  box-sizing: border-box;
 }
 
 .md-photo {
   width: 100%;
-  max-width: 180px;
-  border-radius: 8px;
+  max-width: 283.5px;
+  height: auto;
+  border-radius: 15px;
+  border-top: 7.5px solid #647E3D;
+  border-right: 7.5px solid #647E3D;
   object-fit: cover;
-  margin-bottom: 15px;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin-top: 74px;   /* 🔥 image down ki */
 }
+
 
 .director-name {
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--color-text-dark);
-  margin: 0;
+  margin: 12px 0 2px;
 }
 
 .director-role {
@@ -69,42 +106,58 @@
   margin: 0;
 }
 
-/* Right Message Text */
+/* =========================
+   RIGHT MESSAGE AREA
+   ========================= */
 .md-message-text {
-  flex-grow: 1;
-  text-align: left;
   position: relative;
+  max-width: 897px;
+  margin: 0;
+  padding: 0;
 }
 
+/* quote */
 .quote-icon {
   position: absolute;
   top: 0;
-  left: -20px;
+  left: -22px;
   font-size: 3rem;
   color: var(--color-quote);
   opacity: 0.5;
 }
 
+/* paragraph */
 .message-paragraph {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #555;
-  margin-bottom: 15px;
+  font-size: 28px;
+  line-height: 44.5px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: var(--color-text-muted);
+  margin-top: 80px;
 }
 
+/* link */
 .message-link {
-  color: var(--color-blue-accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  margin-top: 19px;
+  font-size: 14px;
   font-weight: 600;
+
+  color: var(--color-blue-accent);
   text-decoration: none;
-  transition: opacity 0.3s;
-  display: inline-block;
 }
 
 .message-link:hover {
   opacity: 0.8;
 }
 
-/* --- Animation (Shift-in effect) --- */
+/* =========================
+   ANIMATIONS
+   ========================= */
 @keyframes slideInLeft {
   from { transform: translateX(-50px); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
@@ -116,14 +169,16 @@
 }
 
 .md-animate-left {
-    animation: slideInLeft 1s ease-out forwards;
+  animation: slideInLeft 1s ease-out forwards;
 }
 
 .md-animate-right {
-    animation: slideInRight 1s ease-out 0.2s forwards; /* Slight delay */
+  animation: slideInRight 1s ease-out 0.2s forwards;
 }
 
-/* --- Responsive Adjustments --- */
+/* =========================
+   RESPONSIVE
+   ========================= */
 @media (max-width: 900px) {
   .md-section {
     padding: 40px 30px;
@@ -131,21 +186,15 @@
 
   .md-card-container {
     flex-direction: column;
-    gap: 25px;
-    padding: 20px;
+    min-height: auto;
+    gap: 24px;
+    padding: 24px;
   }
 
   .md-profile-card {
     width: 100%;
     padding-right: 0;
-    padding-bottom: 20px;
-    border-right: none;
-    border-bottom: 1px solid #ddd;
     text-align: center;
-  }
-
-  .md-message-text {
-    text-align: left;
   }
 
   .quote-icon {
@@ -153,8 +202,8 @@
     top: -10px;
   }
 }
+
 @media (max-width: 600px) {
-  
   .md-section {
     padding: 30px 20px;
   }
@@ -166,60 +215,30 @@
 
   .md-subheading {
     text-align: center;
-    margin-bottom: 20px;
     font-size: 0.95rem;
-  }
-
-  /* Card container */
-  .md-card-container {
-    padding: 18px;
-    border-radius: 10px;
-  }
-
-  /* Profile card */
-  .md-profile-card {
-    text-align: center;
   }
 
   .md-photo {
     max-width: 150px;
   }
 
-  .director-name {
-    font-size: 1rem;
-  }
-
-  .director-role {
-    font-size: 0.85rem;
-  }
-
-  /* Message text */
   .message-paragraph {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     line-height: 1.5;
   }
 
   .message-link {
     font-size: 0.9rem;
   }
-
-  .link-arrow {
-    font-size: 0.8rem;
-  }
 }
-@media (max-width: 480px) {
 
+@media (max-width: 480px) {
   .md-section {
     padding: 25px 15px;
   }
 
   .md-heading {
     font-size: 1.4rem;
-  }
-
-  .md-card-container {
-    padding: 15px;
-    gap: 20px;
   }
 
   .md-photo {
@@ -230,13 +249,8 @@
     font-size: 0.85rem;
   }
 
-  .message-link {
-    font-size: 0.85rem;
-  }
-
   .quote-icon {
     font-size: 2.3rem;
     left: 5px;
-    top: 0;
   }
 }
