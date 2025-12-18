@@ -147,6 +147,7 @@
   flex-wrap: wrap;
   padding: 6px 8px;
   border-radius: 999px;
+
 }
 
 
@@ -162,7 +163,9 @@
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.25s ease;
-    box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25); */
+  box-shadow: 0px 25px 50px -12px #00000040;
+
 
 }
 
@@ -170,7 +173,9 @@
   background-color: var(--color-green-dark); /* green bg */
   color: #ffffff;                            /* white text */
   border: 2px solid #ffffff;                 /* white outline */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  /* box-shadow: 0 4px 10px rgba(0,0,0,0.15); */
+  box-shadow: 0px 25px 50px -12px #00000040;
+
 }
 
 .filter-tab:not(.tab-active):hover {
@@ -398,7 +403,7 @@
   border-radius: 999px;
   margin-bottom: 12px;
   position: relative;
-  width: 100%;
+  width: 370px;
   overflow: hidden;
 }
 

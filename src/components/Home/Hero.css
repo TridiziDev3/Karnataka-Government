@@ -121,13 +121,35 @@
 /* ================= HERO VIDEO CONTAINER ================= */
 .hero-media {
   position: absolute;
-  top: 0;
-  left: 393px;
-  width: 880px;
-  height: 644px;
+  top: -4vw;
+  left: 410px;
+  width: 840px;
+  height: 720px;
+  border-radius: 50%;
   overflow: hidden;
-  border-radius: 322px;   
+
+  /* 🔥 TOP & BOTTOM HARD CUT */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 4vw,
+    black 4vw,
+    black calc(100% - 4vw),
+    transparent calc(100% - 4vw),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 4vw,
+    black 4vw,
+    black calc(100% - 4vw),
+    transparent calc(100% - 4vw),
+    transparent 100%
+  );
 }
+
+
 
 /* ================= VIDEO TRACK ================= */
 .hero-track {
@@ -149,7 +171,6 @@
   height: 100%;
   object-fit: cover;
 }
-
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {

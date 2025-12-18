@@ -116,73 +116,72 @@
   margin-left: -20px;
 }
 
+/* ================= NAVBAR ================= */
 .navbar {
   background-color: var(--color-green-dark);
   width: 100%;
+  height: 60px;                
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 8px 0;
-  height: 60px;
+  padding: 0;                  
 }
 
-/* pill wrapper */
+/* ================= PILL WRAPPER ================= */
 .main-nav__pill {
   width: 100%;
   max-width: 1320px;
-  height: 60px;
+  height: 60px;                
   background: var(--color-green-dark);
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 12px;
+  box-sizing: border-box;
 }
 
-/* nav list */
+/* ================= NAV LIST ================= */
 .nav-list {
   list-style: none;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
   margin: 0;
   padding: 0;
   width: 100%;
   max-width: 1006px;
-  justify-content: center;
 }
 
-/* nav item */
+/* ================= NAV ITEM ================= */
 .nav-item {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-/* nav link */
+/* ================= NAV LINK ================= */
 .nav-link {
   position: relative;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  height: 65px;
+  height: 60px;                
   padding: 0 16px;
   font-size: 16px;
   font-weight: 600;
   color: #ffffff;
   text-decoration: none;
-  border-radius: 6px;
-  box-sizing: border-box;      
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
-
-/* active tab */
 .nav-item.active .nav-link,
 .nav-link.active,
 .nav-link:focus {
   color: #ffffff;
-
-  /* 🔥 BLUE + ORANGE STRIP INSIDE */
   background-image: linear-gradient(
     to bottom,
     var(--color-blue-active) 0%,
@@ -191,12 +190,15 @@
     var(--color-orange-accent) 100%
   );
 }
-
-/* ================= PAGE CONTENT SCROLL ================= */
-body {
-  padding-top: 185px; 
-  /* 45(top bar) + branding (~80) + 60(navbar) */
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.08);
 }
+
+body {
+  padding-top: 185px;
+  /* 45 (top bar) + ~80 (branding) + 60 (navbar) */
+}
+
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {

@@ -144,8 +144,8 @@
 }
 
 .category-badge{
-  height:36px;
-  padding:6px 14px;
+  height:35px;
+  padding:3px 12px;
   font-size:14px;
   font-weight:400;
   line-height:20px;
@@ -199,10 +199,6 @@
   text-overflow:ellipsis;
   max-height:78px;           
 }
-
-
-
-
 
 /* ================= BUTTON ================= */
 .read-full-button{

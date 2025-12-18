@@ -94,13 +94,14 @@
   display:flex;
   overflow-x:auto;
   scroll-snap-type:x mandatory;
-  padding:10px 0;
   gap:40px;
   width:1533px;
-  padding-right:10px;
+  height:544px;
+  padding-left:30px;
   scrollbar-width:none;
-   margin-left: -100px;
-  padding-left: 50px;
+  /* margin:0 auto; */
+  margin-left: -3vw;
+  
 }
 .plants-cards-scroll::-webkit-scrollbar {
   display:none;
@@ -110,7 +111,8 @@
 .plant-card {
   flex-shrink: 0;
   background-color: white;
-  width: 400px;
+  width: 380px;
+  height: 478px;
   border-radius: 12px;
   overflow: hidden;
   scroll-snap-align: start;
@@ -218,7 +220,7 @@
 }
 
 .stat-value {
-  width:148px;
+  width:131px;
 }
 
 .stat-label-inside {

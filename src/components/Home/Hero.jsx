@@ -91,6 +91,9 @@ const Hero = ({ lang = "en" }) => {
         </div>
 
       </div>
+      <div className="hero-background-white">
+      </div>
+
     </section>
   );
 };
