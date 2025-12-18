@@ -12,12 +12,15 @@ const plantImages = [plantImage1, plantImage2, plantImage3];
 
 const WastePlants = ({ lang = 'en' }) => {
   if (!TEXT.wastePlants || !TEXT.wastePlants.cards?.length) {
-    return <div style={{ textAlign: 'center', padding: '50px' }}>Waste Plant Data Loading Error.</div>;
+    return (
+      <div style={{ textAlign: 'center', padding: '50px' }}>
+        Waste Plant Data Loading Error.
+      </div>
+    );
   }
 
   const t = TEXT.wastePlants;
-  const localize = (obj) =>
-    obj?.[lang] || obj?.['en'] || 'N/A';
+  const localize = (obj) => obj?.[lang] || obj?.['en'] || 'N/A';
 
   const scrollRef = useRef(null);
   const autoScrollRef = useRef(null);
@@ -54,7 +57,7 @@ const WastePlants = ({ lang = 'en' }) => {
         } else {
           scroll('right');
         }
-      }, 3000); // ⏱ 3 seconds
+      }, 3000);
     };
 
     const stopAutoScroll = () => {
@@ -62,8 +65,6 @@ const WastePlants = ({ lang = 'en' }) => {
     };
 
     startAutoScroll();
-
-    /* pause on hover */
     container.addEventListener('mouseenter', stopAutoScroll);
     container.addEventListener('mouseleave', startAutoScroll);
 
@@ -82,7 +83,8 @@ const WastePlants = ({ lang = 'en' }) => {
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add('reveal');
+          if (entry.isIntersecting)
+            entry.target.classList.add('reveal');
         });
       },
       { root: container, threshold: 0.15 }
@@ -100,7 +102,9 @@ const WastePlants = ({ lang = 'en' }) => {
       <div className="plants-header">
         <div>
           <h2 className="plants-heading">{localize(t.heading)}</h2>
-          <p className="plants-subheading">{localize(t.subheading)}</p>
+          <p className="plants-subheading">
+            {localize(t.subheading)}
+          </p>
         </div>
 
         <a href="#" className="view-all-link">
@@ -122,6 +126,7 @@ const WastePlants = ({ lang = 'en' }) => {
           {t.cards.map((card, index) => (
             <article key={index} className="plant-card" tabIndex="0">
               <div className="card-image-wrapper">
+                {/* top leaf badge stays same */}
                 <div className="plant-icon-badge">
                   <FaLeaf />
                 </div>
@@ -132,7 +137,9 @@ const WastePlants = ({ lang = 'en' }) => {
                   className="plant-card-image"
                 />
 
-                <span className="operational-badge">Operational</span>
+                <span className="operational-badge">
+                  Operational
+                </span>
               </div>
 
               <div className="plant-card-content">
@@ -148,7 +155,9 @@ const WastePlants = ({ lang = 'en' }) => {
                 <div className="plant-stats-row">
                   <div className="plant-stat-box type-box">
                     <div className="stat-value">
-                      <span className="stat-label-inside">Type</span>
+                      <span className="stat-label-inside">
+                        Type
+                      </span>
                       <span className="stat-text">
                         {localize(card.type)}
                       </span>
@@ -157,7 +166,9 @@ const WastePlants = ({ lang = 'en' }) => {
 
                   <div className="plant-stat-box capacity-box">
                     <div className="stat-value">
-                      <span className="stat-label-inside">Capacity</span>
+                      <span className="stat-label-inside">
+                        Capacity
+                      </span>
                       <span className="stat-text">
                         {localize(card.capacity)}
                       </span>
@@ -165,10 +176,39 @@ const WastePlants = ({ lang = 'en' }) => {
                   </div>
                 </div>
 
+                {/* 🔥 Compost Output with FIGMA SVG */}
                 <div className="plant-output-row output-box">
                   <p className="stat-label">Compost Output</p>
-                  <div className="stat-value">
-                    {localize(card.output)}
+
+                  <div className="output-value-with-icon">
+                    <span className="leaf-icon-wrapper">
+                      <svg
+                        width="9.17"
+                        height="7.5"
+                        viewBox="0 0 9.17 7.5"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.5 0.5C6.8 0.7 4.5 1.9 3.1 3.2C1.8 4.5 1.1 5.9 0.8 7"
+                          stroke="#00A63E"
+                          strokeWidth="1.67"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M1.2 6.8C2.6 6.6 4.9 5.4 6.3 4.1"
+                          stroke="#00A63E"
+                          strokeWidth="1.67"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
+
+                    <span className="stat-text">
+                      {localize(card.output)}
+                    </span>
                   </div>
                 </div>
               </div>

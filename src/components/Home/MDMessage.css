@@ -26,18 +26,42 @@
 /* =========================
    HEADER
    ========================= */
-.md-heading {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--color-text-dark);
-  margin: 0 0 5px 0;
-}
-
-.md-subheading {
-  font-size: 1rem;
-  color: #666;
+.md-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   
+  height: 76px;
+  width: 100%;
+  max-width: 1501px;
   margin-bottom: 30px;
 }
+
+.md-heading {
+  width: 451px;             
+  height: 42px;
+  font-family: "Roboto";
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 40px;
+  color: #1C398E;
+  margin: 0; 
+  margin-left: -50px;                
+}
+
+
+.md-subheading {
+  width: 311px;            
+  height: 28px;
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #4A5565;
+  margin: 2px 0 0 0;   
+  margin-bottom: 30px; 
+  margin-left: -50px;    
+}
+
 
 /* =========================
    MAIN CARD CONTAINER
@@ -89,7 +113,7 @@
   object-fit: cover;
   background-color: #fff;
   box-sizing: border-box;
-  margin-top: 74px;   /* 🔥 image down ki */
+  margin-top: 74px;  
 }
 
 
@@ -135,6 +159,7 @@
   padding: 0;
   color: var(--color-text-muted);
   margin-top: 80px;
+  font-family: "Lato";
 }
 
 /* link */
@@ -142,13 +167,13 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-
   margin-top: 19px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
-
   color: var(--color-blue-accent);
   text-decoration: none;
+  height: 24px;
+  font-family: "Roboto";
 }
 
 .message-link:hover {

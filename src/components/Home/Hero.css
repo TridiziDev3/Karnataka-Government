@@ -1,162 +1,171 @@
 :root {
-  --hero-yellow-light: #f9d668;
-  --hero-yellow-strong: #ECBC27;
-  --text-dark: #333;
-  --hero-title-font: "Roboto", system-ui, -apple-system, "Segoe UI",
-                     "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans",
-                     sans-serif;
+  --hero-yellow: #ECBC27;
+  --hero-font: "Roboto", system-ui, sans-serif;
 }
 
 /* ================= HERO SECTION ================= */
 .hero-section {
-  position: relative;
-  height: 644px;
   width: 100%;
-  background: #fff;
+  height: 644px;
+  background: #ffffff;
   overflow: hidden;
-  clip-path: inset(0);
-  margin-bottom: -20px;
+  padding-bottom: 40px; 
 }
 
+.hero-inner {
+  max-width: 1467px;
+   height: 644px;
+  margin-left: 37px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
 
 /* ================= LEFT CONTENT ================= */
 .hero-content {
   position: relative;
   z-index: 5;
   width: 550px;
-  height: 100%;
+  height: 356px;
   margin-left: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center;   /* 🔥 vertical center */
   align-items: flex-start;
+  left:-30px;
 }
 
-.hero-content > * {
-  max-width: 550px;
-}
 
 .hero-title {
-  font-family: var(--hero-title-font);
+  width: 550px;
+  max-width: 550px;
+
+  font-family: "Roboto", system-ui, sans-serif;
   font-size: 54px;
   line-height: 58px;
   font-weight: 800;
-  color: var(--hero-yellow-strong);
-  margin: 0 0 18px;
+  color: #ECBC27;
+  margin: 0;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+  text-wrap: balance;
 }
 
-.hero-text {
-  font-family: var(--hero-title-font);
-  font-size: 25px;
-  line-height: 32px;
-  color: var(--text-dark);
-  margin: 0 0 30px;
-  opacity: 0.95;
-}
-
+/* ================= BUTTON GROUP ================= */
 .hero-actions {
+  margin-top: 23px;               /* Figma gap */
   display: flex;
-  gap: 12px;
+  gap: 23px;
   align-items: center;
+  margin-top: 80px;
+  
 }
 
-/* ================= BUTTONS ================= */
-.contact-button-ui-match,
-.know-more-button-ui-match {
-  display: inline-flex;
+/* ================= CONTACT BUTTON ================= */
+.contact-button {
+  width: 147px;
+  height: 48px;
+  box-sizing: border-box;
+
+  display: flex;                  /* 🔥 text perfect center */
   align-items: center;
   justify-content: center;
-  height: 48px;
+
   border-radius: 5px;
-  font-weight: 700;
-  font-family: var(--hero-title-font);
-  cursor: pointer;
-  border: 1px solid var(--hero-yellow-strong);
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.contact-button-ui-match {
-  width: 147px;
   background: transparent;
-  color: var(--hero-yellow-strong);
+  border: 1px solid var(--hero-yellow);
+  color: var(--hero-yellow);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+
+  cursor: pointer;
+  padding: 0;                     /* 🔥 remove default */
 }
 
-.contact-button-ui-match:hover {
-  background: var(--hero-yellow-strong);
-  color: #fff;
+.contact-button:hover {
+  background: var(--hero-yellow);
+  color: #ffffff;
 }
 
-.know-more-button-ui-match {
+/* ================= KNOW MORE BUTTON ================= */
+.know-more-button {
   width: 220px;
-  background: var(--hero-yellow-strong);
-  color: #fff;
+  height: 48px;
+  box-sizing: border-box;
+  display: flex;                  
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background: var(--hero-yellow);
+  border: 1px solid var(--hero-yellow);
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  cursor: pointer;
+  padding: 0;
 }
 
-.know-more-button-ui-match:hover {
+.know-more-button:hover {
   background: #d9a200;
   border-color: #d9a200;
 }
 
-/* ================= IMAGE / CAROUSEL ================= */
-.hero-image-container {
+
+/* ================= HERO VIDEO CONTAINER ================= */
+.hero-media {
   position: absolute;
-  inset: 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
+  top: 0;
+  left: 393px;
+  width: 880px;
+  height: 644px;
   overflow: hidden;
-  clip-path: inset(0 round 0 260px 260px 0);
-  padding-top: 0px;
-  margin-top: -70px;
+  border-radius: 322px;   
 }
 
+/* ================= VIDEO TRACK ================= */
 .hero-track {
   display: flex;
-  height: 100%;
   width: 100%;
-  transition: transform 600ms cubic-bezier(.22,.9,.35,1);
-  will-change: transform;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(.22,.9,.35,1);
 }
 
+/* ================= SLIDE ================= */
 .hero-slide {
   flex: 0 0 100%;
-  height: 100%;                 /* 🔥 IMPORTANT FIX */
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  height: 100%;
 }
 
-/* ================= IMAGE + VIDEO ================= */
-.hero-carousel-image {
-  width: 1084px;
-  height: 644px;
+/* ================= VIDEO ================= */
+.hero-video {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: center;
-  border-radius: 260px;
-  transform: translateX(0px);
 }
-
-
-
-/* VIDEO SAFETY */
-.hero-carousel-image.video {
-  background-color: #000;
-}
-
 
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
+  .hero-inner {
+    margin-left: 24px;
+  }
+
+  .hero-media {
+    width: 760px;
+    height: 440px;
+    border-radius: 200px 0 0 200px;
+  }
+
   .hero-title {
     font-size: 38px;
     line-height: 42px;
-  }
-
-  .hero-carousel-image {
-    width: 760px;
-    height: 440px;
-    min-height: 440px;
-    transform: translateX(80px);
   }
 }
 
@@ -166,50 +175,26 @@
     padding: 40px 20px;
   }
 
-  .hero-image-container {
-    position: relative;
-    height: 360px;
-    border-radius: 30px;
-    padding-top: 0;
-  }
-
-  .hero-carousel-image {
-    width: 100%;
-    height: 100%;
-    min-height: 100%;
-    transform: none;
-    border-radius: 30px;
+  .hero-inner {
+    flex-direction: column;
+    margin-left: 0;
   }
 
   .hero-content {
     width: 100%;
-    margin-left: 0;
-    align-items: center;
     text-align: center;
+    align-items: center;
   }
 
   .hero-actions {
     justify-content: center;
   }
-}
 
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 24px;
-    line-height: 28px;
-  }
-
-  .hero-text {
-    font-size: 14px;
-  }
-
-  .hero-actions {
-    flex-direction: column;
+  .hero-media {
+    position: relative;
     width: 100%;
-  }
-
-  .contact-button-ui-match,
-  .know-more-button-ui-match {
-    width: 100%;
+    height: 360px;
+    border-radius: 30px;
+    margin-top: 40px;
   }
 }

@@ -2,122 +2,118 @@
   --color-green-dark: #83A031;
   --color-blue-active: #1447E6;
   --color-orange-accent: #FF6900;
-  --color-grey-light: #E5E7EB;
-  --base-font-size: 1.6vw;
 }
 
+/* ================= FIXED HEADER WRAPPER ================= */
+.header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
+  background: #ffffff;
+}
+
+/* ================= TOP BAR ================= */
 .top-bar {
   background-color: #83A031;
-  color: white;
+  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5vh 2vw;
-  font-size: 1.8vh;
   height: 45px;
+  padding: 0 32px;
 }
 
-.time-info,
+.time-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.time-info .icon {
+  font-size: 16px;
+}
+
+.time-info span {
+  font-size: 14px;
+}
+
+/* ================= LANGUAGE ================= */
 .language-switcher {
   display: flex;
   align-items: center;
 }
 
-.top-bar .icon {
-  margin-right: 0.5vw;
-  font-size: 1.8vh;
-}
-
 .lang-button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.8vh;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 0 0.5vw;
   display: flex;
   align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
 }
 
+/* ================= BRANDING ================= */
 .branding-section {
-  background-color: white;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 1.5vh 2vw;
+  background: #fff;
 }
 
 .minister-profile {
   display: flex;
   align-items: center;
-  flex: 0 1 30%;
 }
 
 .left-minister {
-  text-align: right;
-  flex-direction: row-reverse;
-  margin-left: -90px;
+  margin-left: -10px;
 }
 
 .minister-photo {
   width: 280px;
-  height: auto;
-  object-fit: contain;
 }
 
 .emblem-image {
   width: 80px;
-  height: 80px;
-  margin-right: 5vw;
+  margin-right: 2vw;
 }
 
-.minister-text {
-  line-height: 1.2;
-}
-
-.minister-name-bold {
-  font-weight: bold;
-  font-size: 1.8vh;
-}
-
-.minister-title {
-  font-size: 1.3vh;
-}
-
+/* ===== CENTER ALIGNMENT ===== */
 .center-branding {
+  position: relative;
   flex: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
-  text-align: center;
+  align-items: center;
+  margin-right: -90px;
+}
+
+.center-logo {
+  position: absolute;
+  left: 0;
+  margin-left: 30px;
 }
 
 .logo-image {
   width: 8vh;
-  height: auto;
-  margin-right: 1.5vw;
+  margin-right: -90px;
 }
 
-.site-title {
-  font-family: "Kumar One";
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 100%;
-  margin: 0;
-  color: #000;
-  white-space: nowrap;
+.site-title-group {
+  display: flex;
+  justify-content: center;
 }
 
-.site-subtitle {
-  font-family: "Krub", "Open Sans", system-ui, sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1;
-  margin: 0;
-  color: rgba(0, 0, 0, 0.65);
-  white-space: nowrap;
-  margin-left: -130px;
+.org-title-image {
+  width: 512px;
+  height: 55px;
+  object-fit: contain;
+  margin-left: -20px;
 }
 
 .navbar {
@@ -176,7 +172,7 @@
   color: #ffffff;
   text-decoration: none;
   border-radius: 6px;
-  box-sizing: border-box;       /* 🔥 IMPORTANT */
+  box-sizing: border-box;      
 }
 
 
@@ -194,171 +190,40 @@
     var(--color-orange-accent) calc(100% - 4px),
     var(--color-orange-accent) 100%
   );
-
-  border-radius: 6px;
 }
 
-@media (max-width: 1200px) {
-  .branding-section {
-    padding: 2vh 2vw;
-  }
-
-  .minister-photo {
-    width: 100px;
-    height: 12vh;
-  }
-
-  .site-title {
-    font-size: 2.3vh;
-  }
-
-  .site-subtitle {
-    font-size: 1.5vh;
-  }
-
-  .nav-link {
-    padding: 1.2vh 1.5vw;
-    font-size: 1.7vh;
-  }
+/* ================= PAGE CONTENT SCROLL ================= */
+body {
+  padding-top: 185px; 
+  /* 45(top bar) + branding (~80) + 60(navbar) */
 }
 
+/* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
-  .branding-section {
-    flex-direction: column;
-    text-align: center;
-    padding: 2vh 2vw;
-  }
-
-  .minister-profile {
-    flex: 1 1 100%;
-    justify-content: center;
-    margin-bottom: 1.5vh;
-  }
-
   .center-branding {
     flex-direction: column;
-    margin-bottom: 1vh;
   }
 
-  .navbar {
-    overflow-x: auto;
+  .center-logo {
+    position: static;
+    margin-bottom: 8px;
   }
 
-  .nav-list {
-    flex-wrap: nowrap;
-    white-space: nowrap;
-    justify-content: flex-start;
+  .org-title-image {
+    width: 420px;
   }
 
-  .nav-link {
-    padding: 1.8vh 3vw;
-    font-size: 2.2vh;
-  }
-
-  .nav-icon {
-    font-size: 2.5vh;
+  body {
+    padding-top: 210px;
   }
 }
 
 @media (max-width: 600px) {
-  .top-bar {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.5vh;
-    padding: 1vh 2vw;
+  .org-title-image {
+    width: 300px;
   }
 
-  .time-info,
-  .language-switcher {
-    justify-content: center;
-  }
-
-  .lang-button {
-    font-size: 1.4vh;
-  }
-
-  .branding-section {
-    padding: 1.5vh 2vw;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .minister-photo {
-    width: 22vh;
-    height: 8vh;
-  }
-
-  .emblem-image {
-    width: 6vh;
-  }
-
-  .logo-image {
-    width: 7vh;
-  }
-
-  .site-title {
-    font-size: 2vh;
-  }
-
-  .site-subtitle {
-    font-size: 1.6vh;
-  }
-
-  .nav-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5vh 0.5vw;
-    padding: 0 2vw;
-    justify-items: center;
-  }
-
-  .nav-item {
-    width: 100%;
-    text-align: center;
-    background: transparent;
-  }
-
-  .nav-link {
-    padding: 1.8vh 1vw;
-    font-size: 2vh;
-    flex-direction: column;
-  }
-
-  .nav-icon {
-    margin-bottom: 0.8vh;
-    font-size: 3vh;
-  }
-}
-
-@media (max-width: 420px) {
-  .top-bar {
-    padding: 1vh 1.5vw;
-  }
-
-  .minister-photo {
-    width: 20vh;
-    height: 7vh;
-  }
-
-  .logo-image {
-    width: 5.5vh;
-  }
-
-  .site-title {
-    font-size: 1.8vh;
-    line-height: 2vh;
-  }
-
-  .site-subtitle {
-    font-size: 1.4vh;
-  }
-
-  .nav-link {
-    padding: 1.5vh 5vw;
-    font-size: 2.3vh;
-  }
-
-  .nav-icon {
-    font-size: 2.6vh;
+  body {
+    padding-top: 230px;
   }
 }

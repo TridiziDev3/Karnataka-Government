@@ -116,20 +116,22 @@
 }
 
 .projects-subheading {
-  color: var(--color-projects-subheading);
-  font-size: clamp(0.75rem, 1vw, 0.9rem);
-  font-weight: 700;
-  text-transform: uppercase;
+  color: #65B03D;
+  font-size: 14px;
+  font-weight: 600;
   letter-spacing: 1px;
   margin-bottom: 8px;
+  font-family: "Inter";
 }
 
 .projects-main-heading {
-  font-size: clamp(1.5rem, 2.4vw, 2rem);
-  font-weight: 700;
-  color: var(--color-card-title-dark);
+  font-size: 32px;
+  font-weight: 600;
+  color: #333333;
   margin: 0;
-  line-height: 1.15;
+  line-height: 38.4px;
+  font-family: "Manrope"; 
+  font-style: "SemiBold";
 }
 
 /* project-filters centered */
@@ -144,7 +146,9 @@
   z-index: 20;
   flex-wrap: wrap;
   padding: 6px 8px;
+  border-radius: 999px;
 }
+
 
 /* filter tab styles */
 .filter-tab {
@@ -157,11 +161,10 @@
   font-size: clamp(0.8rem, 1vw, 0.95rem);
   cursor: pointer;
   white-space: nowrap;
-
   transition: all 0.25s ease;
+    box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+
 }
-
-
 
 .filter-tab.tab-active {
   background-color: var(--color-green-dark); /* green bg */
@@ -215,13 +218,13 @@
 
 /* Pillar text: fluid size */
 .pillar-text {
-  font-size: clamp(1rem, 1.2vw, 1.25rem);
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 400;
   color: var(--color-white-bg);
   line-height: 1.3;
   margin-bottom: 8px;
-
-  text-align: left;      /* 🔥 LEFT nunchi start */
+  text-align: left;
+  font-family: "DM Sans";
 }
 
 
@@ -233,8 +236,11 @@
   color: var(--color-white-bg);
   opacity: 0.95;
   text-decoration: underline;
-
-  text-align: left;        /* 🔥 left start */
+  text-align: left;  
+  width: 87px;
+  height: 32px;   
+  margin-top: 30px;
+  font-family: "DM Sans";   /* 🔥 left start */
 }
 
 
@@ -242,15 +248,16 @@
    PROJECT CARDS GRID
    ------------------------------- */
 .project-cards-grid {
-  width: 100%;
+  width: 1533px;
   margin: 30px auto 80px;
   display: grid;
   gap: 28px;
-  grid-template-columns: repeat(3, 1fr); /* desktop default */
+  grid-template-columns: repeat(3, 1fr); 
   justify-content: center;
   padding: 0 20px;
   box-sizing: border-box;
   max-width: 1180px;
+  padding-bottom: 40px;
 }
 
 /* card */
@@ -262,7 +269,7 @@
   border: 1px solid #eee;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 409px;
   min-height: 340px;
   box-sizing: border-box;
 }
@@ -289,19 +296,14 @@
   position: absolute;
   top: 12px;
   right: 12px;
-
   height: 36px;
   padding: 0 14px;
-
   display: inline-flex;
   align-items: center;
   gap: 8px;
-
   font-size: 0.8rem;
   font-weight: 700;
   color: #ffffff;
-
-  /* 🔥 FIGMA GRADIENT */
   background: linear-gradient(
     90deg,
     #00C950 0%,
@@ -309,15 +311,10 @@
   );
 
   border-radius: 999px;
-
-  /* 🔥 FIGMA SHADOW */
   box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
-
   box-sizing: border-box;
 }
 
-
-/* small circle inside badge */
 .status-circle {
   width: 8px;
   height: 8px;
@@ -371,10 +368,12 @@
 }
 
 .card-title {
-  font-size: clamp(1rem, 1.2vw, 1.25rem);
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 400;
   color: var(--color-card-title-dark);
   margin: 0;
+  font-family:"Roboto";
+  font-style: "regular";
 }
 
 .card-location {
@@ -610,3 +609,9 @@
   mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
 }
 
+.status-icon {
+  width: 16px;        /* Figma */
+  height: 16px;       /* Figma */
+  object-fit: contain;
+  display: block;
+}

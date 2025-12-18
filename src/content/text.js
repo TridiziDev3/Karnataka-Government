@@ -154,8 +154,8 @@ projects: {
 
   hero: {
     title: {
-      en: "Efficient Waste Management for a Cleaner Tomorrow.",
-      kn: "ಸುಸ್ಥಿರ завтраಗೆ ಪರಿಣಾಮಕಾರಿ ಕಸದ ನಿರ್ವಹಣೆ.",
+      en: "Building a futuristic Waste Management System in Karanataka.",
+      kn: "ಕರ್ನಾಟಕದಲ್ಲಿ ಭವಿಷ್ಯನಿಷ್ಠ ತ್ಯಾಜ್ಯ ನಿರ್ವಹಣಾ ವ್ಯವಸ್ಥೆಯನ್ನು ನಿರ್ಮಿಸುತ್ತಿದೆ.",
     },
     text: {
       en: "We handle waste responsibly, ensuring a sustainable and healthier environment for everyone",

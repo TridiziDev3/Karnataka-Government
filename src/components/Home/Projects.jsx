@@ -3,6 +3,9 @@ import "./Projects.css";
 import { FaMapMarkerAlt, FaArrowRight } from "react-icons/fa";
 import { TEXT } from "../../content/text";
 
+/* 🔥 STATUS ICON IMPORT */
+import statusIcon from "../../assets/Icon.png";
+
 import project1 from "../../assets/Homepage/Rectangle 34625672.png";
 import project2 from "../../assets/Homepage/Rectangle 34625677.png";
 import project3 from "../../assets/Homepage/Rectangle 34625673.png";
@@ -95,7 +98,6 @@ const Projects = ({ lang = "en" }) => {
             aria-hidden="true"
             className="bg-vector bg-vector-left"
           />
-
           <img
             src={rightVector}
             alt=""
@@ -129,31 +131,26 @@ const Projects = ({ lang = "en" }) => {
       </div>
 
       <div className="project-cards-grid">
-        {filteredCards.length === 0 && (
-          <div
-            style={{
-              gridColumn: "1/-1",
-              textAlign: "center",
-              padding: "40px",
-            }}
-          >
-            {localize(TEXT.projects.noResults)}
-          </div>
-        )}
-
         {filteredCards.map((card) => (
           <article className="project-card" key={card.id}>
             <div className="card-image-wrapper">
               <img src={card.image} className="card-image" alt="" />
-              <div className="status-badge">
-  <span className="status-arrow">↗</span>
-  <span>Ongoing</span>
-</div>
 
+              {/* 🔥 STATUS BADGE WITH ICON */}
+              <div className="status-badge">
+                <img
+                  src={statusIcon}
+                  alt=""
+                  className="status-icon"
+                />
+                <span>{card.currentStatusText}</span>
+              </div>
             </div>
 
             <div className="card-content-body">
-              <h3 className="card-title">{localizeCard(card, "title")}</h3>
+              <h3 className="card-title">
+                {localizeCard(card, "title")}
+              </h3>
 
               <div className="card-location">
                 <FaMapMarkerAlt className="location-icon" />
@@ -166,8 +163,10 @@ const Projects = ({ lang = "en" }) => {
                 <div
                   className="progress-bar-fill"
                   style={{ width: `${card.progress}%` }}
-                ></div>
-                <span className="progress-percent">{card.progress}%</span>
+                />
+                <span className="progress-percent">
+                  {card.progress}%
+                </span>
               </div>
 
               <a href="#" className="details-button">

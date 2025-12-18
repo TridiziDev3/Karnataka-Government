@@ -20,17 +20,18 @@ import SiddaramaiahImage from "../../assets/Homepage/Cm.png";
 import EmblemImage from "../../assets/Homepage/emblem.png";
 import ShivakumarImage from "../../assets/Homepage/Minister.png";
 import LogoImage from "../../assets/Homepage/temple.png";
+import OrgTitleImage from "../../assets/Bengaluru Solid Waste Management Limited (Government of Karnataka).png";
 
 const navItems = [
-  { name: 'Home', icon: FaHome, href: "#home" },
-  { name: 'About Us', icon: FaInfoCircle, href: "#about" },
-  { name: 'Tenders', icon: FaFileContract, href: "#tenders" },
-  { name: 'Projects', icon: FaRegLightbulb, href: "#projects" },
-  { name: 'Plants', icon: FaTree, href: "#plants" },
-  { name: 'Wings', icon: FaAngleDoubleRight, href: "#wings" },
-  { name: 'Gallery', icon: FaImages, href: "#gallery" },
-  { name: 'Media', icon: FaRegNewspaper, href: "#media" },
-  { name: 'Contacts', icon: FaPhoneAlt, href: "#contact" }
+  { name: 'Home', icon: FaHome },
+  { name: 'About Us', icon: FaInfoCircle },
+  { name: 'Tenders', icon: FaFileContract },
+  { name: 'Projects', icon: FaRegLightbulb },
+  { name: 'Plants', icon: FaTree },
+  { name: 'Wings', icon: FaAngleDoubleRight },
+  { name: 'Gallery', icon: FaImages },
+  { name: 'Media', icon: FaRegNewspaper },
+  { name: 'Contacts', icon: FaPhoneAlt }
 ];
 
 const Header = ({ lang, toggleLanguage }) => {
@@ -66,60 +67,52 @@ const Header = ({ lang, toggleLanguage }) => {
     return () => clearInterval(timer);
   }, [lang]);
 
-  const getText = (key) => TEXT.header.center[key][lang];
-
   return (
-    <header className="site-header">
+    <header className="site-header header-fixed">
+      
+      {/* ================= TOP BAR ================= */}
       <div className="top-bar">
         <div className="time-info">
           <FaClock className="icon" />
-          <span className="datetime-text">{dateTime}</span>
+          <span>{dateTime}</span>
         </div>
 
         <div className="language-switcher">
           <FaGlobe className="icon" />
           <button onClick={toggleLanguage} className="lang-button">
             {t.top.langButton[lang]}
-            <IoIosArrowDown className="lang-dropdown-icon" />
+            <IoIosArrowDown />
           </button>
         </div>
       </div>
 
+      {/* ================= BRANDING ================= */}
       <div className="branding-section">
         <div className="minister-profile left-minister">
-          <img
-            src={SiddaramaiahImage}
-            alt={t.people.cmAlt[lang]}
-            className="minister-photo"
-          />
+          <img src={SiddaramaiahImage} alt="" className="minister-photo" />
         </div>
 
         <div className="center-branding">
-          <img
-            src={LogoImage}
-            alt={getText('logoAlt')}
-            className="logo-image"
-          />
+          <div className="center-logo">
+            <img src={LogoImage} alt="Govt Logo" className="logo-image" />
+          </div>
+
           <div className="site-title-group">
-            <h1 className="site-title">{getText('orgName')}</h1>
-            <p className="site-subtitle">{getText('orgTagline')}</p>
+            <img
+              src={OrgTitleImage}
+              alt="Bengaluru Solid Waste Management Limited"
+              className="org-title-image"
+            />
           </div>
         </div>
 
         <div className="minister-profile right-minister">
-          <img
-            src={EmblemImage}
-            alt="Karnataka Emblem"
-            className="emblem-image"
-          />
-          <img
-            src={ShivakumarImage}
-            alt={t.people.ministerAlt[lang]}
-            className="minister-photo"
-          />
+          <img src={EmblemImage} alt="" className="emblem-image" />
+          <img src={ShivakumarImage} alt="" className="minister-photo" />
         </div>
       </div>
 
+      {/* ================= NAVBAR ================= */}
       <nav className="navbar">
         <ul className="nav-list">
           {TEXT.navbar.links[lang].map((item) => {
@@ -133,14 +126,8 @@ const Header = ({ lang, toggleLanguage }) => {
               item.label === 'Home' || item.label === 'ಮನೆ';
 
             return (
-              <li
-                key={item.label}
-                className={`nav-item ${isHome ? 'active' : ''}`}
-              >
-                <a
-                  href={item.href}
-                  className={`nav-link ${isHome ? 'active' : ''}`}
-                >
+              <li key={item.label} className={`nav-item ${isHome ? 'active' : ''}`}>
+                <a href={item.href} className={`nav-link ${isHome ? 'active' : ''}`}>
                   <Icon className="nav-icon" />
                   {item.label}
                 </a>
@@ -149,6 +136,7 @@ const Header = ({ lang, toggleLanguage }) => {
           })}
         </ul>
       </nav>
+
     </header>
   );
 };

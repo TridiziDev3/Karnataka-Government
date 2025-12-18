@@ -1,161 +1,306 @@
 :root{
   --color-bg-start:#FEF7E7;
   --color-bg-end:#FDE8D4;
+
   --color-heading-dark:#3A2D21;
-  --color-latest-updates-orange:#F97316;
+
   --color-view-all-bg-start:#FF7F16;
   --color-view-all-bg-end:#F94500;
+
   --color-card-bg:#ffffff;
   --color-card-shadow:rgba(0,0,0,0.08);
+
   --blue-primary:#1447E6;
   --blue-light:#E4EBFF;
+
   --green-primary:#04AC4D;
   --green-light:#D7FBE5;
+
   --color-text-description:#555;
   --color-text-date:#6b6b6b;
 }
 
-/* Section */
+/* ================= SECTION ================= */
 .media-section{
-  background: radial-gradient(circle at center, var(--color-bg-start) 0%, #FFF8E8 40%, var(--color-bg-end) 100%);
+  background: radial-gradient(
+    circle at center,
+    var(--color-bg-start) 0%,
+    #FFF8E8 40%,
+    var(--color-bg-end) 100%
+  );
   padding:80px 40px 100px;
   text-align:center;
 }
 
-.media-center-content{max-width:1150px;margin:0 auto}
-
-.media-header-group{margin-bottom:38px}
-
-.latest-updates-badge {
-  background: linear-gradient(
-    90deg,
-    #F54900 0%,
-    #D08700 100%
-  );
-  color: #fff;
-  padding: 6px 18px;
-  font-size: 0.8rem;
-  border-radius: 20px;
-  display: inline-block;
-  font-weight: 700;
-
-  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3);
+/* ================= CONTENT WRAPPER ================= */
+.media-center-content{
+  width:1501px;
+  margin:0 auto;
 }
 
-
-.media-heading {
-  font-size: 2.3rem;
-  margin-top: 12px;
-  font-weight: 700;
-
-  /* 🔥 GRADIENT TEXT COLOR */
-  background: linear-gradient(
-    90deg,
-    #7E2A0C 0%,
-    #733E0A 100%
-  );
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  /* Firefox support */
-  background-clip: text;
-  color: transparent;
+/* ================= HEADER ================= */
+.media-header-group{
+  width:1501px;
+  height:144px;
+  margin:0 auto 38px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
-.media-subheading{margin-top:8px;color:var(--color-text-date);font-size:1rem}
 
-/* Grid */
+.latest-updates-badge{
+  width:152.77px;
+  height:36px;
+  background:linear-gradient(90deg,#F54900,#D08700);
+  color:#fff;
+  font-size:12px;
+  font-weight:700;
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 2px 8px rgba(249,115,22,.3);
+}
+
+.media-heading{
+  width:1501px;
+  height:48px;
+  margin-top:12px;
+  margin-bottom:0;
+  font-family:"Roboto";
+  font-size:48px;
+  font-weight:400;
+  line-height:48px;
+  background:linear-gradient(90deg,#7E2A0C,#733E0A);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.media-subheading{
+  width:672px;
+  height:28px;
+  margin-top:8px;
+  font-family:"Roboto";
+  font-size:20px;
+  line-height:28px;
+  color:#4A5565;
+}
+
+/* ================= GRID ================= */
 .media-cards-grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:26px;margin-bottom:45px;
+  grid-template-columns:repeat(2, 1fr);
+  column-gap:32px;
+  width:1501px;
+  margin:0 auto 45px;
 }
 
-/* Card */
+/* ================= CARD ================= */
 .media-card{
+  width:100%;
+  max-width:700px;              /* 🔥 prevents overlap */
+  height:314px;
   background:var(--color-card-bg);
-  padding:26px 26px 30px;border-radius:20px;
+  border-radius:24px;
+  padding:32px;
   box-shadow:0 8px 25px var(--color-card-shadow);
-  position:relative;overflow:hidden;text-align:left;
+  position:relative;
+  overflow:hidden;
+  text-align:left;
+  box-sizing:border-box;
+
   transform:translateY(10px);
   opacity:0;
-  animation: fadeInUp .55s ease forwards;
-  will-change: transform, opacity;
+  animation:fadeInUp .55s ease forwards;
 }
 
-/* circular highlight */
-.media-card::after{content:"";position:absolute;top:-70px;right:-70px;width:200px;height:200px;border-radius:50%;opacity:.6;z-index:1}
-.media-blue::after{background:var(--blue-light)}
-.media-green::after{background:var(--green-light)}
-
-/* top row */
-.card-top-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;position:relative;z-index:2}
-.category-badge{padding:5px 14px;font-size:.78rem;font-weight:600;border-radius:20px;display:inline-flex;align-items:center;gap:6px;box-shadow:0 1px 4px rgba(0,0,0,0.2)}
-.media-blue .category-badge{background:var(--blue-primary);color:#fff}
-.media-green .category-badge{background:var(--green-primary);color:#fff}
-
-.date-info{color:var(--color-text-date);font-size:.82rem;display:flex;align-items:center;gap:5px}
-.date-icon{font-size:.9rem}
-
-/* text */
-.card-title{font-size:20px;font-weight:400;margin-bottom:10px;color:var(--color-heading-dark)}
-.card-description {
-  font-size: 0.75rem;
-  color: var(--color-text-description);
-
-  line-height: 1.6;         
-  margin-bottom: 20px;
-
-  display: block;
-  overflow-wrap: break-word;
-}
-.card-content-body {
-  position: relative;
-  z-index: 2;
-  padding-right: clamp(60px, 18%, 120px); /* 🔥 KEY FIX */
+/* ================= CARD HIGHLIGHT ================= */
+.media-card::after{
+  content:"";
+  position:absolute;
+  top:-85px;
+  right:-85px;
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  opacity:.6;
+  z-index:1;
+  pointer-events:none;
 }
 
-.media-card::after {
-  content: "";
-  position: absolute;
-  top: -85px;          /* 🔼 little more up */
-  right: -85px;        /* 🔼 little more right */
-  width: 200px;        /* 🔼 increased */
-  height: 200px;       /* 🔼 increased */
-  border-radius: 50%;
-  opacity: 0.6;
-  z-index: 1;
-  pointer-events: none;
+.media-blue::after{ background:var(--blue-light); }
+.media-green::after{ background:var(--green-light); }
+
+/* ================= CARD TOP ================= */
+.card-top-row{
+  width:662.5px;               /* Figma */
+  height:36px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:16px;
+  position:relative;
+  z-index:2;
 }
 
-.card-top-row {
-  padding-right: -200px; /* 🔥 SAME AS BODY */
-  box-sizing: border-box;
+.category-badge{
+  height:36px;
+  padding:6px 14px;
+  font-size:14px;
+  font-weight:400;
+  line-height:20px;
+  border-radius:18px;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  white-space:nowrap;
+}
+
+.media-blue .category-badge{ background:var(--blue-primary); color:#fff; }
+.media-green .category-badge{ background:var(--green-primary); color:#fff; }
+
+.date-info{
+  font-size:12px;
+  line-height:20px;
+  color:var(--color-text-date);
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin-right: 100px;
+}
+
+/* ================= CARD CONTENT ================= */
+.card-content-body{
+  width:662.5px;               /* aligns all inner items */
+  position:relative;
+  z-index:2;
+}
+
+.card-title{
+  width:523px;
+  height:32px;
+  font-size:24px;
+  font-weight:400;
+  line-height:32px;
+  margin:0 0 8px 0;
+  color:var(--color-heading-dark);
+}
+
+.card-description{
+  width:522px;
+  font-size:16px;
+  line-height:26px;
+  color:var(--color-text-description);
+  margin:0 0 20px 0;
+  display:-webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;     
+  overflow:hidden;
+  text-overflow:ellipsis;
+  max-height:78px;           
 }
 
 
-/* button */
-.read-full-button{padding:10px 22px;font-size:.92rem;font-weight:600;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;position:relative;z-index:2;transition:transform .18s,box-shadow .18s}
-.read-full-button:hover{transform:translateY(-1px);box-shadow:0 4px 8px rgba(0,0,0,0.2)}
-.read-full-button.media-blue{background:var(--blue-primary);color:#fff}
-.read-full-button.media-green{background:var(--green-primary);color:#fff}
 
-/* view all */
-.view-all-media-button{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(to right,var(--color-view-all-bg-start),var(--color-view-all-bg-end));color:#fff;padding:12px 30px;border-radius:10px;font-size:1rem;font-weight:700;box-shadow:0 6px 15px rgba(255,106,0,0.5);text-decoration:none;transition:transform .3s,box-shadow .3s}
-.view-all-media-button:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,106,0,0.6)}
 
-/* animation keyframes */
+
+/* ================= BUTTON ================= */
+.read-full-button{
+  width:186px;
+  height:48px;
+  border-radius:14px;
+  font-size:14px;
+  font-weight:600;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  transition:.2s ease;
+  margin-top:-20px;   /* 🔥 button moves up */
+  margin-left: -20px;
+}
+
+
+.read-full-button.media-blue{
+  background:linear-gradient(90deg,#155DFC,#1447E6);
+  color:#fff;
+}
+
+.read-full-button.media-green{
+  background:linear-gradient(90deg,#04AC4D,#2EB872);
+  color:#fff;
+}
+
+.read-full-button:hover{
+  transform:translateY(-1px);
+  box-shadow:0 4px 8px rgba(0,0,0,.2);
+}
+
+/* ================= VIEW ALL ================= */
+.media-footer-button{
+  width:1501px;
+  display:flex;
+  justify-content:center;
+}
+
+.view-all-media-button{
+  width:297px;
+  height:56px;
+  background:linear-gradient(
+    90deg,
+    var(--color-view-all-bg-start),
+    var(--color-view-all-bg-end)
+  );
+  color:#fff;
+  border-radius:10px;
+  font-size:16px;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  text-decoration:none;
+  box-shadow:0 6px 15px rgba(255,106,0,.5);
+}
+
+.view-all-media-button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(255,106,0,.6);
+}
+
+/* ================= ANIMATION ================= */
 @keyframes fadeInUp{
-  from{opacity:0;transform:translateY(18px) scale(.995)}
-  to{opacity:1;transform:translateY(0) scale(1)}
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:translateY(0)}
 }
 
-/* hover motion for the card */
+/* ================= HOVER ================= */
 .media-card:hover{
   transform:translateY(-6px);
-  box-shadow:0 22px 40px -12px rgba(0,0,0,0.28);
+  box-shadow:0 22px 40px -12px rgba(0,0,0,.28);
 }
 
-/* responsive */
-@media (max-width:900px){.media-cards-grid{grid-template-columns:1fr}}
-@media (max-width:600px){.media-section{padding:50px 20px 80px}.media-card{padding:20px}.card-title{font-size:1.2rem}.read-full-button{padding:8px 18px}}
+/* ================= RESPONSIVE ================= */
+@media(max-width:1600px){
+  .media-center-content,
+  .media-header-group,
+  .media-cards-grid,
+  .media-footer-button{
+    width:100%;
+  }
+}
+
+@media(max-width:900px){
+  .media-cards-grid{
+    grid-template-columns:1fr;
+    row-gap:32px;
+  }
+
+  .media-card,
+  .card-top-row,
+  .card-content-body{
+    width:100%;
+    max-width:100%;
+  }
+}
