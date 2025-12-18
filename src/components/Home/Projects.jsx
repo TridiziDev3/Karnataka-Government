@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./Projects.css";
 import { FaMapMarkerAlt, FaArrowRight } from "react-icons/fa";
 import { TEXT } from "../../content/text";
-
-/* 🔥 STATUS ICON IMPORT */
 import statusIcon from "../../assets/Icon.png";
 
 import project1 from "../../assets/Homepage/Rectangle 34625672.png";
@@ -37,26 +35,19 @@ const projectImages = {
 const Projects = ({ lang = "en" }) => {
   const [activeFilter, setActiveFilter] = useState("Ongoing");
 
-  if (!TEXT || !TEXT.projects)
-    return <div className="projects-error">Error: Project data not found</div>;
+  if (!TEXT?.projects) return null;
 
-  const t = TEXT.projects.filters || {};
+  const t = TEXT.projects.filters;
+  const pillars = TEXT.projects.pillars || [];
+  const cardsSource = TEXT.projects.cards || [];
 
   const localize = (obj) =>
     typeof obj === "string" ? obj : obj?.[lang] || obj?.en || "";
 
-  const localizeCard = (card, key) =>
-    typeof card[key] === "string"
-      ? card[key]
-      : card[key]?.[lang] || card[key]?.en || "";
-
-  const pillars = TEXT.projects.pillars || [];
-  const cardsSource = TEXT.projects.cards || [];
-
   useEffect(() => {
     const timer = setInterval(() => {
-      const index = FILTER_STATUSES.indexOf(activeFilter);
-      setActiveFilter(FILTER_STATUSES[(index + 1) % FILTER_STATUSES.length]);
+      const idx = FILTER_STATUSES.indexOf(activeFilter);
+      setActiveFilter(FILTER_STATUSES[(idx + 1) % FILTER_STATUSES.length]);
     }, SCROLL_INTERVAL);
 
     return () => clearInterval(timer);
@@ -64,18 +55,16 @@ const Projects = ({ lang = "en" }) => {
 
   const filteredCards = cardsSource
     .filter(
-      (card) =>
-        card &&
-        (card.status || "").toLowerCase() === activeFilter.toLowerCase()
+      (c) => c.status.toLowerCase() === activeFilter.toLowerCase()
     )
-    .map((card) => ({
-      ...card,
-      image: projectImages[card.id],
-      currentStatusText: localize(t[card.status.toLowerCase()]),
+    .map((c) => ({
+      ...c,
+      image: projectImages[c.id],
+      statusText: localize(t[c.status.toLowerCase()]),
     }));
 
   return (
-    <section className="projects-section" id="projects">
+    <section className="projects-section">
       <div className="project-top-section">
         <div className="project-filters">
           {FILTER_STATUSES.map((status) => (
@@ -86,39 +75,28 @@ const Projects = ({ lang = "en" }) => {
               }`}
               onClick={() => setActiveFilter(status)}
             >
-              {localize(t[status.toLowerCase()]) || status}
+              {localize(t[status.toLowerCase()])}
             </button>
           ))}
         </div>
 
         <div className="pillar-carousel-wrapper">
-          <img
-            src={leftVector}
-            alt=""
-            aria-hidden="true"
-            className="bg-vector bg-vector-left"
-          />
-          <img
-            src={rightVector}
-            alt=""
-            aria-hidden="true"
-            className="bg-vector bg-vector-right"
-          />
+          <img src={leftVector} className="bg-vector bg-vector-left" alt="" />
+          <img src={rightVector} className="bg-vector bg-vector-right" alt="" />
 
           <div className="pillar-slide-container">
             {pillars
-              .filter((p) => {
-                if (activeFilter === "Ongoing") return p.id <= 3;
-                if (activeFilter === "Active") return p.id >= 4 && p.id <= 6;
-                if (activeFilter === "Completed") return p.id >= 7 && p.id <= 9;
-                return false;
-              })
+              .filter((p) =>
+                activeFilter === "Ongoing"
+                  ? p.id <= 3
+                  : activeFilter === "Active"
+                  ? p.id <= 6 && p.id >= 4
+                  : p.id >= 7
+              )
               .map((pillar) => (
                 <div className="pillar-item" key={pillar.id}>
                   <p className="pillar-text">{localize(pillar)}</p>
-                  <a href="#" className="pillar-link">
-                    {localize(t.knowMore)}
-                  </a>
+                  <a className="pillar-link">{localize(t.knowMore)}</a>
                 </div>
               ))}
           </div>
@@ -135,43 +113,42 @@ const Projects = ({ lang = "en" }) => {
           <article className="project-card" key={card.id}>
             <div className="card-image-wrapper">
               <img src={card.image} className="card-image" alt="" />
-
-              {/* 🔥 STATUS BADGE WITH ICON */}
               <div className="status-badge">
-                <img
-                  src={statusIcon}
-                  alt=""
-                  className="status-icon"
-                />
-                <span>{card.currentStatusText}</span>
+                <img src={statusIcon} className="status-icon" alt="" />
+                {card.statusText}
               </div>
             </div>
 
             <div className="card-content-body">
-              <h3 className="card-title">
-                {localizeCard(card, "title")}
-              </h3>
+              <h3 className="card-title">{localize(card.title)}</h3>
 
               <div className="card-location">
-                <FaMapMarkerAlt className="location-icon" />
-                {localizeCard(card, "location")}
+                <FaMapMarkerAlt />
+                {localize(card.location)}
               </div>
 
-              <p className="progress-label">{localize(t.progressLabel)}</p>
+              {/* Progress header row */}
+              <div className="progress-header">
+                <span className="progress-label">
+                  {localize(t.progressLabel)}
+                </span>
+                <span className="progress-percent-gradient">
+  {card.progress}%
+</span>
 
+              </div>
+
+              {/* Progress bar */}
               <div className="progress-bar-container">
                 <div
                   className="progress-bar-fill"
                   style={{ width: `${card.progress}%` }}
                 />
-                <span className="progress-percent">
-                  {card.progress}%
-                </span>
               </div>
 
-              <a href="#" className="details-button">
+              <a className="details-button">
                 {localize(t.viewDetails)}
-                <FaArrowRight className="details-arrow" />
+                <FaArrowRight />
               </a>
             </div>
           </article>

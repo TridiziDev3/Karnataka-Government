@@ -3,25 +3,23 @@
   --hero-font: "Roboto", system-ui, sans-serif;
 }
 
-/* ================= HERO SECTION ================= */
 .hero-section {
   width: 100%;
   height: 644px;
   background: #ffffff;
   overflow: hidden;
-  padding-bottom: 40px; 
+  padding-bottom: 40px;
 }
 
 .hero-inner {
   max-width: 1467px;
-   height: 644px;
+  height: 644px;
   margin-left: 37px;
   display: flex;
   align-items: center;
   position: relative;
 }
 
-/* ================= LEFT CONTENT ================= */
 .hero-content {
   position: relative;
   z-index: 5;
@@ -30,21 +28,19 @@
   margin-left: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;   /* 🔥 vertical center */
+  justify-content: center;
   align-items: flex-start;
-  left:-30px;
+  left: -30px;
 }
-
 
 .hero-title {
   width: 550px;
   max-width: 550px;
-
-  font-family: "Roboto", system-ui, sans-serif;
+  font-family: var(--hero-font);
   font-size: 54px;
   line-height: 58px;
   font-weight: 800;
-  color: #ECBC27;
+  color: var(--hero-yellow);
   margin: 0;
   white-space: normal;
   word-break: normal;
@@ -53,38 +49,29 @@
   text-wrap: balance;
 }
 
-/* ================= BUTTON GROUP ================= */
 .hero-actions {
-  margin-top: 23px;               /* Figma gap */
   display: flex;
   gap: 23px;
   align-items: center;
   margin-top: 80px;
-  
 }
 
-/* ================= CONTACT BUTTON ================= */
 .contact-button {
   width: 147px;
   height: 48px;
-  box-sizing: border-box;
-
-  display: flex;                  /* 🔥 text perfect center */
+  display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 5px;
   background: transparent;
   border: 1px solid var(--hero-yellow);
   color: var(--hero-yellow);
-
   font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 22px;
-
   cursor: pointer;
-  padding: 0;                     /* 🔥 remove default */
+  padding: 0;
 }
 
 .contact-button:hover {
@@ -92,12 +79,10 @@
   color: #ffffff;
 }
 
-/* ================= KNOW MORE BUTTON ================= */
 .know-more-button {
   width: 220px;
   height: 48px;
-  box-sizing: border-box;
-  display: flex;                  
+  display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
@@ -117,8 +102,6 @@
   border-color: #d9a200;
 }
 
-
-/* ================= HERO VIDEO CONTAINER ================= */
 .hero-media {
   position: absolute;
   top: -4vw;
@@ -127,8 +110,6 @@
   height: 720px;
   border-radius: 50%;
   overflow: hidden;
-
-  /* 🔥 TOP & BOTTOM HARD CUT */
   -webkit-mask-image: linear-gradient(
     to bottom,
     transparent 0%,
@@ -149,9 +130,6 @@
   );
 }
 
-
-
-/* ================= VIDEO TRACK ================= */
 .hero-track {
   display: flex;
   width: 100%;
@@ -159,37 +137,37 @@
   transition: transform 0.6s cubic-bezier(.22,.9,.35,1);
 }
 
-/* ================= SLIDE ================= */
 .hero-slide {
   flex: 0 0 100%;
   height: 100%;
 }
 
-/* ================= VIDEO ================= */
 .hero-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= TABLET ================= */
 @media (max-width: 1024px) {
   .hero-inner {
     margin-left: 24px;
-  }
-
-  .hero-media {
-    width: 760px;
-    height: 440px;
-    border-radius: 200px 0 0 200px;
   }
 
   .hero-title {
     font-size: 38px;
     line-height: 42px;
   }
+
+  .hero-media {
+    width: 760px;
+    height: 440px;
+    left: 300px;
+    border-radius: 200px 0 0 200px;
+  }
 }
 
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
   .hero-section {
     height: auto;
@@ -198,24 +176,53 @@
 
   .hero-inner {
     flex-direction: column;
+    height: auto;
     margin-left: 0;
   }
 
   .hero-content {
     width: 100%;
+    height: auto;
+    left: 0;
+    margin-left: 0;
     text-align: center;
     align-items: center;
   }
 
+  .hero-title {
+    width: 100%;
+    max-width: 100%;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
   .hero-actions {
     justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
   }
 
   .hero-media {
     position: relative;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 360px;
-    border-radius: 30px;
     margin-top: 40px;
+    border-radius: 30px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .contact-button,
+  .know-more-button {
+    width: 100%;
+    max-width: 260px;
   }
 }
