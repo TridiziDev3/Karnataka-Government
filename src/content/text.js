@@ -2,6 +2,10 @@
 export const TEXT = {
 
 projects: {
+  tendersHeading: {          
+      en: "Tenders",
+      kn: "ಟೆಂಡರ್‌ಗಳು",
+    },
   filters: {
       ongoing: { en: "Ongoing", kn: "ಪ್ರಗತಿಯಲ್ಲಿದೆ" },
       active: { en: "Active", kn: "ಸಕ್ರಿಯ" },
@@ -167,6 +171,10 @@ projects: {
       en: "Know More",
       kn: "ಇನ್ನಷ್ಟು ತಿಳಿದುಕೊಳ್ಳಿ",
     },
+    contactButton: {          
+    en: "Contact Us",
+    kn: "ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ",
+  },
     ticker: {
       en: "Call 1902 to register your grievance (if any) regarding any scheme / service delivery of Government of Karnataka",
       kn: "ಯಾವುದೇ ಯೋಜನೆ / ಸೇವಾ ವಿತರಣೆ ಕುರಿತು ನಿಮ್ಮ ಅಹವಾಲನ್ನು (ಇದ್ದಲ್ಲಿ) ನೋಂದಾಯಿಸಲು 1902 ಗೆ ಕರೆ ಮಾಡಿ — ಕರ್ನಾಟಕ ಸರ್ಕಾರ",
@@ -209,6 +217,10 @@ projects: {
       en: "Managing Director Desk",
       kn: "ವ್ಯವಸ್ಥಾಪಕ ನಿರ್ದೇಶಕರ ಮನವಿ",
     },
+    subheading: {                         
+    en: "A vision for a cleaner, greener India",
+    kn: "ಸ್ವಚ್ಛ ಮತ್ತು ಹಸಿರಾದ ಭಾರತದ ದೃಷ್ಟಿಕೋನ",
+  },
     p1: {
       en: "Bengaluru Solid Waste Management Limited (BSWML) is a Government of Karnataka undertaking incorporated on 22nd May 2021, based in Bengaluru, Karnataka, India. It focuses on innovation in the environmental sector, specifically solid waste management.",
       kn: "ಬೆಂಗಳೂರು ಘನ ತ್ಯಾಜ್ಯ ನಿರ್ವಹಣೆ ಲಿಮಿಟೆಡ್ (BSWML) ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ಅಧೀನದಲ್ಲಿರುವ ಕಂಪನಿಯಾಗಿದ್ದು, 22 ಮೇ 2021 ರಂದು ಸ್ಥಾಪನೆಯಾಗಿದೆ. ಈ ಸಂಸ್ಥೆ ಕರ್ನಾಟಕದ ಬೆಂಗಳೂರಿನ ನಗರದಲ್ಲಿ ನವೀನ ಮತ್ತು ಪರಿಸರ ಸ್ನೇಹಿ ಕ್ಷೇತ್ರದ ಆವಿಷ್ಕಾರಗಳಿಗೆ, ವಿಶೇಷವಾಗಿ ಘನ ತ್ಯಾಜ್ಯ ನಿರ್ವಹಣೆಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ.",

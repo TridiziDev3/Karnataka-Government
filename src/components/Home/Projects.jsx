@@ -4,6 +4,7 @@ import { FaMapMarkerAlt, FaArrowRight } from "react-icons/fa";
 import { TEXT } from "../../content/text";
 import statusIcon from "../../assets/Icon.png";
 
+/* Project Images */
 import project1 from "../../assets/Homepage/Rectangle 34625672.png";
 import project2 from "../../assets/Homepage/Rectangle 34625677.png";
 import project3 from "../../assets/Homepage/Rectangle 34625673.png";
@@ -14,9 +15,11 @@ import project7 from "../../assets/Homepage/Rectangle 34625676.png";
 import project8 from "../../assets/Homepage/Rectangle 34625677.png";
 import project9 from "../../assets/Homepage/Rectangle 34625672.png";
 
+/* Background vectors */
 import leftVector from "../../assets/vector-left.png";
 import rightVector from "../../assets/vector-right.png";
 
+/* Constants */
 const FILTER_STATUSES = ["Ongoing", "Active", "Completed"];
 const SCROLL_INTERVAL = 3000;
 
@@ -37,13 +40,17 @@ const Projects = ({ lang = "en" }) => {
 
   if (!TEXT?.projects) return null;
 
-  const t = TEXT.projects.filters;
+  /* Text references */
+  const projectText = TEXT.projects;          // 👈 root level
+  const t = TEXT.projects.filters;            // 👈 filters only
   const pillars = TEXT.projects.pillars || [];
   const cardsSource = TEXT.projects.cards || [];
 
+  /* Localization helper */
   const localize = (obj) =>
     typeof obj === "string" ? obj : obj?.[lang] || obj?.en || "";
 
+  /* Auto-scroll filter */
   useEffect(() => {
     const timer = setInterval(() => {
       const idx = FILTER_STATUSES.indexOf(activeFilter);
@@ -53,6 +60,7 @@ const Projects = ({ lang = "en" }) => {
     return () => clearInterval(timer);
   }, [activeFilter]);
 
+  /* Filter cards */
   const filteredCards = cardsSource
     .filter(
       (c) => c.status.toLowerCase() === activeFilter.toLowerCase()
@@ -65,7 +73,15 @@ const Projects = ({ lang = "en" }) => {
 
   return (
     <section className="projects-section">
+      {/* ===== TOP SECTION ===== */}
       <div className="project-top-section">
+
+        {/* TENDERS HEADING (LANGUAGE FIXED) */}
+        <h2 className="tenders-heading">
+          {localize(projectText.tendersHeading)}
+        </h2>
+
+        {/* FILTER TABS */}
         <div className="project-filters">
           {FILTER_STATUSES.map((status) => (
             <button
@@ -80,6 +96,7 @@ const Projects = ({ lang = "en" }) => {
           ))}
         </div>
 
+        {/* PILLARS */}
         <div className="pillar-carousel-wrapper">
           <img src={leftVector} className="bg-vector bg-vector-left" alt="" />
           <img src={rightVector} className="bg-vector bg-vector-right" alt="" />
@@ -90,24 +107,32 @@ const Projects = ({ lang = "en" }) => {
                 activeFilter === "Ongoing"
                   ? p.id <= 3
                   : activeFilter === "Active"
-                  ? p.id <= 6 && p.id >= 4
+                  ? p.id >= 4 && p.id <= 6
                   : p.id >= 7
               )
               .map((pillar) => (
                 <div className="pillar-item" key={pillar.id}>
                   <p className="pillar-text">{localize(pillar)}</p>
-                  <a className="pillar-link">{localize(t.knowMore)}</a>
+                  <a className="pillar-link">
+                    {localize(t.knowMore)}
+                  </a>
                 </div>
               ))}
           </div>
         </div>
       </div>
 
+      {/* ===== PROJECTS HEADING ===== */}
       <div className="projects-heading-group">
-        <p className="projects-subheading">{localize(t.subheading)}</p>
-        <h2 className="projects-main-heading">{localize(t.mainHeading)}</h2>
+        <p className="projects-subheading">
+          {localize(t.subheading)}
+        </p>
+        <h2 className="projects-main-heading">
+          {localize(t.mainHeading)}
+        </h2>
       </div>
 
+      {/* ===== PROJECT CARDS ===== */}
       <div className="project-cards-grid">
         {filteredCards.map((card) => (
           <article className="project-card" key={card.id}>
@@ -120,22 +145,23 @@ const Projects = ({ lang = "en" }) => {
             </div>
 
             <div className="card-content-body">
-              <h3 className="card-title">{localize(card.title)}</h3>
+              <h3 className="card-title">
+                {localize(card.title)}
+              </h3>
 
               <div className="card-location">
                 <FaMapMarkerAlt />
                 {localize(card.location)}
               </div>
 
-              {/* Progress header row */}
+              {/* Progress header */}
               <div className="progress-header">
                 <span className="progress-label">
                   {localize(t.progressLabel)}
                 </span>
                 <span className="progress-percent-gradient">
-  {card.progress}%
-</span>
-
+                  {card.progress}%
+                </span>
               </div>
 
               {/* Progress bar */}
@@ -146,6 +172,7 @@ const Projects = ({ lang = "en" }) => {
                 />
               </div>
 
+              {/* Details button */}
               <a className="details-button">
                 {localize(t.viewDetails)}
                 <FaArrowRight />

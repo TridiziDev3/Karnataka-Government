@@ -60,7 +60,10 @@ const Hero = ({ lang = "en" }) => {
           </h1>
 
           <div className="hero-actions">
-            <button className="contact-button">Contact Us</button>
+            <button className="contact-button">
+  {t.contactButton[lang]}
+</button>
+
             <button className="know-more-button">{t.button[lang]}</button>
           </div>
         </div>

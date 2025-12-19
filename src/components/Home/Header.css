@@ -4,15 +4,6 @@
   --color-orange-accent: #FF6900;
 }
 
-.header-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 2000;
-  background: #ffffff;
-}
-
 .top-bar {
   background-color: #83A031;
   color: #fff;
@@ -45,7 +36,7 @@
 .lang-button {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   background: transparent;
   border: none;
   color: #fff;
@@ -118,6 +109,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .main-nav__pill {
@@ -185,9 +179,9 @@
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-body {
-  padding-top: 180px;
-}
+/* body {
+  padding-top: 200px;
+} */
 
 /* ================= TABLET ================= */
 @media (max-width: 1024px) {

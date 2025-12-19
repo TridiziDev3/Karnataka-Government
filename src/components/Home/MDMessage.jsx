@@ -15,7 +15,10 @@ const MDMessage = ({ lang = 'en' }) => {
     <section className="md-section">
       <div className="md-content-wrapper">
         <h2 className="md-heading">{localize(t.heading)}</h2>
-        <p className="md-subheading">A vision for a cleaner, greener India</p>
+        <p className="md-subheading">
+  {TEXT.md.subheading[lang]}
+</p>
+
 
         <div className="md-card-container">
           <div className="md-profile-card md-animate-left">
