@@ -132,6 +132,7 @@ projects: {
   navbar: {
     links: {
       en: [
+        { href: "#home", label: "Home" },
         { href: "#about", label: "About Us" },
         { href: "#projects", label: "Projects" },
         { href: "#tenders", label: "Tenders" },
@@ -141,6 +142,7 @@ projects: {
         { href: "#contact", label: "Contact Numbers" },
       ],
       kn: [
+        { href: "#home", label: "ಮನೆ" },
         { href: "#about", label: "ನಮ್ಮ ಬಗ್ಗೆ" },
         { href: "#projects", label: "ಯೋಜನೆಗಳು" },
         { href: "#tenders", label: "ಟೆಂಡರ್‌ಗಳು" },
@@ -498,68 +500,45 @@ mediaCenter: {
     },
   },
 
-  footer: {
-    quickLinks: {
-      en: [
-        "Government Holidays",
-        "e-Service Websites",
-        "Government Apps",
-        "e-Service Websites",
-      ],
-      kn: [
-        "ಸರ್ಕಾರದ ರಜೆಗಳು",
-        "ಇ-ಸೇವಾ ವೆಬ್‌ಸೈಟ್‌ಗಳು",
-        "ಸರ್ಕಾರದ ಅಪ್‌ಗಳು",
-        "ಇ-ಸೇವಾ ವೆಬ್‌ಸೈಟ್‌ಗಳು",
-      ],
-    },
-    disclaimerHeading: {
-      en: "Disclaimer",
-      kn: "ಪ್ರಕಟನೆ",
-    },
-    disclaimerText: {
-      en: "Please note: This page provides links to the websites of Govt. Ministries / Departments / Organisations. The content is owned by respective organisations.",
-      kn: "ದಯವಿಟ್ಟು ಗಮನಿಸಿ: ಈ ಪುಟವು ಸರ್ಕಾರದ ಇಲಾಖೆಗಳ ವೆಬ್‌ಸೈಟ್‌ಗಳಿಗೆ ಲಿಂಕ್‌ಗಳನ್ನು ಒದಗಿಸುತ್ತದೆ. ವಿಷಯವನ್ನು ಸಂಬಂಧಿತ ಸಂಸ್ಥೆಗಳು ನಿರ್ವಹಿಸುತ್ತವೆ.",
-    },
-    policiesHeading: {
-      en: "Website Policies & Guidelines",
-      kn: "ವೆಬ್‌ಸೈಟ್ ನೀತಿಗಳು ಮತ್ತು ಮಾರ್ಗಸೂಚಿಗಳು",
-    },
-    policies: {
-      en: [
-        "Copyright Policy",
-        "Hyperlinking Policy",
-        "Security Policy",
-        "Terms & Conditions",
-        "Privacy Policy",
-      ],
-      kn: [
-        "ಪ್ರತಿನಿಧಿ ಹಕ್ಕು ನೀತಿ",
-        "ಹೈಪರ್ ಲಿಂಕಿಂಗ್ ನೀತಿ",
-        "ಭದ್ರತಾ ನೀತಿ",
-        "ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳು",
-        "ಗೌಪ್ಯತಾ ನೀತಿ",
-      ],
-    },
-    accessHeading: {
-      en: "Accessibility Resources",
-      kn: "ಪ್ರಾಪ್ಯ ಸಂಪನ್ಮೂಲಗಳು",
-    },
-    accessLinks: {
-      en: ["Sitemap", "Help", "Screen Reader Access", "Guidelines"],
-      kn: ["ಸೈಟ್ ನಕ್ಷೆ", "ಸಹಾಯ", "ಸ್ಕ್ರೀನ್ ರೀಡರ್ ಪ್ರವೇಶ", "ಮಾರ್ಗಸೂಚಿಗಳು"],
-    },
+   footer: {
     orgLine: {
-      en: "Bengaluru Solid Waste Management Limited (Government of Karnataka)",
-      kn: "ಬೆಂಗಳೂರು ಘನ ತ್ಯಾಜ್ಯ ನಿರ್ವಹಣೆ ಲಿಮಿಟೆಡ್ (ಕರ್ನಾಟಕ ಸರ್ಕಾರ)",
+      en: "Bengaluru Solid Waste Management Limited",
+      kn: "ಬೆಂಗಳೂರು ಘನ ತ್ಯಾಜ್ಯ ನಿರ್ವಹಣೆ ಲಿಮಿಟೆಡ್",
     },
-    ownedLine: {
-      en: "Content owned and maintained by Bengaluru Solid Waste Management Limited (Government of Karnataka)",
-      kn: "ವಿಷಯದ ಹಕ್ಕು ಮತ್ತು ನಿರ್ವಹಣೆ: ಬೆಂಗಳೂರು ಘನ ತ್ಯಾಜ್ಯ ನಿರ್ವಹಣೆ ಲಿಮಿಟೆಡ್ (ಕರ್ನಾಟಕ ಸರ್ಕಾರ)",
+
+    tagline: {
+      en: "Leading Karnataka’s waste management initiatives towards a sustainable and cleaner future for all citizens.",
+      kn: "ಎಲ್ಲಾ ನಾಗರಿಕರಿಗಾಗಿ ಸ್ಥಿರ ಮತ್ತು ಸ್ವಚ್ಛ ಭವಿಷ್ಯದತ್ತ ಕರ್ನಾಟಕದ ಘನ ತ್ಯಾಜ್ಯ ನಿರ್ವಹಣಾ ಉಪಕ್ರಮಗಳನ್ನು ಮುನ್ನಡೆಸುತ್ತಿದೆ.",
     },
-    creditsLine: {
-      en: "Designed, Developed & Hosted by: Centre for e-Governance – Government of Karnataka © 2025",
-      kn: "ವಿನ್ಯಾಸ, ಅಭಿವೃದ್ಧಿ ಮತ್ತು ಹೋಸ್ಟಿಂಗ್: ಇ-ಆಡಳಿತ ಕೇಂದ್ರ – ಕರ್ನಾಟಕ ಸರ್ಕಾರ © 2025",
+
+    quickLinksHeading: { en: "Quick Links", kn: "ತ್ವರಿತ ಕೊಂಡಿಗಳು" },
+
+    quickLinks: {
+      en: ["About Us", "Tenders", "Projects", "Gallery"],
+      kn: ["ನಮ್ಮ ಬಗ್ಗೆ", "ಟೆಂಡರ್‌ಗಳು", "ಯೋಜನೆಗಳು", "ಗ್ಯಾಲರಿ"],
+    },
+
+    policiesHeading: { en: "Important Links", kn: "ಮುಖ್ಯ ಕೊಂಡಿಗಳು" },
+
+    policies: {
+      en: ["Copyright Policy", "Hyperlinking Policy", "Security Policy", "Terms & Conditions", "Privacy Policy"],
+      kn: ["ಕಾಪಿರೈಟ್ ನೀತಿ", "ಹೈಪರ್ ಲಿಂಕಿಂಗ್ ನೀತಿ", "ಭದ್ರತಾ ನೀತಿ", "ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳು", "ಗೌಪ್ಯತಾ ನೀತಿ"],
+    },
+
+    contactHeading: { en: "Contact Us", kn: "ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ" },
+
+    contact: {
+      address: {
+        en: "Bengaluru Solid Waste Management Limited, Vasanth Nagar, Bengaluru",
+        kn: "ಬೆಂಗಳೂರು ಘನ ತ್ಯಾಜ್ಯ ನಿರ್ವಹಣೆ ಲಿಮಿಟೆಡ್, ವಸಂತ ನಗರ, ಬೆಂಗಳೂರು",
+      },
+      phone: { en: "+91-11-2436-0721", kn: "+91-11-2436-0721" },
+      email: { en: "info@bswml.net", kn: "info@bswml.net" },
+    },
+
+    copyrightLine: {
+      en: "© 2025 Bengaluru Solid Waste Management Limited. All rights reserved.",
+      kn: "© 2025 ಬೆಂಗಳೂರು ಘನ ತ್ಯಾಜ್ಯ ನಿರ್ವಹಣೆ ಲಿಮಿಟೆಡ್. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.",
     },
   },
 };

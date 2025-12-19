@@ -46,18 +46,14 @@ const Hero = ({ lang = "en" }) => {
           <h1 className="hero-title">
             {lang === "en" ? (
               <>
-                Building a futuristic
-                <br />
-                Waste Management
-                <br />
-                System in Karnataka
+                Building a futuristic Waste Management System in Karnataka
               </>
             ) : (
               <>
                 ಕರ್ನಾಟಕದಲ್ಲಿ ಭವಿಷ್ಯನಿಷ್ಠ
-                <br />
+                {/* <br /> */}
                 ತ್ಯಾಜ್ಯ ನಿರ್ವಹಣಾ
-                <br />
+                {/* <br /> */}
                 ವ್ಯವಸ್ಥೆ ನಿರ್ಮಾಣ
               </>
             )}
