@@ -16,88 +16,100 @@ const Footer = ({ lang = "en" }) => {
 
   const t = TEXT.footer;
   const localize = (obj) => obj?.[lang] || obj?.en || "";
-  const getLinks = (key) => localize(t[key]) || [];
+  const getList = (key) => localize(t[key]) || [];
 
   return (
     <footer className="site-footer">
       <div className="footer-content-wrapper">
 
-        {/* ===== COLUMN 1 ===== */}
+        {/* ===== COLUMN 1 : BRAND ===== */}
         <div className="footer-col footer-brand">
           <h3 className="footer-brand-title">
-            {localize(t.orgLine).split(" (")[0]}
+            {localize(t.orgLine)}
           </h3>
+
           <p className="footer-brand-desc">
-            Leading Karnataka's waste management initiatives
-            towards a sustainable and cleaner future for all citizens.
+            {localize(t.tagline)}
           </p>
         </div>
 
-        {/* ===== COLUMN 2 ===== */}
+        {/* ===== COLUMN 2 : QUICK LINKS ===== */}
         <div className="footer-col">
-          <h4 className="footer-heading">Quick Links</h4>
+          <h4 className="footer-heading">
+            {localize(t.quickLinksHeading)}
+          </h4>
+
           <ul className="footer-list">
-            {getLinks("quickLinks").map((link, index) => (
+            {getList("quickLinks").map((link, index) => (
               <li key={index}>
-                <a href="#" className="footer-link">{link}</a>
+                <a href="#" className="footer-link">
+                  {link}
+                </a>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* ===== COLUMN 3 ===== */}
+        {/* ===== COLUMN 3 : POLICIES ===== */}
         <div className="footer-col">
           <h4 className="footer-heading">
             {localize(t.policiesHeading)}
           </h4>
+
           <ul className="footer-list">
-            {getLinks("policies").map((link, index) => (
+            {getList("policies").map((link, index) => (
               <li key={index}>
-                <a href="#" className="footer-link">{link}</a>
+                <a href="#" className="footer-link">
+                  {link}
+                </a>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* ===== COLUMN 4 ===== */}
+        {/* ===== COLUMN 4 : CONTACT ===== */}
         <div className="footer-col">
-          <h4 className="footer-heading">Contact Us</h4>
+          <h4 className="footer-heading">
+            {localize(t.contactHeading)}
+          </h4>
 
           <ul className="footer-contact-list">
             <li>
               <FaMapMarkerAlt />
-              <span>
-                Bengaluru Solid Waste Management Limited,
-                Vasanth Nagar, Bengaluru
-              </span>
+              <span>{localize(t.contact.address)}</span>
             </li>
+
             <li>
               <FaPhoneAlt />
-              <span>+91-11-2436-0721</span>
+              <span>{localize(t.contact.phone)}</span>
             </li>
+
             <li>
               <FaEnvelope />
-              <a href="mailto:info@bswml.net" className="footer-link">
-                info@bswml.net
+              <a
+                href={`mailto:${localize(t.contact.email)}`}
+                className="footer-link"
+              >
+                {localize(t.contact.email)}
               </a>
             </li>
           </ul>
         </div>
       </div>
 
-      {/* ===== BOTTOM ===== */}
+      {/* ===== FOOTER BOTTOM ===== */}
       <div className="footer-bottom">
-  <div className="copyright-info">
-    © 2025 Bengaluru Solid Waste Management Limited. All rights reserved.
-  </div>
+        <div className="copyright-info">
+          {localize(t.copyrightLine)}
+        </div>
 
-  <div className="footer-socials">
-    <a href="#"><FaFacebookF /></a>
-    <a href="#"><FaTwitter /></a>
-    <a href="#"><FaLinkedinIn /></a>
-    <a href="#"><FaYoutube /></a>
-  </div>
-</div>
+        <div className="footer-socials">
+          <a href="#"><FaFacebookF /></a>
+          <a href="#"><FaTwitter /></a>
+          <a href="#"><FaLinkedinIn /></a>
+          <a href="#"><FaYoutube /></a>
+        </div>
+      </div>
     </footer>
   );
 };

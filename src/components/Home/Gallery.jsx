@@ -23,9 +23,10 @@ const Gallery = ({ lang = "en" }) => {
   const scrollRef = useRef(null);
   const rafRef = useRef(null);
 
-  if (!TEXT?.gallery?.gallery) return null;
+  // ✅ CORRECT OBJECT
+  if (!TEXT?.gallery?.bswml) return null;
 
-  const t = TEXT.gallery.gallery;
+  const t = TEXT.gallery.bswml;
   const localize = (obj) => obj?.[lang] || obj?.en || "";
 
   useEffect(() => {
@@ -76,14 +77,18 @@ const Gallery = ({ lang = "en" }) => {
     <section className="gallery-section">
       <div className="gallery-header">
         <div className="gallery-header-left">
-          <h2 className="gallery-main-heading">{localize(t.title)}</h2>
+          <h2 className="gallery-main-heading">
+            {localize(t.title)}
+          </h2>
+
           <p className="gallery-subheading">
-            Visual documentation of our initiatives
+            {localize(t.subheading)}
           </p>
         </div>
 
         <a href="#" className="view-all-photos-link">
-          View All Photos <FaArrowRight className="view-all-icon" />
+          {localize(t.viewAll)}
+          <FaArrowRight className="view-all-icon" />
         </a>
       </div>
 

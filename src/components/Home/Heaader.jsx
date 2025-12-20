@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import './Header.css';
+import React, { useState, useEffect } from "react";
+import "./Header.css";
 import {
   FaClock,
   FaGlobe,
@@ -12,9 +12,9 @@ import {
   FaImages,
   FaRegNewspaper,
   FaPhoneAlt
-} from 'react-icons/fa';
+} from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
-import { TEXT } from '../../content/text';
+import { TEXT } from "../../content/text";
 
 import SiddaramaiahImage from "../../assets/Homepage/Cm.png";
 import EmblemImage from "../../assets/Homepage/emblem.png";
@@ -23,21 +23,23 @@ import LogoImage from "../../assets/Homepage/temple.png";
 import OrgTitleImage from "../../assets/Bengaluru Solid Waste Management Limited (Government of Karnataka).png";
 
 const navItems = [
-  { name: 'Home', icon: FaHome },
-  { name: 'About Us', icon: FaInfoCircle },
-  { name: 'Tenders', icon: FaFileContract },
-  { name: 'Projects', icon: FaRegLightbulb },
-  { name: 'Plants', icon: FaTree },
-  { name: 'Wings', icon: FaAngleDoubleRight },
-  { name: 'Gallery', icon: FaImages },
-  { name: 'Media', icon: FaRegNewspaper },
-  { name: 'Contacts', icon: FaPhoneAlt }
+  { name: "Home", icon: FaHome },
+  { name: "About Us", icon: FaInfoCircle },
+  { name: "Tenders", icon: FaFileContract },
+  { name: "Projects", icon: FaRegLightbulb },
+  { name: "Plants", icon: FaTree },
+  { name: "Wings", icon: FaAngleDoubleRight },
+  { name: "Gallery", icon: FaImages },
+  { name: "Media", icon: FaRegNewspaper },
+  { name: "Contacts", icon: FaPhoneAlt }
 ];
 
 const Header = ({ lang, toggleLanguage }) => {
   const [dateTime, setDateTime] = useState("");
+  const [isSticky, setIsSticky] = useState(false);
   const t = TEXT.header;
 
+  /* DATE TIME */
   useEffect(() => {
     const updateDateTime = () => {
       const now = new Date();
@@ -67,53 +69,64 @@ const Header = ({ lang, toggleLanguage }) => {
     return () => clearInterval(timer);
   }, [lang]);
 
+  /* SCROLL LOGIC */
+  useEffect(() => {
+    const handleScroll = () => {
+      const triggerHeight = 140; // branding height approx
+      setIsSticky(window.scrollY > triggerHeight);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="site-header header-fixed">
-      
-      {/* ================= TOP BAR ================= */}
-      <div className="top-bar">
-        <div className="time-info">
-          <FaClock className="icon" />
-          <span>{dateTime}</span>
-        </div>
-
-        <div className="language-switcher">
-          <FaGlobe className="icon" />
-          <button onClick={toggleLanguage} className="lang-button">
-            {t.top.langButton[lang]}
-            <IoIosArrowDown />
-          </button>
-        </div>
-      </div>
-
-      {/* ================= BRANDING ================= */}
-      <div className="branding-section">
-        <div className="minister-profile left-minister">
-          <img src={SiddaramaiahImage} alt="" className="minister-photo" />
-        </div>
-
-        <div className="center-branding">
-          <div className="center-logo">
-            <img src={LogoImage} alt="Govt Logo" className="logo-image" />
+    <>
+      {/* HEADER (SCROLLS) */}
+      <header className="site-header">
+        <div className="top-bar">
+          <div className="time-info">
+            <FaClock className="icon" />
+            <span>{dateTime}</span>
           </div>
 
-          <div className="site-title-group">
-            <img
-              src={OrgTitleImage}
-              alt="Bengaluru Solid Waste Management Limited"
-              className="org-title-image"
-            />
+          <div className="language-switcher">
+            <FaGlobe className="icon" />
+            <button onClick={toggleLanguage} className="lang-button">
+              {t.top.langButton[lang]}
+              <IoIosArrowDown />
+            </button>
           </div>
         </div>
 
-        <div className="minister-profile right-minister">
-          <img src={EmblemImage} alt="" className="emblem-image" />
-          <img src={ShivakumarImage} alt="" className="minister-photo" />
-        </div>
-      </div>
+        <div className="branding-section">
+          <div className="minister-profile left-minister">
+            <img src={SiddaramaiahImage} alt="" className="minister-photo" />
+          </div>
 
-      {/* ================= NAVBAR ================= */}
-      <nav className="navbar">
+          <div className="center-branding">
+            <div className="center-logo">
+              <img src={LogoImage} alt="Govt Logo" className="logo-image" />
+            </div>
+
+            <div className="site-title-group">
+              <img
+                src={OrgTitleImage}
+                alt="Bengaluru Solid Waste Management Limited"
+                className="org-title-image"
+              />
+            </div>
+          </div>
+
+          <div className="minister-profile right-minister">
+            <img src={EmblemImage} alt="" className="emblem-image" />
+            <img src={ShivakumarImage} alt="" className="minister-photo" />
+          </div>
+        </div>
+      </header>
+
+      {/* NAVBAR */}
+      <nav className={`navbar ${isSticky ? "navbar--fixed" : ""}`}>
         <ul className="nav-list">
           {TEXT.navbar.links[lang].map((item) => {
             const englishItem =
@@ -122,13 +135,10 @@ const Header = ({ lang, toggleLanguage }) => {
               navItems.find(nav => nav.name === englishItem.label) || {};
             const Icon = navIcon.icon || FaInfoCircle;
 
-            const isHome =
-              item.label === 'Home' || item.label === 'ಮನೆ';
-
             return (
-              <li key={item.label} className={`nav-item ${isHome ? 'active' : ''}`}>
-                <a href={item.href} className={`nav-link ${isHome ? 'active' : ''}`}>
-                  <Icon className="nav-icon" />
+              <li key={item.label} className="nav-item">
+                <a href={item.href} className="nav-link">
+                  <Icon />
                   {item.label}
                 </a>
               </li>
@@ -137,7 +147,9 @@ const Header = ({ lang, toggleLanguage }) => {
         </ul>
       </nav>
 
-    </header>
+      {/* Spacer – ONLY active when navbar fixed */}
+      {isSticky && <div className="navbar-spacer" />}
+    </>
   );
 };
 

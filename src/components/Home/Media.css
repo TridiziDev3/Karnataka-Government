@@ -154,6 +154,8 @@
   align-items:center;
   gap:6px;
   white-space:nowrap;
+  background: linear-gradient(90deg, #155DFC 0%, #1447E6 100%);
+
 }
 
 .media-blue .category-badge{ background:var(--blue-primary); color:#fff; }
@@ -213,8 +215,10 @@
   justify-content:center;
   gap:8px;
   transition:.2s ease;
-  margin-top:-20px;   /* 🔥 button moves up */
+  margin-top:-20px;   
   margin-left: -20px;
+  background: linear-gradient(90deg, #155DFC 0%, #1447E6 100%);
+
 }
 
 

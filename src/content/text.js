@@ -252,7 +252,6 @@ projects: {
         en: "Wings",
         kn: "ವಿಭಾಗಗಳು",
     },
-    // ADDED: Localized headings for the Wings section (Hardcoded in JSX previously)
     mainHeading: { 
         en: "Organizational Wings",
         kn: "ಸಂಸ್ಥೆಯ ವಿಭಾಗಗಳು",
@@ -261,7 +260,6 @@ projects: {
         en: "Specialized departments driving our mission",
         kn: "ನಮ್ಮ ಧ್ಯೇಯವನ್ನು ನಡೆಸುವ ವಿಶೇಷ ವಿಭಾಗಗಳು",
     },
-    // The 'items' now hold objects containing both the title and the full description, localized.
     items: {
         en: [
             { 
@@ -293,8 +291,6 @@ projects: {
         ],
     },
 },
-  /* --- Conceptual Media Center Data to be added to TEXT.js --- */
-
 mediaCenter: {
     heading: { en: "Media Center", kn: "ಮಾಧ್ಯಮ ಕೇಂದ್ರ" },
     subheading: { en: "Breaking news, press releases, and achievements in waste management", kn: "ತ್ಯಾಜ್ಯ ನಿರ್ವಹಣೆಯಲ್ಲಿನ ಪ್ರಮುಖ ಸುದ್ದಿ, ಪತ್ರಿಕಾ ಪ್ರಕಟಣೆ ಮತ್ತು ಸಾಧನೆಗಳು" },
@@ -450,9 +446,18 @@ mediaCenter: {
   gallery: {
     bswml: {
       title: {
-        en: "BSWML",
-        kn: "ಬಿ.ಎಸ್.ಡಬ್ಲ್ಯೂ.ಎಂ.ಎಲ್",
-      },
+  en: "Gallery",
+  kn: "ಗ್ಯಾಲರಿ",
+},
+
+       subheading: {
+      en: "Visual documentation of our initiatives",
+      kn: "ನಮ್ಮ ಉಪಕ್ರಮಗಳ ದೃಶ್ಯ ದಾಖಲೆ",
+    },
+    viewAll: {
+      en: "View All Photos",
+      kn: "ಎಲ್ಲಾ ಚಿತ್ರಗಳನ್ನು ನೋಡಿ",
+    },
       cards: {
         en: [
           {

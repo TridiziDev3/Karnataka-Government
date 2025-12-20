@@ -1,62 +1,30 @@
 import React, { useEffect, useRef } from 'react';
 import './Wings.css';
-
 import itImage from '../../assets/Container.png';
 import technicalImage from '../../assets/Container1.png';
 import adminImage from '../../assets/Container2.png';
-
-const TEXT = {
-  wings: {
-    mainHeading: { en: 'Organizational Wings' },
-    subheading: { en: 'Specialized departments driving our mission' },
-    items: {
-      en: [
-        {
-          title: 'IT Cell',
-          description:
-            'Digital infrastructure, technology implementation, and IT systems management for efficient waste tracking and monitoring'
-        },
-        {
-          title: 'Technical Wing',
-          description:
-            'Project planning, engineering design, technical implementation, and quality assurance of waste management facilities'
-        },
-        {
-          title: 'Administration',
-          description:
-            'Administrative operations, human resources, policy coordination, and overall organizational management'
-        }
-      ]
-    }
-  }
-};
-
-const wingDetails = {
-  'IT Cell': { img: itImage, colorClass: 'blue' },
-  'Technical Wing': { img: technicalImage, colorClass: 'green' },
-  'Administration': { img: adminImage, colorClass: 'orange' }
-};
-
-const ENGLISH_KEYS = ['IT Cell', 'Technical Wing', 'Administration'];
+import { TEXT } from '../../content/text';
+const wingDetails = [
+  { img: itImage, colorClass: 'blue' },
+  { img: technicalImage, colorClass: 'green' },
+  { img: adminImage, colorClass: 'orange' },
+];
 
 const Wings = ({ lang = 'en' }) => {
-  if (!TEXT.wings || !TEXT.wings.items) return null;
+  if (!TEXT?.wings?.items) return null;
 
   const t = TEXT.wings;
-  const localize = (obj) => (obj && obj[lang]) || (obj && obj['en']) || '';
 
-  const localizedItems = localize(t.items);
+  // ✅ get correct language items (fallback to English)
+  const localizedItems = t.items[lang] || t.items.en;
 
-  const wingsData = localizedItems.slice(0, 3).map((item, index) => {
-    const englishKey = ENGLISH_KEYS[index];
-    const details = wingDetails[englishKey];
-    return {
-      title: item.title,
-      description: item.description,
-      img: details.img,
-      colorClass: details.colorClass
-    };
-  });
+  // ✅ combine text + static details safely
+  const wingsData = localizedItems.slice(0, 3).map((item, index) => ({
+    title: item.title,
+    description: item.description,
+    img: wingDetails[index].img,
+    colorClass: wingDetails[index].colorClass,
+  }));
 
   const containerRef = useRef(null);
 
@@ -84,15 +52,14 @@ const Wings = ({ lang = 'en' }) => {
 
   return (
     <section className="wings-section" ref={containerRef}>
-      {/* 🔥 IMPORTANT WRAPPER — alignment fix */}
       <div className="wings-inner">
 
         <div className="wings-header-container">
           <h2 className="wings-main-heading">
-            {localize(t.mainHeading)}
+            {t.mainHeading[lang] || t.mainHeading.en}
           </h2>
           <p className="wings-subheading">
-            {localize(t.subheading)}
+            {t.subheading[lang] || t.subheading.en}
           </p>
         </div>
 

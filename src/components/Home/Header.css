@@ -3,6 +3,11 @@
   --color-blue-active: #1447E6;
   --color-orange-accent: #FF6900;
 }
+.site-header {
+  position: relative;
+  width: 100%;
+  background: #fff;
+}
 
 .top-bar {
   background-color: #83A031;
@@ -43,6 +48,7 @@
   cursor: pointer;
   font-size: 14px;
 }
+
 
 .branding-section {
   display: flex;
@@ -103,15 +109,20 @@
 }
 
 .navbar {
-  background-color: var(--color-green-dark);
-  width: 100%;
+  position: relative;
   height: 60px;
+  background: var(--color-green-dark);
   display: flex;
   justify-content: center;
   align-items: center;
-  position: sticky;
+  transition: all 0.25s ease;
+}
+.navbar--fixed {
+  position: fixed;
   top: 0;
-  z-index: 1000;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
 }
 
 .main-nav__pill {
@@ -179,9 +190,11 @@
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-/* body {
-  padding-top: 200px;
-} */
+body {
+  margin: 0;
+  padding-top: 0;   /* ❌ DO NOT offset header */
+}
+
 
 /* ================= TABLET ================= */
 @media (max-width: 1024px) {

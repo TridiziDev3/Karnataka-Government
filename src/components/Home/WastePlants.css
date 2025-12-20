@@ -39,6 +39,7 @@
   max-width: 100%;
 }
 
+/* ===== HEADING ===== */
 .plants-heading {
   width: 384px;
   height: 40px;
@@ -49,8 +50,14 @@
   color: #1C398E;
   margin: 0;
   margin-left: -50px;
+
+  /* ✅ single line fix */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+/* ===== SUBHEADING ===== */
 .plants-subheading {
   width: 263px;
   height: 28px;
@@ -61,7 +68,15 @@
   color: #4A5565;
   margin: 0;
   margin-left: -50px;
+
+  /* ✅ single line fix */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
+
+
 
 /* ---------- RIGHT LINK ---------- */
 .view-all-link {
@@ -220,7 +235,7 @@
 }
 
 .stat-value {
-  width:131px;
+  width:161px;
 }
 
 .stat-label-inside {

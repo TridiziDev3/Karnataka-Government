@@ -12,10 +12,7 @@ import Media from './Media';
 import Footer from './Footer';
 
 function Home() {
-  // --- Central Language State Management ---
   const [lang, setLang] = useState('en');
-
-  // Function to pass down and allow the Header to change the language globally
   const toggleLanguage = () => {
     setLang(prevLang => (prevLang === 'en' ? 'kn' : 'en'));
   };
